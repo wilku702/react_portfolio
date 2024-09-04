@@ -1,0 +1,26 @@
+.footer-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--background-color);
+
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    padding-left: 5%;
+    padding-right: 5%;
+
+    border-top: 1px solid #323232;
+}
+
+.footer-icons {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.footer-container img{
+    width: 100%;
+    width: 24px;
+    height: 24px;
+}
