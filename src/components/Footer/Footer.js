@@ -1,7 +1,6 @@
 import React from 'react';
 import './Footer.css';
 
-<<<<<<< HEAD
 import { motion } from 'framer-motion';
 import {
   staggerOne,
@@ -84,27 +83,6 @@ const Footer = () => {
         </motion.div>
       </div>
     </motion.div>
-=======
-const Footer = () => {
-  return (
-    <div className="footer-container">
-      <div className="footer-text">Made by Will Kung</div>
-      <div className="footer-icons">
-        <a
-          href="https://github.com/your-profile"
-          target="_blank"
-          rel="noreferrer">
-          <img src="./logo/github.svg" alt="github" />
-        </a>
-        <a
-          href="https://linkedin.com/in/your-profile"
-          target="_blank"
-          rel="noreferrer">
-          <img src="./logo/linkedin.svg" alt="linkedin" />
-        </a>
-      </div>
-    </div>
->>>>>>> ebd69c1e7ae9403d70f3befda851b6d60b6f6956
   );
 };
 

@@ -1,11 +1,8 @@
 :root {
     --background-color: rgb(20,20,20);
     --text-color: hsl(0, 0%, 100%);
-<<<<<<< HEAD
 
     --main-color: rgb(148, 174, 247);
-=======
->>>>>>> ebd69c1e7ae9403d70f3befda851b6d60b6f6956
 }
   
 html, body, #root {
@@ -18,12 +15,8 @@ html, body, #root {
 body {
     background-color: var(--background-color);
     color: var(--text-color);
-<<<<<<< HEAD
 
     font-family: 'RobotoMono', sans-serif;
-=======
-    
->>>>>>> ebd69c1e7ae9403d70f3befda851b6d60b6f6956
 }
 
 .App {
@@ -34,7 +27,6 @@ body {
     min-height: 100vh; 
     overflow-y: auto;
     background-color: var(--background-color);
-<<<<<<< HEAD
 
     /* cursor: url('../images/cursor/pointer48.png'), auto; */
 }
@@ -73,6 +65,4 @@ body {
 @font-face {
     font-family: 'RobotoMonoSemiBold';
     src: url('../fonts/RobotoMono-SemiBold.ttf') format('truetype');
-=======
->>>>>>> ebd69c1e7ae9403d70f3befda851b6d60b6f6956
 }

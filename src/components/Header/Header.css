@@ -3,7 +3,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-<<<<<<< HEAD
 
     font-family: 'RobotoMonoLight';
 }
@@ -14,15 +13,6 @@
   letter-spacing: -2px;
   line-height: 70px;
   font-size: 2.5rem;
-=======
-}
-
-.header h1 {
-    font-weight: 200;
-    text-align: center;
-    letter-spacing: -2px;
-    line-height: 58px;
->>>>>>> ebd69c1e7ae9403d70f3befda851b6d60b6f6956
 }
 
 .header h1 {
@@ -36,7 +26,6 @@
     transform: translateY(-50%);
 }
 
-<<<<<<< HEAD
 @media(max-width: 768px) {
   .header h1 {
     font-size: 26px;
@@ -49,8 +38,6 @@
   }
 }
 
-=======
->>>>>>> ebd69c1e7ae9403d70f3befda851b6d60b6f6956
 .typewriter-animation h1:nth-child(1) {
     width: 6em;
     -webkit-animation: type 1s steps(40, end);
@@ -60,11 +47,7 @@
   }
 
   .typewriter-animation h1:nth-child(2) {
-<<<<<<< HEAD
     width: 12em;
-=======
-    width: 8em;
->>>>>>> ebd69c1e7ae9403d70f3befda851b6d60b6f6956
     opacity: 0;
     -webkit-animation: type2 1.25s steps(40, end);
     animation: type2 1.25s steps(40, end);
@@ -75,11 +58,7 @@
   }
 
   .typewriter-animation h1:nth-child(3) {
-<<<<<<< HEAD
     width: 18em;
-=======
-    width: 10.5em;
->>>>>>> ebd69c1e7ae9403d70f3befda851b6d60b6f6956
     opacity: 0;
     -webkit-animation: type3 1.5s steps(40, end), blink .5s step-end infinite alternate;
     animation: type3 1.5s steps(40, end), blink .5s step-end infinite alternate;
@@ -88,11 +67,7 @@
     -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
 
-<<<<<<< HEAD
     color: var(--main-color) !important;
-=======
-    color: #A5A6F6 !important;
->>>>>>> ebd69c1e7ae9403d70f3befda851b6d60b6f6956
   }
 
   @keyframes type {
