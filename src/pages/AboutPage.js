@@ -1,4 +1,5 @@
 import React from 'react';
+<<<<<<< HEAD
 import './styles/AboutPage.css';
 
 import { motion } from 'framer-motion';
@@ -71,6 +72,14 @@ const AboutPage = ({}) => {
         <div class="snowflake">❅</div>
       </div>
     </motion.div>
+=======
+
+const AboutPage = ({}) => {
+  return (
+    <div className="page">
+      <h1>About</h1>
+    </div>
+>>>>>>> ebd69c1e7ae9403d70f3befda851b6d60b6f6956
   );
 };
 

@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 /* Wrapper */
+=======
+>>>>>>> ebd69c1e7ae9403d70f3befda851b6d60b6f6956
 .navigation-wrapper{
     display: flex;
     flex-direction: row;
@@ -8,6 +11,7 @@
     top: 0px;
     justify-content: space-between;
     height: 80px;
+<<<<<<< HEAD
     z-index: 2;
 
     padding-right: 6%;
@@ -15,11 +19,17 @@
     margin-right: auto;
     margin-left: auto;
     box-sizing: border-box;
+=======
+>>>>>>> ebd69c1e7ae9403d70f3befda851b6d60b6f6956
 }
 
 /* Logo */
 .navigation-logo {
+<<<<<<< HEAD
     width: 3.2em;
+=======
+    width: 3em;
+>>>>>>> ebd69c1e7ae9403d70f3befda851b6d60b6f6956
     height: auto;
     
     display: block;
@@ -28,9 +38,15 @@
     margin-right: 26px;
     align-self: center;
 
+<<<<<<< HEAD
     line-height: 80px;
     font-weight: bold;
     margin-top: 10px;
+=======
+    margin-left: 82px;
+    line-height: 80px;
+    font-weight: bold;
+>>>>>>> ebd69c1e7ae9403d70f3befda851b6d60b6f6956
 }
 
 .navigation-logo:hover {
@@ -40,33 +56,56 @@
 /* Navigation Tab */
 .navigation-menu{
     display: flex;
+<<<<<<< HEAD
     align-items: center;
 
+=======
+    position: fixed;
+    align-items: center;
+    right: 80px;
+
+    margin-top: 10;
+>>>>>>> ebd69c1e7ae9403d70f3befda851b6d60b6f6956
     margin-bottom: 1rem;
     font-size: 1.2rem;
 }
 
+<<<<<<< HEAD
 @media (max-width: 768px) {
     .navigation-menu {
         display: none;
     }
 }
 
+=======
+>>>>>>> ebd69c1e7ae9403d70f3befda851b6d60b6f6956
 .navigation-menu li{
     display: block;
     font-size: 1rem;
     
     list-style-type: none;
+<<<<<<< HEAD
+=======
+    margin-left: 24px;
+>>>>>>> ebd69c1e7ae9403d70f3befda851b6d60b6f6956
 }
 
 .bar-link{
     color: #e5e5e5;
     text-decoration: none;
 
+<<<<<<< HEAD
     margin-left: 80px;
     display: inline-block;
     font-size: 20px;
     font-weight: 500;
+=======
+    padding-left: 40px;
+    padding-right: 40px;
+    display: inline-block;
+    font-size: 20px;
+    font-weight: 300;
+>>>>>>> ebd69c1e7ae9403d70f3befda851b6d60b6f6956
     line-height: 80px;
     position: relative;
 
@@ -78,6 +117,7 @@
 .bar-link:hover{
     font-weight: bolder;
     transform: scale(1.25);
+<<<<<<< HEAD
 }
 
 /* Menu Toggle */
@@ -156,4 +196,6 @@
       margin-top: 6px;
       margin-right: 4px;
     }
+=======
+>>>>>>> ebd69c1e7ae9403d70f3befda851b6d60b6f6956
 }
