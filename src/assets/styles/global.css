@@ -1,0 +1,68 @@
+:root {
+    --background-color: rgb(20,20,20);
+    --text-color: hsl(0, 0%, 100%);
+
+    --main-color: rgb(148, 174, 247);
+}
+  
+html, body, #root {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+  
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+
+    font-family: 'RobotoMono', sans-serif;
+}
+
+.App {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 100vh; 
+    overflow-y: auto;
+    background-color: var(--background-color);
+
+    /* cursor: url('../images/cursor/pointer48.png'), auto; */
+}
+
+.pointer-gradient {
+    pointer-events: none;
+    position: fixed;
+    inset: 0;
+    z-index: 30;
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+    transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+    transition-duration: .3s;
+}
+
+@media (max-width: 768px) {
+    .pointer-gradient {
+        display: none;
+    }
+}
+
+@font-face {
+    font-family: 'RobotoMonoLight';
+    src: url('../fonts/RobotoMono-ExtraLight.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'RobotoMono';
+    src: url('../fonts/RobotoMono-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'RobotoMonoBold';
+    src: url('../fonts/RobotoMono-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'RobotoMonoSemiBold';
+    src: url('../fonts/RobotoMono-SemiBold.ttf') format('truetype');
+}

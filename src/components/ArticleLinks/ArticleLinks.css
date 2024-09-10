@@ -1,0 +1,250 @@
+.tiles {
+    --main: #000;
+    --bg-color: #1a1b1f;
+    --text: #fff;
+    --text2: rgba(255,255,255,.8);
+    --text3: rgba(255,255,255,.5);
+    --text4: rgba(255,255,255,.3);
+    --text5: #A5A6F6;
+    --bg1: rgba(36, 41, 67, 0.1);
+    --bg2: rgba(255,255,255,0.03);
+    --blue: #007bff;
+    --indigo: #6610f2;
+    --purple: #6f42c1;
+    --pink: #e83e8c;
+    --red: #dc3545;
+    --orange: #fd7e14;
+    --yellow: #ffc107;
+    --green: #28a745;
+    --teal: #20c997;
+    --cyan: #17a2b8;
+    --white: #fff;
+    --gray: #6c757d;
+    --gray-dark: #343a40;
+    --primary: #007bff;
+    --secondary: #6c757d;
+    --success: #28a745;
+    --info: #17a2b8;
+    --warning: #ffc107;
+    --danger: #dc3545;
+    --light: #f8f9fa;
+    --dark: #343a40;
+    font-family: "Roboto Mono", monospace;
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--text);
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    line-height: 36px !important;
+}
+
+.tiles article {
+    align-items: center;
+    display: flex;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+    padding: 4em;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 40vh;
+    max-height: 40em;
+    min-height: 23em;
+    overflow: hidden;
+    position: relative;
+    width: 50%;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+
+.tiles article header h1 {
+    font-weight: 700;
+    line-height: 1.2;
+    font-size: 2.5rem;
+    margin-bottom: .5rem;
+}
+
+.tiles article header p {
+    margin-bottom: 1rem;
+}
+
+
+
+
+/* Tiles */
+.tiles + * {
+    border-top: 0 !important;
+}
+
+.tiles article {
+    -moz-align-items: center;
+    -webkit-align-items: center;
+    -ms-align-items: center;
+    align-items: center;
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    -moz-transition: -moz-transform 0.25s ease, opacity 0.25s ease, -moz-filter 1s ease, -webkit-filter 1s ease;
+    -webkit-transition: -webkit-transform 0.25s ease, opacity 0.25s ease, -webkit-filter 1s ease, -webkit-filter 1s ease;
+    -ms-transition: -ms-transform 0.25s ease, opacity 0.25s ease, -ms-filter 1s ease, -webkit-filter 1s ease;
+    transition: transform 0.25s ease, opacity 0.25s ease, filter 1s ease, -webkit-filter 1s ease;
+    padding: 4em 4em 2em 4em;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 40vh;
+    max-height: 40em;
+    min-height: 23em;
+    overflow: hidden;
+    position: relative;
+    width: 50%;
+}
+
+.tiles article .image {
+    display: none;
+}
+
+.tiles article header {
+    position: relative;
+    z-index: 3;
+}
+
+.tiles article h3 {
+    font-size: 1.75em;
+}
+
+.tiles article h3 a:hover {
+    color: inherit !important;
+}
+
+.tiles article:hover {
+    color: transparent;
+    cursor: pointer;
+}
+
+.tiles article .link.primary {
+    border: 0;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 4;
+}
+
+
+.major:hover {
+    display: hidden;
+    color: transparent;
+}
+
+.tiles article:before {
+    -moz-transition: opacity 0.5s ease;
+    -webkit-transition: opacity 0.5s ease;
+    -ms-transition: opacity 0.5s ease;
+    transition: opacity 0.5s ease;
+    bottom: 0;
+    content: '';
+    display: block;
+    height: 100%;
+    left: 0;
+    opacity: 0.85;
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+}
+
+.tiles article:after {
+    background-color: var(--bg1);
+    content: '';
+    display: block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.tiles article:hover:before {
+    opacity: 0;
+}
+
+.tiles article.is-transitioning {
+    -moz-transform: scale(0.95);
+    -webkit-transform: scale(0.95);
+    -ms-transform: scale(0.95);
+    transform: scale(0.95);
+    -moz-filter: blur(0.5em);
+    -webkit-filter: blur(0.5em);
+    -ms-filter: blur(0.5em);
+    filter: blur(0.5em);
+    opacity: 0;
+}
+
+/* change this and .tiles article { width: } to stagger projects */
+/* .tiles article:nth-child(4n - 1), .tiles article:nth-child(4n - 2) {
+    width: 55%;
+} */
+
+.tiles article:nth-child(6n - 5):before {
+    background-color: var(--bg-color);
+}
+
+.tiles article:nth-child(6n - 4):before {
+    background-color: var(--bg-color);
+}
+
+.tiles article:nth-child(6n - 3):before {
+    background-color: var(--bg-color);
+}
+
+.tiles article:nth-child(6n - 2):before {
+    background-color: var(--bg-color);
+}
+
+.tiles article:nth-child(6n - 1):before {
+    background-color: var(--bg-color);
+}
+
+.tiles article:nth-child(6n):before {
+    background-color: var(--bg-color);
+}
+
+@media screen and (max-width: 1280px) {
+    .tiles article {
+        padding: 4em 3em 2em 3em ;
+        height: 30vh;
+        max-height: 30em;
+        min-height: 20em;
+    }
+}
+
+@media screen and (max-width: 980px) {
+    .tiles article {
+        width: 50% !important;
+    }
+}
+
+@media screen and (max-width: 736px) {
+    .tiles article {
+        padding: 3em 1.5em 1em 1.5em ;
+        height: 16em;
+        max-height: none;
+        min-height: 0;
+    }
+        .tiles article h3 {
+            font-size: 1.5em;
+        }
+}
+
+@media screen and (max-width: 480px) {
+    .tiles article {
+        height: 20em;
+        width: 100% !important;
+    }
+}

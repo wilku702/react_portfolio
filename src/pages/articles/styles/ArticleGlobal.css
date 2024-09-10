@@ -1,0 +1,131 @@
+/* whitespace */
+.whitespace {
+    width: 100%;
+    height: 100px;
+}
+
+@media (max-width: 768px) {
+    .whitespace {
+        display: none;
+    }
+}
+
+
+/* article-containers */
+.article-container{
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@media (min-width: 576px) {
+    .article-container {
+        max-width: 540px;
+    }
+}
+
+@media (min-width: 768px) {
+    .article-container {
+        max-width: 720px;
+    }
+}
+
+@media (min-width: 992px) {
+    .article-container {
+        max-width: 960px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .article-container {
+        max-width: 1140px;
+    }
+}
+
+/* Row */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.space {
+    margin-bottom: 5vh;
+}
+
+/* column style */
+.col-lg-12{
+    --text: #fff;
+    line-height: 36px !important;
+    font-family: "RobotoMono" !important;
+    font-size: 1rem;
+    font-weight: 400;
+    text-align: left;
+    color: var(--text);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.col-lg-4{
+    --text: #fff;
+    line-height: 36px !important;
+    font-family: "RobotoMono" !important;
+    font-size: 1rem;
+    font-weight: 400;
+    text-align: left;
+    color: var(--text);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.article-container p {
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+    font-family: "RobotoMonoSemiBold" !important;
+    font-size: 1rem;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    margin-top: 0;
+    line-height: 36px;
+    color: rgba(255,255,255,0.95);
+    margin-bottom: 0;
+    visibility: visible;
+}
+
+.article-container h6 {
+    font-family: "RobotoMonoBold" !important;
+    color: var(--text);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    margin-top: 0;
+    margin-bottom: .5rem;
+    /* font-weight: bolder; */
+    line-height: 1.2;
+    font-size: 1rem;
+    text-align: left;
+    visibility: visible;
+}
+
+@media (min-width: 992px) {
+    .col-lg-4 {
+        -ms-flex: 0 0 33.333333%;
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
+}
