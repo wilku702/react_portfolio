@@ -1,6 +1,6 @@
 import React from 'react';
 
-const AdonitPage = ({}) => {
+const AdonitPage = () => {
   return <div className="page"></div>;
 };
 

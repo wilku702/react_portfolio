@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 
 import { defaultPageFadeInVariants } from '../motionUtils';
 
-const AboutPage = ({}) => {
+const AboutPage = () => {
   return (
     <motion.div
       className="about-page"
@@ -16,7 +16,7 @@ const AboutPage = ({}) => {
       <div className="about-top-content">
         <div className="about-top-row">
           <div className="about-portrait">
-            <img id="colchuck" src="/portrait.jpg" alt="Picture of Me" />
+            <img id="colchuck" src="/portrait.jpg" alt="Thats Me" />
           </div>
           <div className="about-top-text">
             <h5>Good day! It's a pleasure to meet you.</h5>

@@ -4,7 +4,6 @@ import './Footer.css';
 import { motion } from 'framer-motion';
 import {
   staggerOne,
-  bannerFadeInVariants,
   bannerFadeInUpVariants
 } from '../../motionUtils';
 

@@ -37,6 +37,7 @@ const Navbar = () => {
             <a
               href="https://drive.google.com/file/d/15y7eIv9nvPGdyHCBrwOS1uStmJm7Xde6/view?usp=sharing"
               target="_blank"
+              rel="noopener noreferrer"
               className="bar-link">
               resume
             </a>
@@ -73,6 +74,7 @@ const Navbar = () => {
             <a
               href="https://drive.google.com/file/d/15y7eIv9nvPGdyHCBrwOS1uStmJm7Xde6/view?usp=sharing"
               target="_blank"
+              rel="noopener noreferrer"
               className="menu-link"
               onClick={() => handleClick(false)}>
               resume

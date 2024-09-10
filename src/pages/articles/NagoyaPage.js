@@ -1,6 +1,6 @@
 import React from 'react';
 
-const NagoyaPage = ({}) => {
+const NagoyaPage = () => {
   return <div className="page"></div>;
 };
 

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const TrinitiPage = ({}) => {
+const TrinitiPage = () => {
   return <div className="page"></div>;
 };
 
