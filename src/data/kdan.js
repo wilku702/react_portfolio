@@ -1,40 +1,79 @@
 export const kdanData = {
-  title: 'Uber Internship',
-  service: 'Design Systems',
-  timeline: 'Jun 2021 - Sep 2021 (4 months)',
-  role: 'Product Design Intern',
-  description: `I worked with the Base team at Uber to foster a consistent, cohesive experience among all Uber products. By ensuring our design roots are consistent and accessible, we aid designers in creating beautiful user experiences for everyone. You can learn more about the Base design system at the official website.`,
+  title: 'KDANMobile Internship',
+  service: 'Chatbot Development',
+  timeline: 'Jun 2024 - Aug 2024 (3 months)',
+  role: 'Software Engineer Intern',
+  description: `At KDANMobile, I developed a chatbot for a client, aimed at streamlining data inquiries such as daily revenue and stock levels. This role involved front-end and back-end development, ensuring the chatbot was both functional and user-friendly.`,
   images: [
     {
-      src: './companies/kdan/chatbot.png',
-      alt: 'preview of the Base design system'
+      src: './companies/kdan/kdan-ai.jpg',
+      alt: 'company branch'
     }
   ],
   sections: [
+    // {
+    //   headerType: 'h3',
+    //   title: 'FRONTEND DEVELOPMENT',
+    //   contentType: 'list',
+    //   content: [
+    //     'Documented TalkBack accessibility guidelines for internal teams',
+    //     'Contributed to creating a new onboarding experience for all designers',
+    //     'Created a component from beginning to end for usage in all products',
+    //     'Volunteered with Suit Up to empower youth',
+    //     'Updated module libraries for various products'
+    //   ],
+    //   images: []
+    // },
     {
       headerType: 'h3',
-      title: 'HIGHLIGHTS',
-      contentType: 'list',
-      content: [
-        'Documented TalkBack accessibility guidelines for internal teams',
-        'Contributed to creating a new onboarding experience for all designers',
-        'Created a component from beginning to end for usage in all products',
-        'Volunteered with Suit Up to empower youth',
-        'Updated module libraries for various products'
-      ],
-      images: []
-    },
-    {
-      headerType: 'h3',
-      title: 'PROBLEM STATEMENT',
+      title: 'FRONTEND DEVELOPMENT',
       contentType: 'paragraph',
       content:
-        'How might we create a cohesive rating experience across Uber products?',
+        "Designed and implemented the chatbot's front-end using React JavaScript. The interface allows users to interact with data through visualizations such as graphs and tables, enabling analysis and decision-making",
       images: []
     },
     {
       headerType: 'h3',
-      title: 'AUDIT',
+      title: 'ASK A QUESTION',
+      contentType: 'demonstration',
+      position: 'left',
+      content: `Ask any question regarding data relevant to the client company.`,
+      images: [
+        {
+          src: './companies/kdan/opening-chatbot.gif',
+          alt: 'preview of opening chatbot'
+        }
+      ]
+    },
+    {
+      headerType: 'h3',
+      title: 'LOOK AT THE TABLE OF DATA',
+      contentType: 'demonstration',
+      position: 'right',
+      content: `Review the data relevant to your inquiry.`,
+      images: [
+        {
+          src: './companies/kdan/opening-chatbot.gif',
+          alt: 'preview of opening chatbot'
+        }
+      ]
+    },
+    {
+      headerType: 'h3',
+      title: 'GRAPH THE DATA',
+      contentType: 'demonstration',
+      position: 'left',
+      content: `Choose the graph type and variable axis.`,
+      images: [
+        {
+          src: './companies/kdan/opening-chatbot.gif',
+          alt: 'preview of opening chatbot'
+        }
+      ]
+    },
+    {
+      headerType: 'h3',
+      title: 'BACKEND',
       contentType: 'paragraph',
       content: `
           I began by conducting an initial audit around current use cases for stars across all products and experiences. 
@@ -47,24 +86,11 @@ export const kdanData = {
           src: 'images/uberprivaudit.png',
           alt: 'existing screens using stars'
         },
-        { src: 'images/uberprivaudit2.png', alt: 'notes on existing stars' }
       ]
     },
     {
       headerType: 'h3',
-      title: 'ADD HOUSEMATES',
-      contentType: 'demonstration',
-      content: `Add users to share owned items and track together.`,
-      images: [
-        {
-          src: './companies/kdan/demonstration.gif',
-          alt: 'preview of the Base design system'
-        }
-      ]
-    },
-    {
-      headerType: 'h3',
-      title: 'FINDINGS (PROBLEM)',
+      title: 'INTEGRATION AND TESTING',
       contentType: 'paragraph',
       content: `
           This audit revealed inconsistencies with aspects like size, color, shape, fill, and spacing. With color, 
@@ -76,40 +102,13 @@ export const kdanData = {
     },
     {
       headerType: 'h3',
-      title: 'COMPETITIVE ANALYSIS',
-      contentType: 'paragraph',
-      content: `
-          I moved into competitive analysis of products that offered rating systems. This included seeing how they 
-          were visually displayed, their interactions, and various design systems. I took note of commonalities and 
-          differences to keep in mind and have supporting evidence to back up my design decisions later.
-        `,
-      images: [
-        {
-          src: 'images/uberprivcompanalysis.png',
-          alt: 'random external products with ratings'
-        }
-      ]
-    },
-    {
-      headerType: 'h3',
-      title: 'SOLUTION',
-      contentType: 'paragraph',
-      content:
-        'These are the finalized components that address all current use cases and consider potential variations in the future.',
-      images: [{ src: 'images/uberprivcomponents.png', alt: 'star component' }]
-    },
-    {
-      headerType: 'h3',
       title: 'MOMENTS',
       contentType: 'paragraph',
       content:
-        'Just highlighting some precious moments during my internship at Uber.',
+        'Just highlighting some moments during my internship at KDANMobile.',
       images: [
-        { src: 'images/uberwelcomeyvonne.png', alt: 'Welcome Yvonne' },
-        { src: 'images/uberbyemegan.png', alt: 'Farewell Megan' },
-        { src: 'images/uberdesigninterns.png', alt: 'Design Interns' },
-        { src: 'images/uberteam.png', alt: 'Team Photo' },
-        { src: 'images/uberbyegenerous.png', alt: 'Goodbye Gift' }
+        { src: './companies/kdan/farewell.jpg', alt: 'Farewell Photo' },
+        { src: './companies/kdan/teambuilding.jpg', alt: 'Team Building' }
       ]
     }
   ]

@@ -1,6 +1,5 @@
 import React from 'react';
 import './styles/ArticleGlobal.css';
-import './styles/KdanPage.css';
 import { kdanData } from '../../data/kdan';
 
 const KdanPage = () => {
@@ -12,61 +11,68 @@ const KdanPage = () => {
   const renderContent = (section) => {
     const contentType = section.contentType;
     const content = section.content;
+
+    const renderImages = () =>
+      section.images?.map((img, imgIndex) => (
+        <img key={imgIndex} src={img.src} alt={img.alt} className="space" />
+      ));
+
+    const renderList = () => (
+      <ul>
+        {content.map((item, index) => (
+          <li key={index}>{item}</li>
+        ))}
+      </ul>
+    );
+
+    const renderHeaderSection = () => (
+      <div className="col-lg-12">
+        {renderHeader(section.headerType, section.title)}
+      </div>
+    );
+
     if (contentType === 'list') {
       return (
         <>
+          {renderHeaderSection()}
           <div className="col-lg-12">
-            {renderHeader(section.headerType, section.title)}
-          </div>
-          <div className="col-lg-12">
-            <ul>
-              {content.map((item, index) => (
-                <li key={index}>{item}</li>
-              ))}
-            </ul>
-            {section.images?.map((img, imgIndex) => (
-              <img
-                key={imgIndex}
-                src={img.src}
-                alt={img.alt}
-                className="space"
-              />
-            ))}
+            {renderList()}
+            {renderImages()}
           </div>
         </>
       );
     } else if (contentType === 'paragraph') {
       return (
         <>
-          <div className="col-lg-12">
-            {renderHeader(section.headerType, section.title)}
-          </div>
+          {renderHeaderSection()}
           <div className="col-lg-12">
             <p>{content}</p>
-            {section.images?.map((img, imgIndex) => (
-              <img
-                key={imgIndex}
-                src={img.src}
-                alt={img.alt}
-                className="space"
-              />
-            ))}
+            {renderImages()}
           </div>
         </>
       );
     } else if (contentType === 'demonstration') {
+      const isLeftPosition = section.position === 'left';
       return (
         <>
-          <div class="col-lg-3" />
-          <div class="col-lg-5 sltn-prv">
-            <h5>{section.title}</h5>
-            <h4>{content}</h4>
-          </div>
-          <div class="col-lg-4">
-            {section.images?.map((img, imgIndex) => (
-              <img key={imgIndex} src={img.src} alt={img.alt} />
-            ))}
-          </div>
+          <div className="col-lg-3" />
+          {isLeftPosition ? (
+            <>
+              <div className="col-lg-5 sltn-prv">
+                <h5>{section.title}</h5>
+                <h4>{content}</h4>
+              </div>
+              <div className="col-lg-4">{renderImages()}</div>
+            </>
+          ) : (
+            <>
+              <div className="col-lg-4">{renderImages()}</div>
+              <div className="col-lg-5 sltn-prv">
+                <h5>{section.title}</h5>
+                <h4>{content}</h4>
+              </div>
+            </>
+          )}
         </>
       );
     }
