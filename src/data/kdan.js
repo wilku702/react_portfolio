@@ -52,6 +52,18 @@ export const kdanData = {
     },
     {
       headerType: 'h3',
+      title: 'ADD HOUSEMATES',
+      contentType: 'demonstration',
+      content: `Add users to share owned items and track together.`,
+      images: [
+        {
+          src: './companies/kdan/demonstration.gif',
+          alt: 'preview of the Base design system'
+        }
+      ]
+    },
+    {
+      headerType: 'h3',
       title: 'FINDINGS (PROBLEM)',
       contentType: 'paragraph',
       content: `

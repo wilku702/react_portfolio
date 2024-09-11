@@ -60,11 +60,8 @@
   .typewriter-animation h1:nth-child(3) {
     width: 18em;
     opacity: 0;
-    -webkit-animation: type3 1.5s steps(40, end), blink .5s step-end infinite alternate;
-    animation: type3 1.5s steps(40, end), blink .5s step-end infinite alternate;
-    -webkit-animation-delay: 2.25s;
+    animation: type3 1.75s steps(60, end), blink .5s step-end infinite alternate;
     animation-delay: 2.25s;
-    -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
 
     color: var(--main-color) !important;

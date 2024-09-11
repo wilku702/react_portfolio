@@ -5,23 +5,70 @@ import { kdanData } from '../../data/kdan';
 
 const KdanPage = () => {
   const renderHeader = (type, text) => {
-    const HeaderTag = type || 'h2';
+    const HeaderTag = type || 'h1';
     return <HeaderTag>{text}</HeaderTag>;
   };
 
-  const renderContent = (contentType, content) => {
+  const renderContent = (section) => {
+    const contentType = section.contentType;
+    const content = section.content;
     if (contentType === 'list') {
       return (
-        <ul>
-          {content.map((item, index) => (
-            <li key={index}>{item}</li>
-          ))}
-        </ul>
+        <>
+          <div className="col-lg-12">
+            {renderHeader(section.headerType, section.title)}
+          </div>
+          <div className="col-lg-12">
+            <ul>
+              {content.map((item, index) => (
+                <li key={index}>{item}</li>
+              ))}
+            </ul>
+            {section.images?.map((img, imgIndex) => (
+              <img
+                key={imgIndex}
+                src={img.src}
+                alt={img.alt}
+                className="space"
+              />
+            ))}
+          </div>
+        </>
       );
     } else if (contentType === 'paragraph') {
-      return <p>{content}</p>;
-    } else {
-      return <p>{content}</p>;
+      return (
+        <>
+          <div className="col-lg-12">
+            {renderHeader(section.headerType, section.title)}
+          </div>
+          <div className="col-lg-12">
+            <p>{content}</p>
+            {section.images?.map((img, imgIndex) => (
+              <img
+                key={imgIndex}
+                src={img.src}
+                alt={img.alt}
+                className="space"
+              />
+            ))}
+          </div>
+        </>
+      );
+    } else if (contentType === 'demonstration') {
+      return (
+        <>
+          <div class="col-lg-3" />
+          <div class="col-lg-5 sltn-prv">
+            <h5>{section.title}</h5>
+            <h4>{content}</h4>
+          </div>
+          <div class="col-lg-4">
+            {section.images?.map((img, imgIndex) => (
+              <img key={imgIndex} src={img.src} alt={img.alt} />
+            ))}
+          </div>
+        </>
+      );
     }
   };
 
@@ -34,7 +81,7 @@ const KdanPage = () => {
         <div className="row">
           <div className="col-lg-12">
             <br />
-            <h1>{kdanData.title}</h1>
+            <h1 className="article-title">{kdanData.title}</h1>
             <br />
             <div className="row">
               <div className="col-lg-4">
@@ -81,20 +128,7 @@ const KdanPage = () => {
         <div>
           {kdanData.sections.map((section, index) => (
             <div key={index} className="row space">
-              <div className="col-lg-12">
-                {renderHeader(section.headerType, section.title)}
-              </div>
-              <div className="col-lg-12">
-                {renderContent(section.contentType, section.content)}
-                {section.images?.map((img, imgIndex) => (
-                  <img
-                    key={imgIndex}
-                    src={img.src}
-                    alt={img.alt}
-                    className="space"
-                  />
-                ))}
-              </div>
+              {renderContent(section)}
             </div>
           ))}
         </div>
