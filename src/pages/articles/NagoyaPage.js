@@ -99,7 +99,7 @@ const NagoyaPage = () => {
                 <h6>{nagoyaData.timeline}</h6>
               </div>
               <div className="col-lg-4">
-                <p>role :</p>
+                <p>team :</p>
                 <h6>{nagoyaData.role}</h6>
               </div>
             </div>

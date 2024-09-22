@@ -34,6 +34,18 @@ export const kdanData = {
     },
     {
       headerType: 'h3',
+      title: 'FIGMA DESIGN',
+      contentType: 'paragraph',
+      content: 'The design I followed but added my own twist to.',
+      images: [
+        {
+          src: './companies/kdan/figma.jpg',
+          alt: 'company branch'
+        }
+      ]
+    },
+    {
+      headerType: 'h3',
       title: 'ASK A QUESTION',
       contentType: 'demonstration',
       position: 'left',
@@ -83,9 +95,9 @@ export const kdanData = {
         `,
       images: [
         {
-          src: 'images/uberprivaudit.png',
-          alt: 'existing screens using stars'
-        },
+          src: './companies/kdan/chatbot_layout.jpg',
+          alt: 'chatbot_layout'
+        }
       ]
     },
     {
@@ -98,7 +110,24 @@ export const kdanData = {
           As an accessibility-focused designer, I realized the color contrast was a concern as the stars with shaded 
           inactive states meant our ratings relied on color alone to distinguish the states, which is extremely inaccessible.
         `,
-      images: []
+      images: [
+        {
+          src: './companies/kdan/langfuse.jpg',
+          alt: 'langfuse'
+        }
+      ]
+    },
+    {
+      headerType: 'h3',
+      title: 'DEPLOYMENT',
+      contentType: 'paragraph',
+      content: ``,
+      images: [
+        {
+          src: './companies/kdan/deployment.jpg',
+          alt: 'langfuse'
+        }
+      ]
     },
     {
       headerType: 'h3',
@@ -107,8 +136,8 @@ export const kdanData = {
       content:
         'Just highlighting some moments during my internship at KDANMobile.',
       images: [
-        { src: './companies/kdan/farewell.jpg', alt: 'Farewell Photo' },
-        { src: './companies/kdan/teambuilding.jpg', alt: 'Team Building' }
+        { src: './companies/kdan/hi_team.jpg', alt: 'Hi Team' },
+        { src: './companies/kdan/aws.jpg', alt: 'AWS Summit' }
       ]
     }
   ]

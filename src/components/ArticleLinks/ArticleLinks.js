@@ -16,6 +16,15 @@ const ArticleLinks = () => {
       description:
         "Integration process // Utilized SQL queries within Google Cloud's BigQuery for data handling and incorporated LLM models for responsive chatbot communication."
     },
+    // {
+    //   title: 'Resia',
+    //   link: '/resia',
+    //   backgroundImage: '/companies/triniti.png',
+    //   emojiLink: '👵🏠',
+    //   details: 'React Native | Firebase',
+    //   description:
+    //     'User interaction enhancement // Implemented a social media framework to enable nursing staff to post updates, enhancing family engagement.'
+    // },
     {
       title: 'Triniti',
       link: '/triniti',
@@ -68,10 +77,7 @@ const ArticleLinks = () => {
           onClick={() => handleClick(index, article.link)}>
           <header className="major">
             <h1>{article.title}</h1>
-            <a className="link" href={article.link}>
-              {article.emojiLink}
-            </a>
-            <p>{article.details}</p>
+            <p>{article.emojiLink} {article.details}</p>
             <p>{article.description}</p>
           </header>
         </motion.article>

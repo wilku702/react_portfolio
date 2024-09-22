@@ -1,5 +1,6 @@
 import React from 'react';
 import './styles/AboutPage.css';
+import CompanyLayout from '../components/CompanyLayout/CompanyLayout';
 
 import { motion } from 'framer-motion';
 
@@ -21,19 +22,22 @@ const AboutPage = () => {
           <div className="about-top-text">
             <h5>Good day! It's a pleasure to meet you.</h5>
             <p>
-              I'm Will Kung, an ambitious Computer Science student at The
-              University of Texas at Austin, currently interning as a Software
-              Engineer with a focus on developing cutting-edge technological
-              solutions.
+              I'm Will Kung, a Computer Science student at The University of
+              Texas at Austin, currently interning as a Software Engineer at
+              Done Desk and Resia.
             </p>
             <p>
-              From a young age, I've been captivated by the mechanics of
-              programming and the transformative potential of technology.
+              From a young age, I’ve been captivated by the mechanics of
+              programming and the transformative potential of technology. This
+              passion began with creative ideas like, "What if you could see
+              daily information through a smart mirror?" Sure enough, I built
+              one. Now, my focus has evolved to building things that make a real
+              impact on the world.
             </p>
             <p>
-              This passion is not confined to my academic pursuits alone; it
-              extends into my personal interests in powerlifting and beatboxing,
-              where discipline, rhythm, and precision play crucial roles.
+              Beyond academics, my passion extends to powerlifting and
+              beatboxing, where discipline, rhythm, and precision play crucial
+              roles.
             </p>
           </div>
         </div>
@@ -58,6 +62,11 @@ const AboutPage = () => {
             science.
           </p>
         </div>
+        <br />
+        <div className="center_box">
+          <h2>WHAT I'M CURRENTLY UP TO</h2>
+        </div>
+        <CompanyLayout />
       </div>
 
       <div>
