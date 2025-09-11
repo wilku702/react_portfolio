@@ -59,8 +59,9 @@ const HomeSections = () => {
           className="section-title"
           initial={titleAnim.initial}
           whileInView={titleAnim.whileInView}
-          transition={titleAnim.transition}
+          // transition={titleAnim.transition}
           viewport={{ once: true, amount: 0.6 }}
+          transition={{ ...titleAnim.transition, duration: 1.2,}}
         >
           Internships
         </motion.h2>
@@ -72,7 +73,7 @@ const HomeSections = () => {
           className="section-title"
           initial={titleAnim.initial}
           whileInView={titleAnim.whileInView}
-          transition={titleAnim.transition}
+          transition={{ ...titleAnim.transition, duration: 1.2,}}
           viewport={{ once: true, amount: 0.6 }}
         >
           Projects

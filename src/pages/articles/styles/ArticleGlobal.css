@@ -126,6 +126,33 @@
     font-weight: normal;
 }
 
+/* Image sizing for article pages */
+.article-container img,
+.project-img img {
+    display: block;
+    max-width: 80%;
+    height: auto;
+    /* Constrain portrait/tall images so they don't dominate */
+    max-height: 600px;
+    object-fit: contain;
+    margin: 0 auto 24px;
+    /* Round top-right and bottom-left corners */
+    border-radius: 0 16px 0 16px;
+}
+
+/* Extra spacing utility used by article images */
+.article-container img.space,
+.project-img img.space {
+    margin-bottom: 40px;
+}
+
+@media (max-width: 768px) {
+    .article-container img,
+    .project-img img {
+        max-height: 300px;
+    }
+}
+
 .article-container h1 {
     box-sizing: border-box;
     margin-top: 0;
