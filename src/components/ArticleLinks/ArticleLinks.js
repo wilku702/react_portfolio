@@ -60,11 +60,19 @@ const ArticleLinks = ({ items }) => {
   const [activeIndex, setActiveIndex] = useState(null);
 
   const handleClick = (index, link) => {
-    setActiveIndex(index); // Trigger the animation
+    const isExternal = typeof link === 'string' && /^https?:\/\//i.test(link);
 
+    if (isExternal) {
+      // Open immediately without triggering the disappear animation
+      window.open(link, '_blank', 'noopener,noreferrer');
+      return;
+    }
+
+    // Internal route: play click animation then navigate
+    setActiveIndex(index);
     setTimeout(() => {
-      navigate(link); // Navigate after the animation
-    }, 500); // Delay in milliseconds, match this with your animation duration
+      navigate(link);
+    }, 500); // Keep in sync with 'clicked' animation duration
   };
 
   return (

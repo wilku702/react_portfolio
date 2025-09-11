@@ -3,7 +3,7 @@ export const kdanData = {
   service: 'Chatbot Development',
   timeline: 'Jun 2024 - Aug 2024 (3 months)',
   role: 'Software Engineer Intern',
-  description: `At KDANMobile, I developed a chatbot for a client, aimed at streamlining data inquiries such as daily revenue and stock levels. This role involved front-end and back-end development, ensuring the chatbot was both functional and user-friendly.`,
+  description: `At KDANMobile, I built a chatbot for a client to streamline data inquiries like revenue and stock checks, combining front-end and back-end development to deliver a responsive and user-friendly experience.`,
   images: [
     {
       src: './companies/kdan/kdan-ai.jpg',
@@ -11,32 +11,19 @@ export const kdanData = {
     }
   ],
   sections: [
-    // {
-    //   headerType: 'h3',
-    //   title: 'FRONTEND DEVELOPMENT',
-    //   contentType: 'list',
-    //   content: [
-    //     'Documented TalkBack accessibility guidelines for internal teams',
-    //     'Contributed to creating a new onboarding experience for all designers',
-    //     'Created a component from beginning to end for usage in all products',
-    //     'Volunteered with Suit Up to empower youth',
-    //     'Updated module libraries for various products'
-    //   ],
-    //   images: []
-    // },
     {
       headerType: 'h3',
       title: 'FRONTEND DEVELOPMENT',
       contentType: 'paragraph',
       content:
-        "Designed and implemented the chatbot's front-end using React JavaScript. The interface allows users to interact with data through visualizations such as graphs and tables, enabling analysis and decision-making",
+        "Built an interactive interface in React.js that lets users explore data through dynamic graphs and tables, supporting real-time analysis and decision-making.",
       images: []
     },
     {
       headerType: 'h3',
       title: 'FIGMA DESIGN',
       contentType: 'paragraph',
-      content: 'The design I followed but added my own twist to.',
+      content: 'Adapted the company’s Figma design system, adding my own enhancements to improve usability and visual flow.',
       images: [
         {
           src: './companies/kdan/figma.jpg',
@@ -87,12 +74,7 @@ export const kdanData = {
       headerType: 'h3',
       title: 'BACKEND',
       contentType: 'paragraph',
-      content: `
-          I began by conducting an initial audit around current use cases for stars across all products and experiences. 
-          This allowed me to understand current use cases and consider potential use cases in the future. Additionally, 
-          I had to consider both mobile and web experiences, and an audit helped me see the context and placement of 
-          this particular component. This internal audit examined over 20 unique use cases across 6 distinct products.
-        `,
+      content: `Developed backend APIs in Python, connected to BigQuery with SQL queries, and integrated multiple LLM models to generate accurate, context-aware responses. Deployed on Google Cloud Functions and containerized with Docker.`,
       images: [
         {
           src: './companies/kdan/chatbot_layout.jpg',
@@ -104,12 +86,7 @@ export const kdanData = {
       headerType: 'h3',
       title: 'INTEGRATION AND TESTING',
       contentType: 'paragraph',
-      content: `
-          This audit revealed inconsistencies with aspects like size, color, shape, fill, and spacing. With color, 
-          there were also accessibility concerns as yellow stars do not pass web accessibility guidelines (WCAG). 
-          As an accessibility-focused designer, I realized the color contrast was a concern as the stars with shaded 
-          inactive states meant our ratings relied on color alone to distinguish the states, which is extremely inaccessible.
-        `,
+      content: `Implemented a testing pipeline to improve accuracy and reliability, using LangChain/LangFuse for traceability and RAGAS for systematic prompt evaluation and refinement.`,
       images: [
         {
           src: './companies/kdan/langfuse.jpg',
@@ -121,11 +98,11 @@ export const kdanData = {
       headerType: 'h3',
       title: 'DEPLOYMENT',
       contentType: 'paragraph',
-      content: ``,
+      content: `Containerized and embedded the chatbot into the client’s website using Docker, ensuring smooth deployment and scalability across environments.`,
       images: [
         {
           src: './companies/kdan/deployment.jpg',
-          alt: 'langfuse'
+          alt: 'deployment'
         }
       ]
     },

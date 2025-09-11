@@ -28,7 +28,7 @@ const HomeSections = () => {
   const projectItems = [
     {
       title: 'Nagoya USARD',
-      link: '/nagoya',
+      link: 'https://github.com/quarcs-lab/quarcs-bolivia',
       backgroundImage: '/companies/nagoya.png',
       emojiLink: '🎓',
       details: 'Hugo | Go | Node.js',
@@ -37,7 +37,7 @@ const HomeSections = () => {
     },
     {
       title: 'Triniti',
-      link: '/triniti',
+      link: 'https://github.com/wilku702/Triniti',
       backgroundImage: '/companies/triniti.png',
       emojiLink: '👵🏠',
       details: 'React Native | Firebase',
