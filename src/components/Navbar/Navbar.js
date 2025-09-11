@@ -35,7 +35,7 @@ const Navbar = () => {
         <li>
           <motion.div variants={bannerFadeInVariants}>
             <a
-              href="https://drive.google.com/file/d/15y7eIv9nvPGdyHCBrwOS1uStmJm7Xde6/view?usp=sharing"
+              href="https://drive.google.com/file/d/16GZNTunAN-zW5FVHhaSBrJUaG9L8IIh5/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className="bar-link">

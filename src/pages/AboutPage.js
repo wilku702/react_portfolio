@@ -12,6 +12,7 @@ const AboutPage = () => {
       className="about-page"
       variants={defaultPageFadeInVariants}
       initial="initial"
+      
       animate="animate"
       exit="exit">
       <div className="about-top-content">

@@ -4,9 +4,9 @@ import { motion } from 'framer-motion';
 import './ArticleLinks.css';
 import { articleVariants } from '../../motionUtils';
 
-const ArticleLinks = () => {
-  // Array of articles
-  const articles = [
+const ArticleLinks = ({ items }) => {
+  // Default array of articles (used if no items prop is passed)
+  const defaultArticles = [
     {
       title: 'KDANMOBILE',
       link: '/kdan',
@@ -54,6 +54,8 @@ const ArticleLinks = () => {
     }
   ];
 
+  const articles = items && Array.isArray(items) ? items : defaultArticles;
+
   const navigate = useNavigate(); // Hook for programmatically navigating
   const [activeIndex, setActiveIndex] = useState(null);
 
@@ -75,11 +77,17 @@ const ArticleLinks = () => {
           variants={articleVariants}
           style={{ backgroundImage: `url(${article.backgroundImage})` }}
           onClick={() => handleClick(index, article.link)}>
-          <header className="major">
+          <motion.header
+            className="major"
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true, amount: 0.5 }}
+          >
             <h1>{article.title}</h1>
             <p>{article.emojiLink} {article.details}</p>
             <p>{article.description}</p>
-          </header>
+          </motion.header>
         </motion.article>
       ))}
     </section>

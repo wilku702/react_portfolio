@@ -1,0 +1,35 @@
+.home-sections {
+  display: block;
+}
+
+.home-section {
+  padding: 3rem 0 1rem;
+  padding-top: 3%;
+}
+
+.project-section {
+  padding-top: 10%;
+}
+
+.section-title {
+  font-family: "Roboto Mono", monospace;
+  font-weight: 700;
+  font-size: 1.75rem;
+  line-height: 1.2;
+  /* margin: 0 0 1rem 0;
+  padding: 0 0.5rem; */
+  text-align: center;
+  padding-bottom: 1%;
+
+  font-weight: 700;
+  line-height: 1.2;
+  font-size: 2.5rem;
+  margin-bottom: .5rem;
+}
+
+@media screen and (max-width: 736px) {
+  .section-title {
+    font-size: 1.5rem;
+  }
+}
+
