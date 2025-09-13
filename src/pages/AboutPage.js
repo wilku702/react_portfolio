@@ -36,9 +36,9 @@ const AboutPage = () => {
               impact on the world.
             </p>
             <p>
-              Beyond academics, my passion extends to powerlifting and
-              beatboxing, where discipline, rhythm, and precision play crucial
-              roles.
+              Beyond academics, my passion extends to powerlifting, beatboxing, 
+              playing piano, and rock climbing, where I continue to challenge myself 
+              through rhythm, creativity, and problem-solving.
             </p>
           </div>
         </div>
@@ -59,7 +59,7 @@ const AboutPage = () => {
             the robustness of machine learning algorithms, I aim to bridge the
             gap between user needs and technological advancements. Through this
             portfolio, I invite you to explore my projects and the distinct
-            blend of passion and precision I bring to the field of computer
+            blend of passion I bring to the field of computer
             science.
           </p>
         </div>
