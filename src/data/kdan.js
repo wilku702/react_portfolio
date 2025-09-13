@@ -26,7 +26,7 @@ export const kdanData = {
       content: 'Adapted the company’s Figma design system, adding my own enhancements to improve usability and visual flow.',
       images: [
         {
-          src: './companies/kdan/figma.jpg',
+          src: './companies/kdan/figma.png',
           alt: 'company branch'
         }
       ]
@@ -77,7 +77,7 @@ export const kdanData = {
       content: `Developed backend APIs in Python, connected to BigQuery with SQL queries, and integrated multiple LLM models to generate accurate, context-aware responses. Deployed on Google Cloud Functions and containerized with Docker.`,
       images: [
         {
-          src: './companies/kdan/chatbot_layout.jpg',
+          src: './companies/kdan/chatbot_layout.png',
           alt: 'chatbot_layout'
         }
       ]
@@ -89,7 +89,7 @@ export const kdanData = {
       content: `Implemented a testing pipeline to improve accuracy and reliability, using LangChain/LangFuse for traceability and RAGAS for systematic prompt evaluation and refinement.`,
       images: [
         {
-          src: './companies/kdan/langfuse.jpg',
+          src: './companies/kdan/langfuse.png',
           alt: 'langfuse'
         }
       ]
@@ -101,7 +101,7 @@ export const kdanData = {
       content: `Containerized and embedded the chatbot into the client’s website using Docker, ensuring smooth deployment and scalability across environments.`,
       images: [
         {
-          src: './companies/kdan/deployment.jpg',
+          src: './companies/kdan/deployment.png',
           alt: 'deployment'
         }
       ]
@@ -113,8 +113,8 @@ export const kdanData = {
       content:
         'Just highlighting some moments during my internship at KDANMobile.',
       images: [
-        { src: './companies/kdan/hi_team.jpg', alt: 'Hi Team' },
-        { src: './companies/kdan/aws.jpg', alt: 'AWS Summit' }
+        { src: './companies/kdan/hi_team.png', alt: 'Hi Team' },
+        { src: './companies/kdan/aws.png', alt: 'AWS Summit' }
       ]
     }
   ]
