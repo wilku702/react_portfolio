@@ -40,10 +40,10 @@ const Footer = () => {
           </h4>
           <h4>
             <a
-              href="mailto:wk5389@utexas.edu"
+              href="mailto:wkung2004@gmail.com"
               target="_blank"
               rel="noopener noreferrer">
-              wk5389@utexas.edu
+              wkung2004@gmail.com
             </a>
           </h4>
         </motion.div>
