@@ -62,6 +62,10 @@ const ArticleLinks = ({ items }) => {
   const handleClick = (index, link) => {
     const isExternal = typeof link === 'string' && /^https?:\/\//i.test(link);
 
+    if ( typeof link === 'string' && link.length == 0 ) {
+      return;
+    }
+
     if (isExternal) {
       // Open immediately without triggering the disappear animation
       window.open(link, '_blank', 'noopener,noreferrer');

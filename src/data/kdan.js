@@ -39,7 +39,7 @@ export const kdanData = {
       content: `Ask any question regarding data relevant to the client company.`,
       images: [
         {
-          src: './companies/kdan/opening-chatbot.gif',
+          src: './companies/kdan/chatbot/chatbot_message.gif',
           alt: 'preview of opening chatbot'
         }
       ]
@@ -52,7 +52,7 @@ export const kdanData = {
       content: `Review the data relevant to your inquiry.`,
       images: [
         {
-          src: './companies/kdan/opening-chatbot.gif',
+          src: './companies/kdan/chatbot/chatbot_table.gif',
           alt: 'preview of opening chatbot'
         }
       ]
@@ -65,7 +65,7 @@ export const kdanData = {
       content: `Choose the graph type and variable axis.`,
       images: [
         {
-          src: './companies/kdan/opening-chatbot.gif',
+          src: './companies/kdan/chatbot/chatbot_graph.gif',
           alt: 'preview of opening chatbot'
         }
       ]

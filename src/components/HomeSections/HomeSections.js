@@ -5,23 +5,41 @@ import './HomeSections.css';
 
 const HomeSections = () => {
   const internshipItems = [
-    {
+  {
       title: 'KDANMOBILE',
       link: '/kdan',
       backgroundImage: '/companies/kdan.png',
       emojiLink: '🤖💬',
-      details: 'React.js | Python | SQL | BigQuery | LLM',
+      details: 'React.js | Python | SQL | BigQuery | LLM | Docker',
       description:
-        "Integration process // Utilized SQL queries within Google Cloud's BigQuery for data handling and incorporated LLM models for responsive chatbot communication."
+        'Built and deployed a real-time analytics chatbot for revenue and stock inquiries; integrated multiple LLMs with Google Cloud Functions and SQL on BigQuery, boosting response speed from 30s to ~8s and improving answer accuracy through LangChain, LangFuse, and RAGAS testing.'
     },
     {
       title: 'Adonit',
       link: '/adonit',
       backgroundImage: '/companies/adonit.png',
       emojiLink: '📈',
-      details: 'React Native | Python | Streamlit',
+      details: 'React Native | Python | Streamlit | SQL | Prophet',
       description:
-        'Predictive analytics implementation // Created an AI-powered audio section and integrated revenue forecasting with React Native and Python.'
+        'Developed features for Adonit One including an AI-powered audio module; created a predictive analytics dashboard using Streamlit and SQL on BigQuery with Prophet forecasting, enabling proactive revenue insights; automated deployments via GitLab CI/CD.'
+    },
+    {
+      title: 'Done Desk',
+      link: '',
+      backgroundImage: '/companies/donedesk.jpg',
+      emojiLink: '🦷',
+      details: 'Ruby on Rails | MongoDB | AWS | REST APIs',
+      description:
+        'Engineered a SaaS platform to track employee CE credits; built data pipelines to parse state requirements from Excel into MongoDB, deployed a Ruby on Rails frontend for record management, and validated APIs with automated test suites and Postman.'
+    },
+    {
+      title: 'Resia',
+      link: '',
+      backgroundImage: '/companies/resia.jpg',
+      emojiLink: '🏗️',
+      details: 'React.js | AWS | LLM',
+      description:
+        'Collaborated on building an AI-powered 3D modeling and cost estimation platform for architects. Developed React.js components for interactive design previews, integrated LLM-based natural language inputs for generating structural layouts, and deployed prototypes on AWS.'
     }
   ];
 
