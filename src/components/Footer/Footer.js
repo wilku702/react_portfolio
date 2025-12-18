@@ -40,9 +40,10 @@ const Footer = () => {
               href="mailto:wkung2004@gmail.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-main hover:underline"
+              className="group relative text-main inline-block transition-all duration-300 hover:text-white"
             >
-              wkung2004@gmail.com
+              <span className="relative z-10">wkung2004@gmail.com</span>
+              <span className="absolute bottom-0 left-0 w-full h-0.5 bg-main scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
             </a>
           </h4>
         </motion.div>
@@ -57,9 +58,10 @@ const Footer = () => {
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-main hover:underline"
+                  className="group relative text-main inline-block transition-all duration-300 hover:text-white hover:scale-110"
                 >
-                  {link.platform}
+                  <span className="relative z-10">{link.platform}</span>
+                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-main scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
                 </a>
               </li>
             ))}
@@ -74,9 +76,10 @@ const Footer = () => {
               href="https://github.com/wilku702"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-main hover:underline"
+              className="group relative text-main inline-block transition-all duration-300 hover:text-white hover:scale-110"
             >
-              github
+              <span className="relative z-10">github</span>
+              <span className="absolute bottom-0 left-0 w-full h-0.5 bg-main scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
             </a>
           </h4>
         </motion.div>

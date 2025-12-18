@@ -19,10 +19,15 @@ const Navbar = () => {
       animate="animate"
       exit="exit"
     >
-      <motion.div variants={bannerFadeInVariants} className="flex items-center">
+      <motion.div
+        variants={bannerFadeInVariants}
+        className="flex items-center"
+        whileHover={{ scale: 1.1, rotate: 5 }}
+        whileTap={{ scale: 0.9 }}
+      >
         <NavLink to="/" className="flex items-center">
           <img
-            className="w-12 h-auto transition-transform duration-300 hover:scale-110"
+            className="w-12 h-auto transition-all duration-300 hover:drop-shadow-[0_0_8px_rgba(148,174,247,0.6)]"
             src="./logo/W.svg"
             alt="Site Icon"
           />
@@ -30,24 +35,34 @@ const Navbar = () => {
       </motion.div>
       <ul className="hidden md:flex items-center gap-12 text-lg font-medium">
         <li>
-          <motion.div variants={bannerFadeInVariants}>
+          <motion.div
+            variants={bannerFadeInVariants}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+          >
             <NavLink
               to="/about"
-              className="text-text transition-transform duration-300 hover:scale-110"
+              className="relative text-text transition-all duration-300 group inline-block"
             >
-              about
+              <span className="relative z-10 group-hover:text-main transition-colors duration-300">about</span>
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-main transition-all duration-300 group-hover:w-full"></span>
             </NavLink>
           </motion.div>
         </li>
         <li>
-          <motion.div variants={bannerFadeInVariants}>
+          <motion.div
+            variants={bannerFadeInVariants}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+          >
             <a
               href="https://drive.google.com/file/d/16GZNTunAN-zW5FVHhaSBrJUaG9L8IIh5/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-text transition-transform duration-300 hover:scale-110"
+              className="relative text-text transition-all duration-300 group inline-block"
             >
-              resume
+              <span className="relative z-10 group-hover:text-main transition-colors duration-300">resume</span>
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-main transition-all duration-300 group-hover:w-full"></span>
             </a>
           </motion.div>
         </li>
@@ -56,22 +71,26 @@ const Navbar = () => {
         variants={bannerFadeInVariants}
         className="md:hidden flex flex-col items-end"
       >
-        <button
-          className="text-lg font-medium text-text"
+        <motion.button
+          className="text-lg font-medium text-text relative group"
           onClick={() => handleClick(!activeIndex)}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
         >
-          {activeIndex ? 'close' : 'menu'}
-        </button>
+          <span className="group-hover:text-main transition-colors duration-300">
+            {activeIndex ? 'close' : 'menu'}
+          </span>
+        </motion.button>
         <div
           className={`${
-            activeIndex ? 'opacity-100 visible' : 'opacity-0 invisible'
-          } transition-all duration-300 mt-2 bg-background/90 backdrop-blur-sm rounded-lg shadow-lg border border-white/10`}
+            activeIndex ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'
+          } transition-all duration-300 mt-2 bg-background/90 backdrop-blur-sm rounded-lg shadow-lg border border-white/10 hover:border-main/30`}
         >
           <ul className="flex flex-col px-4 py-3 text-main text-base font-semibold space-y-2 min-w-[150px]">
             <li>
               <NavLink
                 to="/"
-                className="block"
+                className="block hover:translate-x-1 transition-all duration-200 hover:text-white"
                 onClick={() => handleClick(false)}
               >
                 home
@@ -80,7 +99,7 @@ const Navbar = () => {
             <li>
               <NavLink
                 to="/about"
-                className="block"
+                className="block hover:translate-x-1 transition-all duration-200 hover:text-white"
                 onClick={() => handleClick(false)}
               >
                 about
@@ -91,7 +110,7 @@ const Navbar = () => {
                 href="https://drive.google.com/file/d/16GZNTunAN-zW5FVHhaSBrJUaG9L8IIh5/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block"
+                className="block hover:translate-x-1 transition-all duration-200 hover:text-white"
                 onClick={() => handleClick(false)}
               >
                 resume

@@ -29,14 +29,24 @@ module.exports = {
           '0%, 100%': { transform: 'translateX(0px)' },
           '50%': { transform: 'translateX(80px)' }
         },
-        typewriter: {
+        type1: {
+          '0%': { width: '0' },
+          '99.9%': { borderRightColor: 'rgba(255,255,255,0.75)' },
+          '100%': { width: '6em', borderRightColor: 'transparent' }
+        },
+        type2: {
           '0%': { width: '0', opacity: '0' },
           '1%': { opacity: '1' },
-          '100%': { width: '100%', opacity: '1' }
+          '99.9%': { borderRightColor: 'rgba(255,255,255,0.75)' },
+          '100%': { width: '12em', opacity: '1', borderRightColor: 'transparent' }
+        },
+        type3: {
+          '0%': { width: '0', opacity: '0' },
+          '1%': { opacity: '1' },
+          '100%': { width: '18em', opacity: '1' }
         },
         blink: {
-          '0%, 50%': { 'border-color': 'rgba(255,255,255,0.75)' },
-          '50%, 100%': { 'border-color': 'transparent' }
+          '50%': { borderRightColor: 'transparent' }
         },
         scrollBounce: {
           '0%': { transform: 'translateY(-20px) rotate(45deg)', opacity: '0' },
@@ -46,11 +56,9 @@ module.exports = {
       },
       animation: {
         snow: 'snowFall 10s linear infinite, snowShake 3s ease-in-out infinite',
-        type: 'typewriter 1.1s steps(40, end) forwards',
-        type2:
-          'typewriter 1.3s steps(40, end) 1s forwards, blink .5s step-end infinite alternate 2.3s',
-        type3:
-          'typewriter 1.7s steps(60, end) 2.4s forwards, blink .5s step-end infinite alternate 2.4s',
+        type: 'type1 1s steps(40, end) forwards',
+        type2: 'type2 1.25s steps(40, end) 1s forwards',
+        type3: 'type3 1.75s steps(60, end) 2.25s forwards, blink .5s step-end infinite alternate 2.25s',
         scroll: 'scrollBounce 3s cubic-bezier(0.19, 1, 0.22, 1) infinite'
       }
     }
