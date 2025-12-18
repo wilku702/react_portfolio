@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import './ArticleLinks.css';
 import { articleVariants } from '../../motionUtils';
 
 const ArticleLinks = ({ items }) => {
@@ -80,7 +79,7 @@ const ArticleLinks = ({ items }) => {
   };
 
   return (
-    <section className="tiles">
+    <section className="flex flex-wrap">
       {articles.map((article, index) => (
         <motion.article
           key={index}
@@ -88,17 +87,25 @@ const ArticleLinks = ({ items }) => {
           animate={index === activeIndex ? 'clicked' : 'normal'}
           variants={articleVariants}
           style={{ backgroundImage: `url(${article.backgroundImage})` }}
-          onClick={() => handleClick(index, article.link)}>
+          className="group relative w-full md:w-1/2 h-80 md:h-[28rem] bg-cover bg-center flex items-center p-8 md:p-12 overflow-hidden transition-transform duration-300"
+          onClick={() => handleClick(index, article.link)}
+        >
+          <div className="absolute inset-0 bg-[#1a1b1f]/85 transition-opacity duration-500 group-hover:opacity-70"></div>
           <motion.header
-            className="major"
+            className="relative z-10 space-y-3"
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true, amount: 0.5 }}
           >
-            <h1>{article.title}</h1>
-            <p>{article.emojiLink} {article.details}</p>
-            <p>{article.description}</p>
+            <h1 className="text-4xl font-bold leading-tight">{article.title}</h1>
+            <p className="text-lg">
+              <span className="mr-2">{article.emojiLink}</span>
+              {article.details}
+            </p>
+            <p className="text-base text-white/90 leading-relaxed">
+              {article.description}
+            </p>
           </motion.header>
         </motion.article>
       ))}

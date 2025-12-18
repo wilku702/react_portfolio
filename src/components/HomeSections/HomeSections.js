@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import ArticleLinks from '../ArticleLinks/ArticleLinks';
-import './HomeSections.css';
 
 const HomeSections = () => {
   const internshipItems = [
@@ -71,27 +70,26 @@ const HomeSections = () => {
   };
 
   return (
-    <div className="home-sections">
-      <section className="home-section">
+    <div className="flex flex-col">
+      <section className="pt-12 md:pt-16 lg:pt-20 px-4">
         <motion.h2
-          className="section-title"
+          className="text-3xl md:text-4xl lg:text-5xl font-bold text-center pb-4"
           initial={titleAnim.initial}
           whileInView={titleAnim.whileInView}
-          // transition={titleAnim.transition}
           viewport={{ once: true, amount: 0.6 }}
-          transition={{ ...titleAnim.transition, duration: 1.2,}}
+          transition={{ ...titleAnim.transition, duration: 1.2 }}
         >
           Internships
         </motion.h2>
         <ArticleLinks items={internshipItems} />
       </section>
 
-      <section className="home-section project-section">
+      <section className="pt-20 px-4">
         <motion.h2
-          className="section-title"
+          className="text-3xl md:text-4xl lg:text-5xl font-bold text-center pb-4"
           initial={titleAnim.initial}
           whileInView={titleAnim.whileInView}
-          transition={{ ...titleAnim.transition, duration: 1.2,}}
+          transition={{ ...titleAnim.transition, duration: 1.2 }}
           viewport={{ once: true, amount: 0.6 }}
         >
           Projects

@@ -1,5 +1,4 @@
 import React from 'react';
-import './Footer.css';
 
 import { motion } from 'framer-motion';
 import {
@@ -28,54 +27,55 @@ const Footer = () => {
       variants={staggerOne}
       initial="initial"
       animate="animate"
-      className="footer-container">
-      <div className="footer-border" />
-      <div className="footer-info">
-        <motion.div
-          variants={bannerFadeInUpVariants}
-          className="footer-info-item"
-          id="personal">
-          <h4 className="footer-info-header">
+      className="flex flex-col bg-background pt-16 pb-10 px-6 md:px-16"
+    >
+      <div className="w-full border-t border-white/30" />
+      <div className="flex flex-wrap justify-between text-center md:text-left gap-10 mt-8">
+        <motion.div variants={bannerFadeInUpVariants} className="space-y-2">
+          <h4 className="text-lg text-white/80 uppercase tracking-wide">
             reach out to me <br /> through email
           </h4>
-          <h4>
+          <h4 className="text-xl">
             <a
               href="mailto:wkung2004@gmail.com"
               target="_blank"
-              rel="noopener noreferrer">
+              rel="noopener noreferrer"
+              className="text-main hover:underline"
+            >
               wkung2004@gmail.com
             </a>
           </h4>
         </motion.div>
-        <motion.div
-          variants={bannerFadeInUpVariants}
-          className="footer-info-item"
-          id="media">
-          <h4 className="footer-info-header">
+        <motion.div variants={bannerFadeInUpVariants} className="space-y-2">
+          <h4 className="text-lg text-white/80 uppercase tracking-wide">
             <br /> let's connect
           </h4>
-          <ul>
+          <ul className="flex flex-row gap-8 justify-center md:justify-start text-xl">
             {footerLinks.map((link) => (
-              <li key={link.id} id={link.id}>
-                <a href={link.url} target="_blank" rel="noopener noreferrer">
+              <li key={link.id}>
+                <a
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-main hover:underline"
+                >
                   {link.platform}
                 </a>
               </li>
             ))}
           </ul>
         </motion.div>
-        <motion.div
-          variants={bannerFadeInUpVariants}
-          className="footer-info-item"
-          id="code">
-          <h4 className="footer-info-header">
+        <motion.div variants={bannerFadeInUpVariants} className="space-y-2">
+          <h4 className="text-lg text-white/80 uppercase tracking-wide">
             <br /> my codespace
           </h4>
-          <h4>
+          <h4 className="text-xl">
             <a
               href="https://github.com/wilku702"
               target="_blank"
-              rel="noopener noreferrer">
+              rel="noopener noreferrer"
+              className="text-main hover:underline"
+            >
               github
             </a>
           </h4>

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import './assets/styles/global.css';
 
 // Import Routing
 import {
@@ -54,13 +53,13 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
+    <div className="min-h-screen w-full bg-background text-text flex flex-col relative">
       <div
-        className="pointer-gradient"
+        className="pointer-gradient hidden md:block fixed inset-0 pointer-events-none transition-[background] duration-100 ease-linear z-30"
         style={{
-          background: `radial-gradient(600px at ${mousePosition.x}px ${mousePosition.y}px, rgba(148, 174, 247, 0.09), transparent 80%)`,
-          transition: 'background 0.1s ease'
-        }}></div>
+          background: `radial-gradient(600px at ${mousePosition.x}px ${mousePosition.y}px, rgba(148, 174, 247, 0.09), transparent 80%)`
+        }}
+      ></div>
       <Router>
         <ScrollToTop />
         <Navbar />
