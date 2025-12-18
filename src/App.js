@@ -11,6 +11,8 @@ import {
 // Import Components
 import Footer from './components/Footer/Footer';
 import Navbar from './components/Navbar/Navbar';
+import AnimatedBackground from './components/AnimatedBackground/AnimatedBackground';
+import { ScrollProgress } from './components/InteractiveElements/ScrollProgress';
 
 // Import Pages
 import FrontPage from './pages/FrontPage';
@@ -54,12 +56,20 @@ function App() {
 
   return (
     <div className="min-h-screen w-full bg-background text-text flex flex-col relative">
+      {/* Animated gradient background */}
+      <AnimatedBackground />
+
+      {/* Mouse gradient effect */}
       <div
         className="pointer-gradient hidden md:block fixed inset-0 pointer-events-none transition-[background] duration-100 ease-linear z-30"
         style={{
           background: `radial-gradient(600px at ${mousePosition.x}px ${mousePosition.y}px, rgba(148, 174, 247, 0.09), transparent 80%)`
         }}
       ></div>
+
+      {/* Scroll progress indicator */}
+      <ScrollProgress />
+
       <Router>
         <ScrollToTop />
         <Navbar />

@@ -73,7 +73,7 @@ const HomeSections = () => {
     <div className="flex flex-col">
       <section className="pt-12 md:pt-16 lg:pt-20 px-4">
         <motion.h2
-          className="text-3xl md:text-4xl lg:text-5xl font-bold text-center pb-4"
+          className="text-3xl md:text-4xl lg:text-5xl font-bold text-center pb-4 gradient-text-main"
           initial={titleAnim.initial}
           whileInView={titleAnim.whileInView}
           viewport={{ once: true, amount: 0.6 }}
@@ -86,7 +86,7 @@ const HomeSections = () => {
 
       <section className="pt-20 px-4">
         <motion.h2
-          className="text-3xl md:text-4xl lg:text-5xl font-bold text-center pb-4"
+          className="text-3xl md:text-4xl lg:text-5xl font-bold text-center pb-4 gradient-text-main"
           initial={titleAnim.initial}
           whileInView={titleAnim.whileInView}
           transition={{ ...titleAnim.transition, duration: 1.2 }}

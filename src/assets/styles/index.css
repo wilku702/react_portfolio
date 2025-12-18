@@ -61,4 +61,194 @@
   .snowflake {
     @apply fixed top-[-10%] z-[9999] select-none cursor-default text-white text-base animate-snow drop-shadow-sm;
   }
+
+  /* Glassmorphism effects */
+  .glass-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  }
+
+  .glass-card-dark {
+    background: rgba(20, 20, 20, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(148, 174, 247, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(148, 174, 247, 0.1);
+  }
+
+  .glass-button {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    transition: all 0.3s ease;
+  }
+
+  .glass-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(148, 174, 247, 0.4);
+    box-shadow: 0 4px 16px 0 rgba(148, 174, 247, 0.3);
+  }
+
+  /* Neumorphism effects */
+  .neuro-card {
+    background: rgb(20, 20, 20);
+    box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.5),
+                -8px -8px 16px rgba(40, 40, 40, 0.3);
+    border-radius: 20px;
+  }
+
+  .neuro-card-inset {
+    background: rgb(20, 20, 20);
+    box-shadow: inset 8px 8px 16px rgba(0, 0, 0, 0.5),
+                inset -8px -8px 16px rgba(40, 40, 40, 0.3);
+    border-radius: 20px;
+  }
+
+  .neuro-button {
+    background: rgb(20, 20, 20);
+    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.5),
+                -6px -6px 12px rgba(40, 40, 40, 0.3);
+    border-radius: 12px;
+    transition: all 0.2s ease;
+  }
+
+  .neuro-button:hover {
+    box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.6),
+                -8px -8px 16px rgba(40, 40, 40, 0.4);
+  }
+
+  .neuro-button:active {
+    box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.5),
+                inset -4px -4px 8px rgba(40, 40, 40, 0.3);
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .gradient-text-animated {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradientShift 15s ease infinite;
+  }
+
+  .gradient-text-main {
+    background: linear-gradient(135deg, rgb(148, 174, 247) 0%, rgb(100, 140, 255) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Animated gradient backgrounds */
+  .bg-gradient-animated {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+  }
+
+  /* Underline animation */
+  .animated-underline {
+    position: relative;
+    display: inline-block;
+  }
+
+  .animated-underline::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background: linear-gradient(90deg, rgb(148, 174, 247), rgb(100, 140, 255));
+    transition: width 0.3s ease;
+  }
+
+  .animated-underline:hover::after {
+    width: 100%;
+  }
+
+  /* Magnetic cursor effect */
+  .magnetic {
+    transition: transform 0.2s ease-out;
+  }
+}
+
+@layer utilities {
+  /* Parallax utilities */
+  .parallax {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  /* Text gradient utilities */
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+  }
+}
+
+/* View Transitions API styles */
+@media (prefers-reduced-motion: no-preference) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: 0.5s;
+  }
+
+  /* Forward transition (left to right) */
+  .transition-forward::view-transition-old(root) {
+    animation-name: slide-out-left;
+  }
+
+  .transition-forward::view-transition-new(root) {
+    animation-name: slide-in-right;
+  }
+
+  /* Back transition (right to left) */
+  .transition-back::view-transition-old(root) {
+    animation-name: slide-out-right;
+  }
+
+  .transition-back::view-transition-new(root) {
+    animation-name: slide-in-left;
+  }
+
+  @keyframes slide-out-left {
+    to {
+      transform: translateX(-30px);
+      opacity: 0;
+    }
+  }
+
+  @keyframes slide-in-right {
+    from {
+      transform: translateX(30px);
+      opacity: 0;
+    }
+  }
+
+  @keyframes slide-out-right {
+    to {
+      transform: translateX(30px);
+      opacity: 0;
+    }
+  }
+
+  @keyframes slide-in-left {
+    from {
+      transform: translateX(-30px);
+      opacity: 0;
+    }
+  }
 }
