@@ -83,25 +83,30 @@ const ArticleLinks = ({ items }) => {
   return (
     <section className="flex flex-wrap">
       {articles.map((article, index) => (
-        <Tilt
-          key={index}
-          tiltMaxAngleX={5}
-          tiltMaxAngleY={5}
-          perspective={1000}
-          scale={1.01}
-          transitionSpeed={2000}
-          className="w-full md:w-1/2"
-        >
-          <motion.article
-            initial="normal"
-            animate={index === activeIndex ? 'clicked' : 'normal'}
-            variants={articleVariants}
-            style={{ backgroundImage: `url(${article.backgroundImage})` }}
-            className="group relative w-full h-80 md:h-[28rem] bg-cover bg-center flex items-center p-8 md:p-12 overflow-hidden transition-all duration-400 cursor-pointer"
-            onClick={() => handleClick(index, article.link)}
+        <div key={index} className="w-full md:w-1/2 relative z-10 hover:z-50">
+          <Tilt
+            tiltMaxAngleX={5}
+            tiltMaxAngleY={5}
+            perspective={1000}
+            scale={1.01}
+            transitionSpeed={2000}
+            className="w-full h-full"
           >
-            {/* Background overlay with brightness effect */}
-            <div className="absolute inset-0 bg-[#1a1b1f]/85 transition-all duration-500 group-hover:bg-[#1a1b1f]/70"></div>
+            <motion.article
+              initial="normal"
+              animate={index === activeIndex ? 'clicked' : 'normal'}
+              variants={articleVariants}
+              className="group relative w-full h-80 md:h-[28rem] bg-[#1a1b1f] flex items-center p-8 md:p-12 overflow-hidden transition-all duration-400 cursor-pointer"
+              onClick={() => handleClick(index, article.link)}
+            >
+              {/* Background image layer */}
+              <div
+                className="absolute inset-0 bg-cover bg-center"
+                style={{ backgroundImage: `url(${article.backgroundImage})` }}
+              ></div>
+
+              {/* Dimming overlay */}
+              <div className="absolute inset-0 bg-[#1a1b1f]/80 transition-all duration-500 group-hover:bg-[#1a1b1f]/60"></div>
 
             {/* Gradient overlay */}
             <div className="absolute inset-0 bg-gradient-to-br from-main/0 via-main/0 to-main/0 opacity-0 group-hover:from-main/15 group-hover:via-main/5 group-hover:to-transparent group-hover:opacity-100 transition-all duration-500"></div>
@@ -136,6 +141,7 @@ const ArticleLinks = ({ items }) => {
             </div>
           </motion.article>
         </Tilt>
+        </div>
       ))}
     </section>
   );

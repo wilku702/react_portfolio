@@ -64,7 +64,7 @@ const Header = () => {
         className="scroll-down"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 4, duration: 1 }}
+        transition={{ delay: 5, duration: 1 }}
       />
     </div>
   );

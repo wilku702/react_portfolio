@@ -35,9 +35,12 @@
 }
 
 @layer components {
+
   /* Typewriter animation helpers */
   .typewriter-line {
-    @apply inline-block border-r-2 border-white/30 whitespace-nowrap overflow-hidden;
+    @apply inline-block border-r-2 border-white/30 whitespace-nowrap;
+    overflow: hidden;
+    padding-bottom: 5px;
   }
 
   .typewriter-line-1 {
@@ -97,33 +100,33 @@
   .neuro-card {
     background: rgb(20, 20, 20);
     box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.5),
-                -8px -8px 16px rgba(40, 40, 40, 0.3);
+      -8px -8px 16px rgba(40, 40, 40, 0.3);
     border-radius: 20px;
   }
 
   .neuro-card-inset {
     background: rgb(20, 20, 20);
     box-shadow: inset 8px 8px 16px rgba(0, 0, 0, 0.5),
-                inset -8px -8px 16px rgba(40, 40, 40, 0.3);
+      inset -8px -8px 16px rgba(40, 40, 40, 0.3);
     border-radius: 20px;
   }
 
   .neuro-button {
     background: rgb(20, 20, 20);
     box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.5),
-                -6px -6px 12px rgba(40, 40, 40, 0.3);
+      -6px -6px 12px rgba(40, 40, 40, 0.3);
     border-radius: 12px;
     transition: all 0.2s ease;
   }
 
   .neuro-button:hover {
     box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.6),
-                -8px -8px 16px rgba(40, 40, 40, 0.4);
+      -8px -8px 16px rgba(40, 40, 40, 0.4);
   }
 
   .neuro-button:active {
     box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.5),
-                inset -4px -4px 8px rgba(40, 40, 40, 0.3);
+      inset -4px -4px 8px rgba(40, 40, 40, 0.3);
   }
 
   /* Gradient text */
@@ -185,6 +188,7 @@
 }
 
 @layer utilities {
+
   /* Parallax utilities */
   .parallax {
     background-attachment: fixed;
@@ -201,6 +205,7 @@
 
 /* View Transitions API styles */
 @media (prefers-reduced-motion: no-preference) {
+
   ::view-transition-old(root),
   ::view-transition-new(root) {
     animation-duration: 0.5s;
