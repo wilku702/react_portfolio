@@ -3,45 +3,65 @@ import { motion } from 'framer-motion';
 import ArticleLinks from '../ArticleLinks/ArticleLinks';
 
 const HomeSections = () => {
-  const internshipItems = [
-  {
+    const internshipItems = [
+    {
+      title: 'ELASA AI',
+      link: '/elasa',
+      backgroundImage: '/companies/elasa.png',
+      emojiLink: '🛡️🤖',
+      details: 'Playwright | Python | AWS SQS | Browserbase | Auth/MFA',
+      description:
+        'Stabilized an SQS-driven quoting pipeline across 8 carriers with idempotent retries + observability, cutting failures from 30% to 10%; built MFA session handoff with TTL/refresh + fallback re-auth.',
+      size: 'large'
+    },
+    {
       title: 'KDANMOBILE',
       link: '/kdan',
       backgroundImage: '/companies/kdan.png',
       emojiLink: '🤖💬',
       details: 'React.js | Python | SQL | BigQuery | LLM | Docker',
       description:
-        'Built and deployed a real-time analytics chatbot for revenue and stock inquiries; integrated multiple LLMs with Google Cloud Functions and SQL on BigQuery, boosting response speed from 30s to ~8s and improving answer accuracy through LangChain, LangFuse, and RAGAS testing.',
-      size: 'large' // Featured card
+        'Built a React/Python analytics chatbot processing 1,000+ weekly queries; cut p95 latency from 30s to 8.1s and raised RAGAS from 0.58 to 0.85 (92% success) using BigQuery + LangChain/LangFuse.',
+      size: 'medium'
+    },
+    {
+      title: 'Resia AI',
+      link: '/resia',
+      backgroundImage: '/companies/resia.jpg',
+      emojiLink: '🏗️',
+      details: 'React.js | AWS Amplify | GraphQL | S3 | Python | LLM',
+      description:
+        'Prototyped an LLM pipeline from room descriptions → 2D floorplans/3D interiors; enforced JSON layout schemas + Python validation to cut invalid generations by 40%.',
+      size: 'small'
+    },
+    {
+      title: 'Done Desk',
+      link: '/donedesk',
+      backgroundImage: '/companies/donedesk.jpg',
+      emojiLink: '🦷',
+      details: 'Ruby on Rails | MongoDB Atlas | Python ETL | REST APIs',
+      description:
+        'Built a Python ETL from Excel/CSV → MongoDB for 50+ licenses across 20+ states, plus Rails APIs/models for CE tracking dashboards serving 2,000+ staff.',
+      size: 'small'
     },
     {
       title: 'Adonit',
       link: '/adonit',
       backgroundImage: '/companies/adonit.png',
       emojiLink: '📈',
-      details: 'React Native | Python | Streamlit | SQL | Prophet',
+      details: 'React Native | Expo | Redux Toolkit | TFLite | Python | BigQuery | Prophet',
       description:
-        'Developed features for Adonit One including an AI-powered audio module; created a predictive analytics dashboard using Streamlit and SQL on BigQuery with Prophet forecasting, enabling proactive revenue insights; automated deployments via GitLab CI/CD.',
+        'Shipped an accessibility audio module in React Native (Expo) with on-device TFLite; built Streamlit + BigQuery forecasting with Prophet, improving weekly MAPE from 19% to 12%.',
       size: 'medium'
     },
     {
-      title: 'Done Desk',
-      link: '',
-      backgroundImage: '/companies/donedesk.jpg',
-      emojiLink: '🦷',
-      details: 'Ruby on Rails | MongoDB | AWS | REST APIs',
+      title: 'Siemens',
+      link: '/siemens',
+      backgroundImage: '/companies/siemens.png',
+      emojiLink: '🏭⚡️',
+      details: 'Postman | Tableau | Excel VBA | Data Visualization',
       description:
-        'Engineered a SaaS platform to track employee CE credits; built data pipelines to parse state requirements from Excel into MongoDB, deployed a Ruby on Rails frontend for record management, and validated APIs with automated test suites and Postman.',
-      size: 'small'
-    },
-    {
-      title: 'Resia',
-      link: '',
-      backgroundImage: '/companies/resia.jpg',
-      emojiLink: '🏗️',
-      details: 'React.js | AWS | LLM',
-      description:
-        'Collaborated on building an AI-powered 3D modeling and cost estimation platform for architects. Developed React.js components for interactive design previews, integrated LLM-based natural language inputs for generating structural layouts, and deployed prototypes on AWS.',
+        'Built Postman-facing HTTP library visualizations, contributed UI for building management, and created Tableau + Excel VBA workflows for energy and finance analysis.',
       size: 'medium'
     }
   ];
