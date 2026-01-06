@@ -80,10 +80,27 @@ const ArticleLinks = ({ items }) => {
     }, 500); // Keep in sync with 'clicked' animation duration
   };
 
+  // Helper function to determine grid classes based on card size
+  const getCardClasses = (size) => {
+    switch(size) {
+      case 'large':
+        return 'md:col-span-2 md:row-span-2 h-[400px] md:h-full'; // Takes 2x2 space
+      case 'medium':
+        return 'md:col-span-2 md:row-span-1 h-[300px] md:h-full'; // Takes 2x1 space
+      case 'small':
+        return 'md:col-span-1 md:row-span-1 h-[300px] md:h-full'; // Takes 1x1 space
+      default:
+        return 'md:col-span-1 md:row-span-1 h-[300px] md:h-full';
+    }
+  };
+
   return (
-    <section className="flex flex-wrap">
+    <section className="grid grid-cols-1 md:grid-cols-4 auto-rows-[200px] gap-3 md:gap-4">
       {articles.map((article, index) => (
-        <div key={index} className="w-full md:w-1/2 relative z-10 hover:z-50">
+        <div
+          key={index}
+          className={`relative z-10 hover:z-50 ${getCardClasses(article.size)}`}
+        >
           <Tilt
             tiltMaxAngleX={5}
             tiltMaxAngleY={5}
@@ -96,7 +113,7 @@ const ArticleLinks = ({ items }) => {
               initial="normal"
               animate={index === activeIndex ? 'clicked' : 'normal'}
               variants={articleVariants}
-              className="group relative w-full h-80 md:h-[28rem] bg-[#1a1b1f] flex items-center p-8 md:p-12 overflow-hidden transition-all duration-400 cursor-pointer"
+              className="group relative w-full h-full bg-[#1a1b1f] flex items-center p-6 md:p-8 lg:p-10 overflow-hidden transition-all duration-400 cursor-pointer rounded-2xl md:rounded-3xl border border-white/5"
               onClick={() => handleClick(index, article.link)}
             >
               {/* Background image layer */}
@@ -105,30 +122,50 @@ const ArticleLinks = ({ items }) => {
                 style={{ backgroundImage: `url(${article.backgroundImage})` }}
               ></div>
 
-              {/* Dimming overlay */}
-              <div className="absolute inset-0 bg-[#1a1b1f]/80 transition-all duration-500 group-hover:bg-[#1a1b1f]/60"></div>
+              {/* Dimming overlay with backdrop blur */}
+              <div className="absolute inset-0 bg-[#1a1b1f]/80 backdrop-blur-[2px] transition-all duration-500 group-hover:bg-[#1a1b1f]/50 group-hover:backdrop-blur-sm"></div>
 
             {/* Gradient overlay */}
-            <div className="absolute inset-0 bg-gradient-to-br from-main/0 via-main/0 to-main/0 opacity-0 group-hover:from-main/15 group-hover:via-main/5 group-hover:to-transparent group-hover:opacity-100 transition-all duration-500"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-main/0 via-main/0 to-main/0 opacity-0 group-hover:from-main/20 group-hover:via-main/10 group-hover:to-transparent group-hover:opacity-100 transition-all duration-500"></div>
+
+            {/* Border glow effect */}
+            <div className="absolute inset-0 rounded-2xl md:rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                 style={{
+                   boxShadow: '0 0 20px rgba(148, 174, 247, 0.3), inset 0 0 20px rgba(148, 174, 247, 0.1)'
+                 }}></div>
 
             {/* Content */}
             <motion.header
-              className="relative z-10 space-y-3"
+              className={`relative z-10 ${article.size === 'large' ? 'space-y-4' : 'space-y-2 md:space-y-3'}`}
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
               viewport={{ once: true, amount: 0.5 }}
             >
-              <h1 className="text-4xl font-bold leading-tight transition-all duration-400 group-hover:text-main group-hover:translate-x-2 group-hover:brightness-110">
+              <h1 className={`font-bold leading-tight transition-all duration-400 group-hover:text-main group-hover:translate-x-2 group-hover:brightness-110 ${
+                article.size === 'large'
+                  ? 'text-3xl md:text-4xl lg:text-5xl'
+                  : article.size === 'medium'
+                  ? 'text-2xl md:text-3xl lg:text-4xl'
+                  : 'text-2xl md:text-3xl'
+              }`}>
                 {article.title}
               </h1>
-              <p className="text-lg transition-all duration-400 group-hover:translate-x-2 group-hover:brightness-110">
+              <p className={`transition-all duration-400 group-hover:translate-x-2 group-hover:brightness-110 ${
+                article.size === 'large' ? 'text-base md:text-lg' : 'text-sm md:text-base'
+              }`}>
                 <span className="mr-2 inline-block transition-transform duration-400 group-hover:scale-125 group-hover:brightness-125">
                   {article.emojiLink}
                 </span>
                 {article.details}
               </p>
-              <p className="text-base text-white/90 leading-relaxed transition-all duration-400 group-hover:text-white group-hover:translate-x-2 group-hover:brightness-110">
+              <p className={`text-white/90 leading-relaxed transition-all duration-400 group-hover:text-white group-hover:translate-x-2 group-hover:brightness-110 ${
+                article.size === 'large'
+                  ? 'text-sm md:text-base lg:text-lg'
+                  : article.size === 'small'
+                  ? 'text-xs md:text-sm line-clamp-3'
+                  : 'text-sm md:text-base line-clamp-4'
+              }`}>
                 {article.description}
               </p>
             </motion.header>
