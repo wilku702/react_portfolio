@@ -4,8 +4,9 @@ import { motion } from 'framer-motion';
 import { articleVariants } from '../../motionUtils';
 import Tilt from 'react-parallax-tilt';
 import { navigateWithTransition } from '../../utils/viewTransitions';
+import { SKILLS_CONFIG } from '../../data/skillsConfig';
 
-const ArticleLinks = ({ items }) => {
+const ArticleLinks = ({ items, hoveredSkill }) => {
   // Default array of articles (used if no items prop is passed)
   const defaultArticles = [
     {
@@ -94,6 +95,20 @@ const ArticleLinks = ({ items }) => {
     }
   };
 
+  // Helper function to determine card opacity based on hover state
+  const getCardOpacityClass = (article, hoveredSkill) => {
+    if (!hoveredSkill) return 'opacity-100';
+    const hasSkill = article.skills && article.skills.includes(hoveredSkill);
+    return hasSkill ? 'opacity-100' : 'opacity-30';
+  };
+
+  // Helper function to determine card glow based on hover state
+  const getCardGlowClass = (article, hoveredSkill) => {
+    if (!hoveredSkill) return '';
+    const hasSkill = article.skills && article.skills.includes(hoveredSkill);
+    return hasSkill ? 'ring-2 ring-main/40 shadow-lg shadow-main/20' : '';
+  };
+
   return (
     <section className="grid grid-cols-1 md:grid-cols-4 auto-rows-[200px] gap-3 md:gap-4">
       {articles.map((article, index) => (
@@ -113,7 +128,13 @@ const ArticleLinks = ({ items }) => {
               initial="normal"
               animate={index === activeIndex ? 'clicked' : 'normal'}
               variants={articleVariants}
-              className="group relative w-full h-full bg-[#1a1b1f] flex items-center p-6 md:p-8 lg:p-10 overflow-hidden transition-all duration-400 cursor-pointer rounded-2xl md:rounded-3xl border border-white/5"
+              className={`
+                group relative w-full h-full bg-[#1a1b1f] flex items-center p-6 md:p-8 lg:p-10
+                overflow-hidden cursor-pointer rounded-2xl md:rounded-3xl border border-white/5
+                transition-all duration-300
+                ${getCardOpacityClass(article, hoveredSkill)}
+                ${getCardGlowClass(article, hoveredSkill)}
+              `}
               onClick={() => handleClick(index, article.link)}
             >
               {/* Background image layer */}
@@ -136,39 +157,59 @@ const ArticleLinks = ({ items }) => {
 
             {/* Content */}
             <motion.header
-              className={`relative z-10 ${article.size === 'large' ? 'space-y-4' : 'space-y-2 md:space-y-3'}`}
+              className={`relative z-10 ${article.size === 'large' ? 'space-y-5 md:space-y-6' : 'space-y-3 md:space-y-4'}`}
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
               viewport={{ once: true, amount: 0.5 }}
             >
-              <h1 className={`font-bold leading-tight transition-all duration-400 group-hover:text-main group-hover:translate-x-2 group-hover:brightness-110 ${
+              <h1 className={`font-bold leading-tight transition-all duration-400 group-hover:text-main group-hover:translate-x-1 group-hover:brightness-110 ${
                 article.size === 'large'
-                  ? 'text-3xl md:text-4xl lg:text-5xl'
+                  ? 'text-4xl md:text-5xl lg:text-6xl'
                   : article.size === 'medium'
-                  ? 'text-2xl md:text-3xl lg:text-4xl'
-                  : 'text-2xl md:text-3xl'
+                  ? 'text-3xl md:text-4xl lg:text-5xl'
+                  : 'text-2xl md:text-3xl lg:text-4xl'
               }`}>
                 {article.title}
               </h1>
-              <p className={`transition-all duration-400 group-hover:translate-x-2 group-hover:brightness-110 ${
-                article.size === 'large' ? 'text-base md:text-lg' : 'text-sm md:text-base'
-              }`}>
-                <span className="mr-2 inline-block transition-transform duration-400 group-hover:scale-125 group-hover:brightness-125">
-                  {article.emojiLink}
-                </span>
-                {article.details}
-              </p>
-              <p className={`text-white/90 leading-relaxed transition-all duration-400 group-hover:text-white group-hover:translate-x-2 group-hover:brightness-110 ${
+              <p className={`text-white/85 leading-relaxed transition-all duration-400 group-hover:text-white/95 group-hover:translate-x-1 ${
                 article.size === 'large'
-                  ? 'text-sm md:text-base lg:text-lg'
+                  ? 'text-base md:text-lg lg:text-xl'
                   : article.size === 'small'
-                  ? 'text-xs md:text-sm line-clamp-3'
-                  : 'text-sm md:text-base line-clamp-4'
+                  ? 'text-sm md:text-base line-clamp-5'
+                  : 'text-sm md:text-base lg:text-lg line-clamp-6'
               }`}>
                 {article.description}
               </p>
             </motion.header>
+
+            {/* Skills icons row */}
+            {article.skills && article.skills.length > 0 && (
+              <div className="absolute bottom-4 left-6 md:left-8 flex gap-2 items-center z-20">
+                {article.skills.slice(0, 6).map(skillKey => {
+                  const skill = SKILLS_CONFIG[skillKey];
+                  if (!skill) return null;
+                  const Icon = skill.icon;
+                  const isActiveSkill = hoveredSkill === skillKey;
+
+                  return (
+                    <div
+                      key={skillKey}
+                      className={`
+                        transition-all duration-300
+                        ${isActiveSkill
+                          ? 'text-main scale-125 brightness-150'
+                          : 'text-main/60 hover:text-main'
+                        }
+                      `}
+                      title={skill.name}
+                    >
+                      <Icon size={20} />
+                    </div>
+                  );
+                })}
+              </div>
+            )}
 
             {/* Arrow indicator */}
             <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-400 transform translate-x-4 group-hover:translate-x-0">
