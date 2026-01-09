@@ -13,7 +13,7 @@ const Navbar = () => {
 
   return (
     <motion.div
-      className="fixed top-0 left-0 w-full flex items-center justify-between h-20 z-20 px-6 md:px-12"
+      className="fixed top-0 left-0 w-full flex items-center justify-between h-20 z-50 px-6 md:px-12 bg-background/40 backdrop-blur-sm"
       variants={staggerOne}
       initial="initial"
       animate="animate"
@@ -69,10 +69,10 @@ const Navbar = () => {
       </ul>
       <motion.div
         variants={bannerFadeInVariants}
-        className="md:hidden flex flex-col items-end"
+        className="md:hidden flex flex-col items-end relative"
       >
         <motion.button
-          className="text-lg font-medium text-text relative group"
+          className="text-lg font-medium text-text relative group z-50 px-3 py-2"
           onClick={() => handleClick(!activeIndex)}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
@@ -83,10 +83,10 @@ const Navbar = () => {
         </motion.button>
         <div
           className={`${
-            activeIndex ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'
-          } transition-all duration-300 mt-2 bg-background/90 backdrop-blur-sm rounded-lg shadow-lg border border-white/10 hover:border-main/30`}
+            activeIndex ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2 pointer-events-none'
+          } absolute top-full right-0 mt-2 transition-all duration-300 bg-background/95 backdrop-blur-md rounded-lg shadow-xl border border-white/20 z-50`}
         >
-          <ul className="flex flex-col px-4 py-3 text-main text-base font-semibold space-y-2 min-w-[150px]">
+          <ul className="flex flex-col px-6 py-4 text-main text-base font-semibold space-y-3 min-w-[160px]">
             <li>
               <NavLink
                 to="/"

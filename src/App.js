@@ -55,7 +55,7 @@ function App() {
   }, []);
 
   return (
-    <div className="min-h-screen w-full bg-background text-text flex flex-col relative">
+    <div className="min-h-screen w-full max-w-full overflow-x-hidden bg-background text-text flex flex-col relative">
       {/* Animated gradient background */}
       <AnimatedBackground />
 

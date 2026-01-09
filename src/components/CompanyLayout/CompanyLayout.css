@@ -244,3 +244,41 @@
         min-height: 20em;
     }
 }
+
+/* Enhanced mobile responsiveness for tiles */
+@media screen and (max-width: 768px) {
+    .tiles {
+        padding: 0;
+    }
+    
+    .tiles article {
+        width: 100% !important;
+        padding: 2em 1.25em 1em 1.25em;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .tiles article {
+        padding: 1.5em 1em 0.75em 1em;
+        min-height: 18em;
+    }
+    
+    .tiles article header h1 {
+        font-size: 1.75rem !important;
+    }
+    
+    .tiles article h3 {
+        font-size: 1.25em !important;
+    }
+}
+
+@media screen and (max-width: 390px) {
+    .tiles article {
+        padding: 1.25em 0.75em 0.5em 0.75em;
+        min-height: 16em;
+    }
+    
+    .tiles article header h1 {
+        font-size: 1.5rem !important;
+    }
+}

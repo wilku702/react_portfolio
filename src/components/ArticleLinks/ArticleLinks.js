@@ -5,6 +5,7 @@ import { articleVariants } from '../../motionUtils';
 import Tilt from 'react-parallax-tilt';
 import { navigateWithTransition } from '../../utils/viewTransitions';
 import { SKILLS_CONFIG } from '../../data/skillsConfig';
+import './ArticleLinks.css';
 
 const ArticleLinks = ({ items, hoveredSkill }) => {
   // Default array of articles (used if no items prop is passed)
@@ -85,13 +86,13 @@ const ArticleLinks = ({ items, hoveredSkill }) => {
   const getCardClasses = (size) => {
     switch(size) {
       case 'large':
-        return 'md:col-span-2 md:row-span-2 h-[400px] md:h-full'; // Takes 2x2 space
+        return 'col-span-1 md:col-span-2 md:row-span-2 h-[350px] md:h-full'; // Takes 2x2 space on desktop, full width on mobile
       case 'medium':
-        return 'md:col-span-2 md:row-span-1 h-[300px] md:h-full'; // Takes 2x1 space
+        return 'col-span-1 md:col-span-2 md:row-span-1 h-[300px] md:h-full'; // Takes 2x1 space on desktop, full width on mobile
       case 'small':
-        return 'md:col-span-1 md:row-span-1 h-[300px] md:h-full'; // Takes 1x1 space
+        return 'col-span-1 md:col-span-1 md:row-span-1 h-[280px] md:h-full'; // Takes 1x1 space
       default:
-        return 'md:col-span-1 md:row-span-1 h-[300px] md:h-full';
+        return 'col-span-1 md:col-span-1 md:row-span-1 h-[280px] md:h-full';
     }
   };
 
@@ -110,7 +111,7 @@ const ArticleLinks = ({ items, hoveredSkill }) => {
   };
 
   return (
-    <section className="grid grid-cols-1 md:grid-cols-4 auto-rows-[200px] gap-3 md:gap-4">
+    <section className="grid grid-cols-1 md:grid-cols-4 auto-rows-[200px] gap-4 px-4 md:px-0">
       {articles.map((article, index) => (
         <div
           key={index}
@@ -157,7 +158,7 @@ const ArticleLinks = ({ items, hoveredSkill }) => {
 
             {/* Content */}
             <motion.header
-              className={`relative z-10 ${article.size === 'large' ? 'space-y-5 md:space-y-6' : 'space-y-3 md:space-y-4'}`}
+              className={`relative z-10 pb-12 md:pb-14 ${article.size === 'large' ? 'space-y-5 md:space-y-6' : 'space-y-3 md:space-y-4'}`}
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
@@ -174,10 +175,10 @@ const ArticleLinks = ({ items, hoveredSkill }) => {
               </h1>
               <p className={`text-white/85 leading-relaxed transition-all duration-400 group-hover:text-white/95 group-hover:translate-x-1 ${
                 article.size === 'large'
-                  ? 'text-base md:text-lg lg:text-xl'
+                  ? 'text-base md:text-lg lg:text-xl line-clamp-5'
                   : article.size === 'small'
-                  ? 'text-sm md:text-base line-clamp-5'
-                  : 'text-sm md:text-base lg:text-lg line-clamp-6'
+                  ? 'text-sm md:text-base line-clamp-4'
+                  : 'text-sm md:text-base lg:text-lg line-clamp-4'
               }`}>
                 {article.description}
               </p>

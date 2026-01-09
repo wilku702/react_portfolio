@@ -157,3 +157,35 @@
       margin-right: 4px;
     }
 }
+/* Enhanced mobile responsiveness */
+@media (max-width: 768px) {
+    .navigation-wrapper {
+        padding-right: 4%;
+        padding-left: 4%;
+        height: 70px;
+    }
+    
+    .navigation-logo {
+        width: 2.5em;
+        margin-right: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navigation-wrapper {
+        padding-right: 3%;
+        padding-left: 3%;
+        height: 60px;
+    }
+    
+    .navigation-logo {
+        width: 2em;
+        margin-right: 12px;
+        margin-top: 5px;
+    }
+    
+    .toggle-menu {
+        right: 40px;
+        top: 15px;
+    }
+}

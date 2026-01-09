@@ -214,3 +214,39 @@
     margin-bottom: 0;
     visibility: visible;
 }
+
+/* Mobile responsiveness for article pages */
+@media (max-width: 768px) {
+    article {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    article img {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    article h1, article h2, article h3 {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+    
+    article p {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        text-align: justify;
+    }
+}
+
+@media (max-width: 480px) {
+    article {
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+    }
+    
+    article p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+}

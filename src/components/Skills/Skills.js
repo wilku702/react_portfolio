@@ -36,7 +36,7 @@ const Skills = ({ hoveredSkill, onSkillHover }) => {
       )}
 
       {/* Skills grid */}
-      <section className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-7 gap-6 md:gap-8">
+      <section className="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-7 xl:grid-cols-8 gap-3 md:gap-6">
         {ALL_SKILLS.map(skillKey => {
           const skill = SKILLS_CONFIG[skillKey];
           if (!skill) return null;
@@ -47,7 +47,7 @@ const Skills = ({ hoveredSkill, onSkillHover }) => {
           return (
             <motion.div
               key={skillKey}
-              className="flex flex-col items-center gap-2 cursor-pointer"
+              className="flex flex-col items-center gap-1 md:gap-2 cursor-pointer"
               onClick={() => handleSkillClick(skillKey)}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
@@ -60,10 +60,10 @@ const Skills = ({ hoveredSkill, onSkillHover }) => {
                   : 'text-main/80'
                 }
               `}>
-                <Icon size={36} className="md:w-10 md:h-10" />
+                <Icon size={28} className="md:w-9 md:h-9 lg:w-10 lg:h-10" />
               </div>
               <span className={`
-                text-xs md:text-sm font-mono text-center transition-all duration-300
+                text-[0.65rem] md:text-xs lg:text-sm font-mono text-center transition-all duration-300 leading-tight
                 ${isSelected ? 'text-main font-semibold' : 'text-white/70'}
               `}>
                 {skill.name}

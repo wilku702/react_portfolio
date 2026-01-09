@@ -33,3 +33,26 @@
   }
 }
 
+
+/* Enhanced mobile responsiveness */
+@media screen and (max-width: 768px) {
+    .home-section {
+        padding: 2rem 1rem 1rem;
+        padding-top: 5%;
+    }
+    
+    .project-section {
+        padding-top: 8%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .home-section {
+        padding: 1.5rem 0.75rem 0.75rem;
+    }
+    
+    .section-title {
+        font-size: 1.25rem !important;
+        padding-bottom: 3%;
+    }
+}

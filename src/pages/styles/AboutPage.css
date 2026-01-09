@@ -280,3 +280,53 @@ img {
     -webkit-animation-delay: 3s,1.5s;
     animation-delay: 3s,1.5s
 }
+
+/* Enhanced mobile responsiveness */
+@media (max-width: 768px) {
+    .about-page {
+        max-width: 100%;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    .about-top-content {
+        padding-top: 20%;
+        line-height: 28px !important;
+        font-size: 0.9rem;
+    }
+    
+    .about-portrait,
+    .about-top-text {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-page {
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+    }
+    
+    .about-top-content {
+        padding-top: 25%;
+        line-height: 24px !important;
+        font-size: 0.85rem;
+    }
+    
+    .about-top-text h5 {
+        font-size: 1.1rem !important;
+    }
+    
+    .about-top-text p {
+        line-height: 24px !important;
+        font-size: 0.85rem;
+        margin-top: 2vh;
+    }
+    
+    #colchuck {
+        padding-top: 4%;
+        padding-bottom: 4%;
+        margin-bottom: 5%;
+    }
+}

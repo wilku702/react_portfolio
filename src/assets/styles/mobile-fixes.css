@@ -1,0 +1,153 @@
+/* Comprehensive Mobile Responsiveness Fixes */
+
+/* Prevent horizontal scroll on all mobile devices */
+@media (max-width: 768px) {
+    html {
+        overflow-x: hidden;
+        max-width: 100vw;
+    }
+    
+    body {
+        overflow-x: hidden;
+        max-width: 100vw;
+        position: relative;
+    }
+    
+    #root {
+        overflow-x: hidden;
+        max-width: 100vw;
+    }
+    
+    /* Prevent all elements from causing horizontal scroll */
+    * {
+        box-sizing: border-box;
+    }
+    
+    /* Fix container widths */
+    .container,
+    .wrapper,
+    main,
+    section {
+        max-width: 100vw;
+        overflow-x: hidden;
+    }
+    
+    /* Responsive padding for main sections */
+    section {
+        padding-left: clamp(1rem, 4vw, 2rem);
+        padding-right: clamp(1rem, 4vw, 2rem);
+    }
+    
+    /* Fix for headers and text */
+    h1 {
+        font-size: clamp(1.75rem, 6vw, 3rem) !important;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        hyphens: auto;
+    }
+    
+    h2 {
+        font-size: clamp(1.5rem, 5vw, 2.5rem) !important;
+        word-wrap: break-word;
+    }
+    
+    h3 {
+        font-size: clamp(1.25rem, 4vw, 2rem) !important;
+        word-wrap: break-word;
+    }
+    
+    h4, h5, h6 {
+        font-size: clamp(1rem, 3vw, 1.5rem) !important;
+        word-wrap: break-word;
+    }
+    
+    p {
+        font-size: clamp(0.875rem, 3vw, 1rem);
+        word-wrap: break-word;
+    }
+    
+    /* Fix images */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    /* Fix video and iframe embeds */
+    video,
+    iframe {
+        max-width: 100%;
+    }
+    
+    /* Navigation fixes */
+    nav {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    /* Footer fixes */
+    footer {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    /* Fix for grids that might overflow */
+    .grid,
+    [class*="grid"] {
+        gap: 0.75rem;
+    }
+}
+
+/* Extra small devices (iPhone SE, small phones) */
+@media (max-width: 390px) {
+    h1 {
+        font-size: clamp(1.5rem, 8vw, 2rem) !important;
+    }
+    
+    section {
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+    }
+    
+    /* Reduce gap in grids for very small screens */
+    .grid,
+    [class*="grid"] {
+        gap: 0.5rem;
+    }
+}
+
+/* iPhone specific fixes */
+@supports (-webkit-touch-callout: none) {
+    /* Disable text size adjustment */
+    body {
+        -webkit-text-size-adjust: 100%;
+        text-size-adjust: 100%;
+    }
+    
+    /* Fix for iPhone viewport height issue */
+    .header,
+    [class*="h-screen"],
+    [class*="h-\[100vh\]"] {
+        min-height: -webkit-fill-available;
+    }
+}
+
+/* Landscape orientation fixes for mobile */
+@media (max-width: 926px) and (orientation: landscape) {
+    .header,
+    [class*="h-screen"] {
+        height: auto;
+        min-height: 100vh;
+        padding: 2rem 1rem;
+    }
+}
+
+/* Fix for touch targets (buttons, links) */
+@media (max-width: 768px) {
+    button,
+    a,
+    [role="button"] {
+        min-height: 44px;
+        min-width: 44px;
+        padding: 0.75rem 1rem;
+    }
+}

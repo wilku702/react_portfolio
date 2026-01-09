@@ -9,7 +9,7 @@
       name="description"
       content="Web site created using create-react-app"
     />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo/logo.png" />
     <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
@@ -25,6 +25,57 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>Will Kung</title>
+    <script>
+      // Prevent crypto wallet extension errors on mobile browsers
+      // Some extensions try to access window.ethereum.selectedAddress
+      // This creates a safe stub to prevent errors
+      (function() {
+        try {
+          if (typeof window.ethereum === 'undefined') {
+            window.ethereum = {
+              selectedAddress: null,
+              isMetaMask: false
+            };
+          }
+        } catch (e) {
+          // Silently handle any errors during initialization
+          console.warn('Wallet initialization skipped:', e.message);
+        }
+      })();
+
+      // Aggressive suppression of generic "Script error" messages
+      // Override console.error to filter out React's error overlay for generic script errors
+      (function() {
+        var originalError = console.error;
+        console.error = function() {
+          var args = Array.prototype.slice.call(arguments);
+          var errorMessage = args[0];
+
+          // Check if this is a generic "Script error" from React's error handler
+          if (typeof errorMessage === 'string' && errorMessage.includes('Script error')) {
+            // Log it as debug instead
+            console.debug('Suppressed generic script error:', errorMessage);
+            return;
+          }
+
+          // Pass through all other errors
+          originalError.apply(console, args);
+        };
+      })();
+
+      // Suppress generic "Script error" messages from cross-origin scripts at the window level
+      window.addEventListener('error', function(event) {
+        // Check if it's a generic "Script error" with no useful information
+        if (event.message === 'Script error.' && (!event.filename || event.filename === '') && event.lineno === 0) {
+          // Suppress the error to prevent React error overlay from showing
+          event.preventDefault();
+          event.stopPropagation();
+          event.stopImmediatePropagation();
+          console.debug('Suppressed generic script error at window level');
+          return false;
+        }
+      }, true);
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>

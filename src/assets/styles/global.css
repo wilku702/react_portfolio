@@ -66,3 +66,37 @@ body {
     font-family: 'RobotoMonoSemiBold';
     src: url('../fonts/RobotoMono-SemiBold.ttf') format('truetype');
 }
+/* Mobile-specific fixes */
+@media (max-width: 768px) {
+    html, body {
+        overflow-x: hidden;
+        width: 100%;
+        position: relative;
+    }
+    
+    * {
+        max-width: 100vw;
+    }
+    
+    /* Prevent text from overflowing */
+    h1, h2, h3, h4, h5, h6, p {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+}
+
+/* iPhone specific fixes */
+@supports (-webkit-touch-callout: none) {
+    /* iOS Safari */
+    body {
+        -webkit-text-size-adjust: 100%;
+    }
+    
+    html {
+        height: -webkit-fill-available;
+    }
+    
+    body {
+        min-height: -webkit-fill-available;
+    }
+}
