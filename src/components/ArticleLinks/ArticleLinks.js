@@ -55,8 +55,12 @@ const ArticleLinks = ({ items }) => {
               viewport={{ once: true, amount: 0.5 }}
             >
               <h1>{article.title}</h1>
-              <p>{article.emojiLink} {article.details}</p>
-              <p>{article.description}</p>
+              <div className="tech-tags">
+                {article.details.split('|').map((tech, i) => (
+                  <span key={i} className="tech-tag">{tech.trim()}</span>
+                ))}
+              </div>
+              <p className="card-description">{article.description}</p>
             </motion.header>
           </motion.article>
         );
