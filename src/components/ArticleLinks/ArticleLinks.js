@@ -3,11 +3,13 @@ import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import './ArticleLinks.css';
 import { articleVariants } from '../../motionUtils';
+import { useNavigationConfirm } from '../../context/NavigationContext';
 
 const ArticleLinks = ({ items }) => {
   const articles = items || [];
 
   const navigate = useNavigate();
+  const { confirmNavigation } = useNavigationConfirm();
   const [activeIndex, setActiveIndex] = useState(null);
 
   const handleClick = (index, link) => {
@@ -18,16 +20,13 @@ const ArticleLinks = ({ items }) => {
     }
 
     if (isExternal) {
-      // Open immediately without triggering the disappear animation
-      window.open(link, '_blank', 'noopener,noreferrer');
+      confirmNavigation(link);
       return;
     }
 
-    // Internal route: play click animation then navigate
+    // Internal route: animate then navigate
     setActiveIndex(index);
-    setTimeout(() => {
-      navigate(link);
-    }, 500); // Keep in sync with 'clicked' animation duration
+    setTimeout(() => { navigate(link); }, 500);
   };
 
   return (

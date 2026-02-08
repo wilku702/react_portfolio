@@ -40,17 +40,6 @@ const Navbar = () => {
             </NavLink>
           </motion.div>
         </li>
-        <li>
-          <motion.div variants={bannerFadeInVariants}>
-            <a
-              href="https://drive.google.com/file/d/16GZNTunAN-zW5FVHhaSBrJUaG9L8IIh5/view?usp=sharing"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bar-link">
-              resume
-            </a>
-          </motion.div>
-        </li>
       </ul>
       <motion.div
         variants={bannerFadeInVariants}
@@ -98,17 +87,6 @@ const Navbar = () => {
               onClick={() => handleClick(false)}>
               about
             </NavLink>
-          </li>
-          <li role="none">
-            <a
-              href="https://drive.google.com/file/d/16GZNTunAN-zW5FVHhaSBrJUaG9L8IIh5/view?usp=sharing"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="menu-link"
-              role="menuitem"
-              onClick={() => handleClick(false)}>
-              resume
-            </a>
           </li>
         </ul>
       </motion.div>

@@ -10,14 +10,6 @@ const Header = () => {
     }
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
-  const handleScrollToWork = (e) => {
-    e.preventDefault();
-    const workSection = document.getElementById('work');
-    if (workSection) {
-      workSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
     <div className="header">
       <div className={`typewriter-animation ${skipAnimation ? 'skip-animation' : ''}`}>
@@ -25,7 +17,6 @@ const Header = () => {
         <h1>full stack developer</h1>
         <h1>react specialist, ai enthusiast</h1>
       </div>
-      <a href="#work" className={`hero-cta ${skipAnimation ? 'skip-animation' : ''}`} onClick={handleScrollToWork}>View My Work</a>
       <div className="scroll-down"></div>
     </div>
   );

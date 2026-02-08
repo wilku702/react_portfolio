@@ -21,7 +21,7 @@
 .navigation-logo {
     width: 3.2em;
     height: auto;
-    
+
     display: block;
     cursor: pointer;
     transition: transform .3s;
@@ -55,7 +55,7 @@
 .navigation-menu li{
     display: block;
     font-size: 1rem;
-    
+
     list-style-type: none;
 }
 
@@ -94,7 +94,7 @@
 .toggle-menu-items li{
     display: block;
     font-size: 1rem;
-    
+
     list-style-type: none;
 }
 

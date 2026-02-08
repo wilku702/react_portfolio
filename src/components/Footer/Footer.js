@@ -1,5 +1,6 @@
 import React from 'react';
 import './Footer.css';
+import { useNavigationConfirm } from '../../context/NavigationContext';
 
 import { motion } from 'framer-motion';
 import {
@@ -8,6 +9,8 @@ import {
 } from '../../motionUtils';
 
 const Footer = () => {
+  const { confirmNavigation } = useNavigationConfirm();
+
   const footerLinks = [
     {
       id: 'ig',
@@ -57,9 +60,12 @@ const Footer = () => {
           <ul>
             {footerLinks.map((link) => (
               <li key={link.id} id={link.id}>
-                <a href={link.url} target="_blank" rel="noopener noreferrer">
+                <button
+                  className="footer-ext-link"
+                  onClick={() => confirmNavigation(link.url)}
+                >
                   {link.platform}
-                </a>
+                </button>
               </li>
             ))}
           </ul>
@@ -69,16 +75,26 @@ const Footer = () => {
           className="footer-info-item"
           id="code">
           <h4 className="footer-info-header">
-            <br /> my codespace
+            <br /> my work
           </h4>
-          <h4>
-            <a
-              href="https://github.com/wilku702"
-              target="_blank"
-              rel="noopener noreferrer">
-              github
-            </a>
-          </h4>
+          <ul>
+            <li id="gh">
+              <button
+                className="footer-ext-link"
+                onClick={() => confirmNavigation('https://github.com/wilku702')}
+              >
+                github
+              </button>
+            </li>
+            <li id="rs">
+              <button
+                className="footer-ext-link"
+                onClick={() => confirmNavigation('https://drive.google.com/file/d/16GZNTunAN-zW5FVHhaSBrJUaG9L8IIh5/view?usp=sharing')}
+              >
+                resume
+              </button>
+            </li>
+          </ul>
         </motion.div>
       </div>
     </motion.div>

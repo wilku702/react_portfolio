@@ -1,0 +1,74 @@
+.confirm-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.confirm-modal-card {
+  background: var(--bg-color, #1a1a2e);
+  border: 1px solid var(--main-color);
+  border-radius: 12px;
+  padding: 2.5rem 2rem 2rem;
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+  font-family: 'RobotoMono', monospace;
+}
+
+.confirm-modal-card p {
+  color: var(--text-color, #e5e5e5);
+  font-size: 1.1rem;
+  margin: 0 0 0.4rem;
+}
+
+.confirm-modal-card .confirm-modal-dest {
+  color: var(--main-color);
+  font-size: 0.95rem;
+  margin: 0 0 2rem;
+  opacity: 0.8;
+}
+
+.confirm-modal-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.confirm-modal-actions button {
+  font-family: 'RobotoMono', monospace;
+  font-size: 0.95rem;
+  padding: 0.6rem 1.6rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.15s ease;
+}
+
+.confirm-modal-actions button:hover {
+  transform: scale(1.05);
+}
+
+.confirm-modal-actions button:focus-visible {
+  outline: 2px solid var(--main-color);
+  outline-offset: 2px;
+}
+
+.confirm-modal-confirm {
+  background: var(--main-color);
+  color: #000;
+  font-weight: 600;
+}
+
+.confirm-modal-cancel {
+  background: transparent;
+  color: var(--text-color, #e5e5e5);
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+.confirm-modal-cancel:hover {
+  border-color: rgba(255, 255, 255, 0.4) !important;
+}

@@ -13,6 +13,7 @@ import {
 import Footer from './components/Footer/Footer';
 import Navbar from './components/Navbar/Navbar';
 import ErrorBoundary from './components/ErrorBoundary';
+import { NavigationProvider } from './context/NavigationContext';
 
 // Lazy-loaded Pages
 const FrontPage = lazy(() => import('./pages/FrontPage'));
@@ -72,26 +73,28 @@ function App() {
           transition: 'background 0.1s ease'
         }}></div>
       <Router>
-        <a href="#main-content" className="skip-link">Skip to main content</a>
-        <ScrollToTop />
-        <Navbar />
-        <Suspense fallback={<LoadingPage />} id="main-content">
-          <ErrorBoundary>
-            <Routes>
-              <Route path="/" element={<FrontPage />} />
-              <Route path="/work" element={<WorkPage />} />
-              <Route path="/about" element={<AboutPage />} />
+        <NavigationProvider>
+          <a href="#main-content" className="skip-link">Skip to main content</a>
+          <ScrollToTop />
+          <Navbar />
+          <Suspense fallback={<LoadingPage />} id="main-content">
+            <ErrorBoundary>
+              <Routes>
+                <Route path="/" element={<FrontPage />} />
+                <Route path="/work" element={<WorkPage />} />
+                <Route path="/about" element={<AboutPage />} />
 
-              <Route path="/kdan" element={<KdanPage />} />
-              <Route path="/triniti" element={<TrinitiPage />} />
-              <Route path="/nagoya" element={<NagoyaPage />} />
-              <Route path="/adonit" element={<AdonitPage />} />
+                <Route path="/kdan" element={<KdanPage />} />
+                <Route path="/triniti" element={<TrinitiPage />} />
+                <Route path="/nagoya" element={<NagoyaPage />} />
+                <Route path="/adonit" element={<AdonitPage />} />
 
-              <Route path="*" element={<NotFoundPage />} />
-            </Routes>
-          </ErrorBoundary>
-        </Suspense>
-        <Footer />
+                <Route path="*" element={<NotFoundPage />} />
+              </Routes>
+            </ErrorBoundary>
+          </Suspense>
+          <Footer />
+        </NavigationProvider>
       </Router>
     </div>
   );
