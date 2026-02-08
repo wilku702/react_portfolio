@@ -6,23 +6,32 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  Navigate,
   useLocation
 } from 'react-router-dom';
 
 // Import Components
 import Footer from './components/Footer/Footer';
 import Navbar from './components/Navbar/Navbar';
+import ErrorBoundary from './components/ErrorBoundary';
 
 // Lazy-loaded Pages
 const FrontPage = lazy(() => import('./pages/FrontPage'));
+const WorkPage = lazy(() => import('./pages/WorkPage'));
 const AboutPage = lazy(() => import('./pages/AboutPage'));
+const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
 
 // Lazy-loaded Articles
 const KdanPage = lazy(() => import('./pages/articles/KdanPage'));
 const TrinitiPage = lazy(() => import('./pages/articles/TrinitiPage'));
 const NagoyaPage = lazy(() => import('./pages/articles/NagoyaPage'));
 const AdonitPage = lazy(() => import('./pages/articles/AdonitPage'));
+
+const LoadingPage = () => (
+  <div className="page loading-page">
+    <div className="loading-pulse"></div>
+    <div className="loading-pulse short"></div>
+  </div>
+);
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -63,20 +72,24 @@ function App() {
           transition: 'background 0.1s ease'
         }}></div>
       <Router>
+        <a href="#main-content" className="skip-link">Skip to main content</a>
         <ScrollToTop />
         <Navbar />
-        <Suspense fallback={<div className="page" />}>
-          <Routes>
-            <Route path="/" element={<FrontPage />} />
-            <Route path="/about" element={<AboutPage />} />
+        <Suspense fallback={<LoadingPage />} id="main-content">
+          <ErrorBoundary>
+            <Routes>
+              <Route path="/" element={<FrontPage />} />
+              <Route path="/work" element={<WorkPage />} />
+              <Route path="/about" element={<AboutPage />} />
 
-            <Route path="/kdan" element={<KdanPage />} />
-            <Route path="/triniti" element={<TrinitiPage />} />
-            <Route path="/nagoya" element={<NagoyaPage />} />
-            <Route path="/adonit" element={<AdonitPage />} />
+              <Route path="/kdan" element={<KdanPage />} />
+              <Route path="/triniti" element={<TrinitiPage />} />
+              <Route path="/nagoya" element={<NagoyaPage />} />
+              <Route path="/adonit" element={<AdonitPage />} />
 
-            <Route path="*" element={<Navigate replace to="/" />} />
-          </Routes>
+              <Route path="*" element={<NotFoundPage />} />
+            </Routes>
+          </ErrorBoundary>
         </Suspense>
         <Footer />
       </Router>

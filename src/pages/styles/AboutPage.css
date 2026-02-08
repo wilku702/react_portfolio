@@ -280,3 +280,10 @@ img {
     -webkit-animation-delay: 3s,1.5s;
     animation-delay: 3s,1.5s
 }
+
+@media (prefers-reduced-motion: reduce) {
+    .snowflake {
+        animation: none !important;
+        display: none;
+    }
+}

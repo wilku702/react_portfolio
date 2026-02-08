@@ -1,6 +1,5 @@
 import React from 'react';
 import './styles/AboutPage.css';
-import CompanyLayout from '../components/CompanyLayout/CompanyLayout';
 
 import { motion } from 'framer-motion';
 
@@ -63,11 +62,6 @@ const AboutPage = () => {
             science.
           </p>
         </div>
-        <br />
-        <div className="center_box">
-          <h2>WHAT I'M CURRENTLY UP TO</h2>
-        </div>
-        <CompanyLayout />
       </div>
 
       <div>

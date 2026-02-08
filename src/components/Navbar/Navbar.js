@@ -28,6 +28,13 @@ const Navbar = () => {
       <ul className="navigation-menu">
         <li>
           <motion.div variants={bannerFadeInVariants}>
+            <NavLink to="/work" className="bar-link">
+              work
+            </NavLink>
+          </motion.div>
+        </li>
+        <li>
+          <motion.div variants={bannerFadeInVariants}>
             <NavLink to="/about" className="bar-link">
               about
             </NavLink>
@@ -72,6 +79,15 @@ const Navbar = () => {
               role="menuitem"
               onClick={() => handleClick(false)}>
               home
+            </NavLink>
+          </li>
+          <li role="none">
+            <NavLink
+              to="/work"
+              className="menu-link"
+              role="menuitem"
+              onClick={() => handleClick(false)}>
+              work
             </NavLink>
           </li>
           <li role="none">

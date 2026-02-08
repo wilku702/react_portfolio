@@ -1,0 +1,82 @@
+.work-page {
+    width: 100%;
+    padding-top: 120px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    box-sizing: border-box;
+}
+
+@media (min-width: 1200px) {
+    .work-page {
+        max-width: 1140px;
+    }
+}
+
+@media (max-width: 1199px) {
+    .work-page {
+        max-width: 960px;
+    }
+}
+
+@media (max-width: 991px) {
+    .work-page {
+        max-width: 720px;
+    }
+}
+
+@media (max-width: 767px) {
+    .work-page {
+        max-width: 540px;
+    }
+}
+
+.work-page-title {
+    font-family: "Roboto Mono", monospace;
+    font-weight: 700;
+    font-size: 2.5rem;
+    line-height: 1.2;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+@media screen and (max-width: 736px) {
+    .work-page-title {
+        font-size: 1.5rem;
+    }
+}
+
+.work-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    padding-bottom: 0;
+}
+
+.work-tab {
+    background: none;
+    border: none;
+    font-family: "Roboto Mono", monospace;
+    font-size: 1rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    padding: 0.5rem 0.25rem;
+    margin-bottom: -1px;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.work-tab:hover,
+.work-tab:focus-visible {
+    color: rgba(255, 255, 255, 0.8);
+    outline: none;
+}
+
+.work-tab[aria-selected="true"] {
+    color: var(--main-color);
+    border-bottom-color: var(--main-color);
+}

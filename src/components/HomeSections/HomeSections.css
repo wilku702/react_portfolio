@@ -7,10 +7,6 @@
   padding-top: 3%;
 }
 
-.project-section {
-  padding-top: 10%;
-}
-
 .section-title {
   font-family: "Roboto Mono", monospace;
   font-weight: 700;
@@ -31,5 +27,18 @@
   .section-title {
     font-size: 1.5rem;
   }
+}
+
+.view-all-link {
+  font-family: "Roboto Mono", monospace;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--main-color);
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.view-all-link:hover {
+  opacity: 0.75;
 }
 

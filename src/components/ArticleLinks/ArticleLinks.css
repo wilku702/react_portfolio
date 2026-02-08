@@ -138,8 +138,19 @@
 
 
 .major:hover {
-    visibility: hidden;
-    color: transparent;
+    transform: scale(1.02);
+    filter: brightness(1.2);
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.non-clickable {
+    cursor: default;
+    opacity: 0.7;
+}
+
+.non-clickable:hover {
+    transform: none;
+    filter: none;
 }
 
 .tiles article:before {

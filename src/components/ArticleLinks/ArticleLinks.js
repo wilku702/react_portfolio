@@ -32,30 +32,36 @@ const ArticleLinks = ({ items }) => {
 
   return (
     <section className="tiles">
-      {articles.map((article, index) => (
-        <motion.article
-          key={index}
-          initial="normal"
-          animate={index === activeIndex ? 'clicked' : 'normal'}
-          variants={articleVariants}
-          role="link"
-          tabIndex={0}
-          style={{ backgroundImage: `url(${article.backgroundImage})` }}
-          onClick={() => handleClick(index, article.link)}
-          onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); handleClick(index, article.link); } }}>
-          <motion.header
-            className="major"
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true, amount: 0.5 }}
-          >
-            <h1>{article.title}</h1>
-            <p>{article.emojiLink} {article.details}</p>
-            <p>{article.description}</p>
-          </motion.header>
-        </motion.article>
-      ))}
+      {articles.map((article, index) => {
+        const isNonClickable = typeof article.link === 'string' && article.link.length === 0;
+
+        return (
+          <motion.article
+            key={index}
+            initial="normal"
+            animate={index === activeIndex ? 'clicked' : 'normal'}
+            variants={articleVariants}
+            className={isNonClickable ? 'non-clickable' : ''}
+            role={!isNonClickable ? 'link' : undefined}
+            tabIndex={!isNonClickable ? 0 : undefined}
+            aria-label={!isNonClickable ? `View ${article.title} details` : undefined}
+            style={{ backgroundImage: `url(${article.backgroundImage})` }}
+            onClick={() => handleClick(index, article.link)}
+            onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); handleClick(index, article.link); } }}>
+            <motion.header
+              className="major"
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true, amount: 0.5 }}
+            >
+              <h1>{article.title}</h1>
+              <p>{article.emojiLink} {article.details}</p>
+              <p>{article.description}</p>
+            </motion.header>
+          </motion.article>
+        );
+      })}
     </section>
   );
 };

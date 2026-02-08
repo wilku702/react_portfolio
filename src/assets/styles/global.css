@@ -66,3 +66,75 @@ body {
     font-family: 'RobotoMonoSemiBold';
     src: url('../fonts/RobotoMono-SemiBold.ttf') format('truetype');
 }
+
+*:focus-visible {
+    outline: 3px solid var(--main-color);
+    outline-offset: 4px;
+}
+
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--main-color);
+    color: var(--background-color);
+    padding: 8px 16px;
+    z-index: 100;
+    font-family: 'RobotoMono', sans-serif;
+    text-decoration: none;
+    font-weight: 700;
+    transition: top 0.3s;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+.loading-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  gap: 1rem;
+}
+
+.loading-pulse {
+  width: 200px;
+  height: 16px;
+  background: rgba(148, 174, 247, 0.15);
+  border-radius: 8px;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.loading-pulse.short {
+  width: 120px;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+
+.not-found-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  text-align: center;
+}
+
+.not-found-page h1 {
+  font-family: 'RobotoMono', sans-serif;
+  font-size: 6rem;
+  color: var(--main-color);
+  margin-bottom: 0.5rem;
+}
+
+.not-found-page p {
+  font-family: 'RobotoMono', sans-serif;
+  font-size: 1.25rem;
+  color: var(--text-color);
+  margin-bottom: 2rem;
+}

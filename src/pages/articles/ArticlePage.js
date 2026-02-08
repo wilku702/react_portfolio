@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './styles/ArticleGlobal.css';
 
 const ALLOWED_TAGS = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
@@ -85,6 +86,7 @@ const ArticlePage = ({ data }) => {
       <div className="article-container">
         <div className="row">
           <div className="col-lg-12">
+            <Link to="/" className="back-link">← Back to Home</Link>
             <h1 className="article-title">{data.title}</h1>
             <div className="row">
               <div className="col-lg-4">
@@ -128,6 +130,10 @@ const ArticlePage = ({ data }) => {
               {renderContent(section)}
             </div>
           ))}
+        </div>
+        <div className="article-cta">
+          <p>Interested in this project?</p>
+          <a href="mailto:wkung2004@gmail.com" className="cta-button">Get in Touch</a>
         </div>
       </div>
     </main>
