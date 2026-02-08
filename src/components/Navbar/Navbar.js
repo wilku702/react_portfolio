@@ -28,8 +28,15 @@ const Navbar = () => {
       <ul className="navigation-menu">
         <li>
           <motion.div variants={bannerFadeInVariants}>
-            <NavLink to="/work" className="bar-link">
-              work
+            <NavLink to="/experience" className="bar-link">
+              experience
+            </NavLink>
+          </motion.div>
+        </li>
+        <li>
+          <motion.div variants={bannerFadeInVariants}>
+            <NavLink to="/projects" className="bar-link">
+              projects
             </NavLink>
           </motion.div>
         </li>
@@ -72,11 +79,20 @@ const Navbar = () => {
           </li>
           <li role="none">
             <NavLink
-              to="/work"
+              to="/experience"
               className="menu-link"
               role="menuitem"
               onClick={() => handleClick(false)}>
-              work
+              experience
+            </NavLink>
+          </li>
+          <li role="none">
+            <NavLink
+              to="/projects"
+              className="menu-link"
+              role="menuitem"
+              onClick={() => handleClick(false)}>
+              projects
             </NavLink>
           </li>
           <li role="none">

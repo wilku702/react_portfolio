@@ -29,8 +29,8 @@ const FrontPage = () => {
           </motion.h2>
           <ArticleLinks items={featuredItems} />
           <div style={{ textAlign: 'center', marginTop: '2rem' }}>
-            <Link to="/work" className="view-all-link">
-              View All Work →
+            <Link to="/experience" className="view-all-link">
+              View All Experience →
             </Link>
           </div>
         </section>

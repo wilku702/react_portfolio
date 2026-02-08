@@ -217,6 +217,9 @@
 
 .back-link {
   display: inline-block;
+  background: none;
+  border: none;
+  cursor: pointer;
   color: var(--main-color);
   text-decoration: none;
   font-family: 'RobotoMono', sans-serif;

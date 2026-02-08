@@ -6,6 +6,7 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
+  Navigate,
   useLocation
 } from 'react-router-dom';
 
@@ -17,7 +18,8 @@ import { NavigationProvider } from './context/NavigationContext';
 
 // Lazy-loaded Pages
 const FrontPage = lazy(() => import('./pages/FrontPage'));
-const WorkPage = lazy(() => import('./pages/WorkPage'));
+const ExperiencePage = lazy(() => import('./pages/ExperiencePage'));
+const ProjectsPage = lazy(() => import('./pages/ProjectsPage'));
 const AboutPage = lazy(() => import('./pages/AboutPage'));
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
 
@@ -81,7 +83,9 @@ function App() {
             <ErrorBoundary>
               <Routes>
                 <Route path="/" element={<FrontPage />} />
-                <Route path="/work" element={<WorkPage />} />
+                <Route path="/experience" element={<ExperiencePage />} />
+                <Route path="/projects" element={<ProjectsPage />} />
+                <Route path="/work" element={<Navigate to="/experience" replace />} />
                 <Route path="/about" element={<AboutPage />} />
 
                 <Route path="/kdan" element={<KdanPage />} />

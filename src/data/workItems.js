@@ -65,5 +65,3 @@ export const projectItems = [
 ];
 
 export const featuredItems = [internshipItems[0], internshipItems[1]];
-
-export const allItems = [...internshipItems, ...projectItems];
