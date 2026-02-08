@@ -6,19 +6,20 @@ import { motion } from 'framer-motion';
 import { staggerOne, bannerFadeInVariants } from '../../motionUtils';
 
 const Navbar = () => {
-  const [activeIndex, setActiveIndex] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleClick = (state) => {
-    setActiveIndex(state);
+    setIsMenuOpen(state);
   };
 
   return (
-    <motion.div
+    <motion.nav
       className="navigation-wrapper"
       variants={staggerOne}
       initial="initial"
       animate="animate"
-      exit="exit">
+      exit="exit"
+      aria-label="Main navigation">
       <motion.div variants={bannerFadeInVariants}>
         <NavLink to="/">
           <img className="navigation-logo" src="./logo/W.svg" alt="Site Icon" />
@@ -46,43 +47,56 @@ const Navbar = () => {
       </ul>
       <motion.div
         variants={bannerFadeInVariants}
-        className={`toggle-menu ${activeIndex ? 'active' : 'hidden'}`}>
-        <div className="menu-status-off" onClick={() => handleClick(true)}>
+        className={`toggle-menu ${isMenuOpen ? 'active' : 'hidden'}`}>
+        <button
+          className="menu-status-off"
+          onClick={() => handleClick(true)}
+          aria-expanded={isMenuOpen}
+          aria-controls="mobile-menu"
+          aria-label="Open menu">
           menu
-        </div>
-        <div className="menu-status-on" onClick={() => handleClick(false)}>
+        </button>
+        <button
+          className="menu-status-on"
+          onClick={() => handleClick(false)}
+          aria-expanded={isMenuOpen}
+          aria-controls="mobile-menu"
+          aria-label="Close menu">
           close
-        </div>
-        <ul className="toggle-menu-items">
-          <li>
+        </button>
+        <ul className="toggle-menu-items" id="mobile-menu" role="menu">
+          <li role="none">
             <NavLink
               to="/"
               className="menu-link"
+              role="menuitem"
               onClick={() => handleClick(false)}>
               home
             </NavLink>
           </li>
-          <li>
+          <li role="none">
             <NavLink
               to="/about"
               className="menu-link"
+              role="menuitem"
               onClick={() => handleClick(false)}>
               about
             </NavLink>
           </li>
-          <li>
+          <li role="none">
             <a
-              href="https://drive.google.com/file/d/15y7eIv9nvPGdyHCBrwOS1uStmJm7Xde6/view?usp=sharing"
+              href="https://drive.google.com/file/d/16GZNTunAN-zW5FVHhaSBrJUaG9L8IIh5/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className="menu-link"
+              role="menuitem"
               onClick={() => handleClick(false)}>
               resume
             </a>
           </li>
         </ul>
       </motion.div>
-    </motion.div>
+    </motion.nav>
   );
 };
 

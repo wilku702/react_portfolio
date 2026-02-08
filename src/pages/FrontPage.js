@@ -4,10 +4,10 @@ import HomeSections from '../components/HomeSections/HomeSections';
 
 const FrontPage = () => {
   return (
-    <div className="page">
+    <main className="page">
       <Header />
       <HomeSections />
-    </div>
+    </main>
   );
 };
 

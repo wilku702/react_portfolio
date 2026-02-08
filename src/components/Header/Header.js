@@ -9,7 +9,7 @@ const Header = () => {
         <h1>full stack developer</h1>
         <h1>react specialist, ai enthusiast</h1>
       </div>
-      <div class="scroll-down"></div>
+      <div className="scroll-down"></div>
     </div>
   );
 };

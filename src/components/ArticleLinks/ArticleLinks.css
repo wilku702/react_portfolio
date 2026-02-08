@@ -138,7 +138,7 @@
 
 
 .major:hover {
-    display: hidden;
+    visibility: hidden;
     color: transparent;
 }
 
@@ -191,27 +191,7 @@
     width: 55%;
 } */
 
-.tiles article:nth-child(6n - 5):before {
-    background-color: var(--bg-color);
-}
-
-.tiles article:nth-child(6n - 4):before {
-    background-color: var(--bg-color);
-}
-
-.tiles article:nth-child(6n - 3):before {
-    background-color: var(--bg-color);
-}
-
-.tiles article:nth-child(6n - 2):before {
-    background-color: var(--bg-color);
-}
-
-.tiles article:nth-child(6n - 1):before {
-    background-color: var(--bg-color);
-}
-
-.tiles article:nth-child(6n):before {
+.tiles article:before {
     background-color: var(--bg-color);
 }
 

@@ -5,64 +5,15 @@ import './ArticleLinks.css';
 import { articleVariants } from '../../motionUtils';
 
 const ArticleLinks = ({ items }) => {
-  // Default array of articles (used if no items prop is passed)
-  const defaultArticles = [
-    {
-      title: 'KDANMOBILE',
-      link: '/kdan',
-      backgroundImage: '/companies/kdan.png',
-      emojiLink: '🤖💬',
-      details: 'React.js | Python | SQL | BigQuery | LLM',
-      description:
-        "Integration process // Utilized SQL queries within Google Cloud's BigQuery for data handling and incorporated LLM models for responsive chatbot communication."
-    },
-    // {
-    //   title: 'Resia',
-    //   link: '/resia',
-    //   backgroundImage: '/companies/triniti.png',
-    //   emojiLink: '👵🏠',
-    //   details: 'React Native | Firebase',
-    //   description:
-    //     'User interaction enhancement // Implemented a social media framework to enable nursing staff to post updates, enhancing family engagement.'
-    // },
-    {
-      title: 'Triniti',
-      link: '/triniti',
-      backgroundImage: '/companies/triniti.png',
-      emojiLink: '👵🏠',
-      details: 'React Native | Firebase',
-      description:
-        'User interaction enhancement // Implemented a social media framework to enable nursing staff to post updates, enhancing family engagement.'
-    },
-    {
-      title: 'Nagoya USARD',
-      link: '/nagoya',
-      backgroundImage: '/companies/nagoya.png',
-      emojiLink: '🎓',
-      details: 'Hugo | Go | Node.js',
-      description:
-        'Data-driven development // Built robust analysis tools for Bolivian socio-economic datasets, enhancing research capabilities.'
-    },
-    {
-      title: 'Adonit',
-      link: '/adonit',
-      backgroundImage: '/companies/adonit.png',
-      emojiLink: '📈',
-      details: 'React Native | Python | Streamlit',
-      description:
-        'Predictive analytics implementation // Created an AI-powered audio section and integrated revenue forecasting with React Native and Python.'
-    }
-  ];
+  const articles = items || [];
 
-  const articles = items && Array.isArray(items) ? items : defaultArticles;
-
-  const navigate = useNavigate(); // Hook for programmatically navigating
+  const navigate = useNavigate();
   const [activeIndex, setActiveIndex] = useState(null);
 
   const handleClick = (index, link) => {
     const isExternal = typeof link === 'string' && /^https?:\/\//i.test(link);
 
-    if ( typeof link === 'string' && link.length == 0 ) {
+    if ( typeof link === 'string' && link.length === 0 ) {
       return;
     }
 
@@ -87,8 +38,11 @@ const ArticleLinks = ({ items }) => {
           initial="normal"
           animate={index === activeIndex ? 'clicked' : 'normal'}
           variants={articleVariants}
+          role="link"
+          tabIndex={0}
           style={{ backgroundImage: `url(${article.backgroundImage})` }}
-          onClick={() => handleClick(index, article.link)}>
+          onClick={() => handleClick(index, article.link)}
+          onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); handleClick(index, article.link); } }}>
           <motion.header
             className="major"
             initial={{ opacity: 0, y: 16 }}

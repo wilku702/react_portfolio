@@ -34,9 +34,7 @@ const CompanyLayout = () => {
           style={{ backgroundImage: `url(${article.backgroundImage})` }}>
           <header className="major">
             <h1>{article.title}</h1>
-            <a className="link" href={article.link}>
-              {article.emojiLink}
-            </a>
+            <p>{article.emojiLink}</p>
             <p>{article.details}</p>
             <p>{article.description}</p>
           </header>
