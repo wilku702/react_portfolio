@@ -28,7 +28,13 @@
       "Bash(then echo \"OK: $f\")",
       "Bash(else echo \"MISSING: $f\")",
       "Bash(fi)",
-      "Bash(done)"
+      "Bash(done)",
+      "Bash(npm uninstall:*)",
+      "Bash(npx eslint:*)",
+      "Bash(npm ls:*)",
+      "Bash(timeout 5 npm run dev:*)",
+      "Bash(find:*)",
+      "Bash(echo:*)"
     ]
   }
 }

@@ -26,13 +26,6 @@ const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
 // Lazy-loaded Articles
 const DynamicArticlePage = lazy(() => import('./pages/articles/DynamicArticlePage'));
 
-const LoadingPage = () => (
-  <div className="page loading-page">
-    <div className="loading-pulse"></div>
-    <div className="loading-pulse short"></div>
-  </div>
-);
-
 function ScrollToTop() {
   const { pathname } = useLocation();
 
@@ -63,6 +56,14 @@ function App() {
     };
   }, [handleMouseMove]);
 
+  // Prefetch lazy-loaded route chunks so they're cached before the user navigates
+  useEffect(() => {
+    import('./pages/ExperiencePage');
+    import('./pages/ProjectsPage');
+    import('./pages/AboutPage');
+    import('./pages/articles/DynamicArticlePage');
+  }, []);
+
   return (
     <div className="App">
       <div
@@ -76,7 +77,7 @@ function App() {
           <a href="#main-content" className="skip-link">Skip to main content</a>
           <ScrollToTop />
           <Navbar />
-          <Suspense fallback={<LoadingPage />}>
+          <Suspense fallback={<div />}>
             <ErrorBoundary>
               <main id="main-content">
                 <Routes>
