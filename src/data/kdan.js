@@ -6,8 +6,8 @@ export const kdanData = {
   description: `At KDANMobile, I built a chatbot for a client to streamline data inquiries like revenue and stock checks, combining front-end and back-end development to deliver a responsive and user-friendly experience.`,
   images: [
     {
-      src: './companies/kdan/kdan-ai.jpg',
-      alt: 'company branch'
+      src: '/companies/kdan/kdan-ai.jpg',
+      alt: 'KDANMobile office building'
     }
   ],
   sections: [
@@ -26,8 +26,8 @@ export const kdanData = {
       content: 'Adapted the company’s Figma design system, adding my own enhancements to improve usability and visual flow.',
       images: [
         {
-          src: './companies/kdan/figma.png',
-          alt: 'company branch'
+          src: '/companies/kdan/figma.jpg',
+          alt: 'Figma design mockups for the chatbot interface'
         }
       ]
     },
@@ -39,8 +39,8 @@ export const kdanData = {
       content: `Ask any question regarding data relevant to the client company.`,
       images: [
         {
-          src: './companies/kdan/chatbot/chatbot_message.gif',
-          alt: 'preview of opening chatbot'
+          src: '/companies/kdan/chatbot/chatbot_message.gif',
+          alt: 'Demo of sending a message to the chatbot'
         }
       ]
     },
@@ -52,8 +52,8 @@ export const kdanData = {
       content: `Review the data relevant to your inquiry.`,
       images: [
         {
-          src: './companies/kdan/chatbot/chatbot_table.gif',
-          alt: 'preview of opening chatbot'
+          src: '/companies/kdan/chatbot/chatbot_table.gif',
+          alt: 'Demo of chatbot displaying data in a table'
         }
       ]
     },
@@ -65,8 +65,8 @@ export const kdanData = {
       content: `Choose the graph type and variable axis.`,
       images: [
         {
-          src: './companies/kdan/chatbot/chatbot_graph.gif',
-          alt: 'preview of opening chatbot'
+          src: '/companies/kdan/chatbot/chatbot_graph.gif',
+          alt: 'Demo of chatbot generating an interactive graph'
         }
       ]
     },
@@ -77,8 +77,8 @@ export const kdanData = {
       content: `Developed backend APIs in Python, connected to BigQuery with SQL queries, and integrated multiple LLM models to generate accurate, context-aware responses. Deployed on Google Cloud Functions and containerized with Docker.`,
       images: [
         {
-          src: './companies/kdan/chatbot_layout.png',
-          alt: 'chatbot_layout'
+          src: '/companies/kdan/chatbot_layout.jpg',
+          alt: 'Architecture diagram of the chatbot backend system'
         }
       ]
     },
@@ -89,8 +89,8 @@ export const kdanData = {
       content: `Implemented a testing pipeline to improve accuracy and reliability, using LangChain/LangFuse for traceability and RAGAS for systematic prompt evaluation and refinement.`,
       images: [
         {
-          src: './companies/kdan/langfuse.png',
-          alt: 'langfuse'
+          src: '/companies/kdan/langfuse.jpg',
+          alt: 'LangFuse dashboard showing chatbot tracing and evaluation'
         }
       ]
     },
@@ -101,8 +101,8 @@ export const kdanData = {
       content: `Containerized and embedded the chatbot into the client’s website using Docker, ensuring smooth deployment and scalability across environments.`,
       images: [
         {
-          src: './companies/kdan/deployment.png',
-          alt: 'deployment'
+          src: '/companies/kdan/deployment.jpg',
+          alt: 'Docker deployment pipeline for the chatbot'
         }
       ]
     },
@@ -113,8 +113,8 @@ export const kdanData = {
       content:
         'Just highlighting some moments during my internship at KDANMobile.',
       images: [
-        { src: './companies/kdan/hi_team.png', alt: 'Hi Team' },
-        { src: './companies/kdan/aws.png', alt: 'AWS Summit' }
+        { src: '/companies/kdan/hi_team.jpg', alt: 'Hi Team' },
+        { src: '/companies/kdan/aws.jpg', alt: 'AWS Summit' }
       ]
     }
   ]

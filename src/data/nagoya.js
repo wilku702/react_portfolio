@@ -6,7 +6,7 @@ export const nagoyaData = {
   description: `At Nagoya University's USARD program, I contributed to the QuaRCS Bolivia project, building robust analysis tools for Bolivian socio-economic datasets to enhance research capabilities and support data-driven development initiatives.`,
   images: [
     {
-      src: './companies/nagoya/nagoya.png',
+      src: '/companies/nagoya/nagoya_large.jpg',
       alt: 'QuaRCS Bolivia project overview'
     }
   ],
@@ -27,7 +27,7 @@ export const nagoyaData = {
         'Designed the research tool interface with a focus on clarity and usability, ensuring that complex datasets could be explored intuitively through interactive visualizations and filtering controls.',
       images: [
         {
-          src: './companies/nagoya/figma.svg',
+          src: '/companies/nagoya/figma.jpg',
           alt: 'preview of figma design'
         }
       ]
@@ -48,7 +48,7 @@ export const nagoyaData = {
         'Processed and structured Bolivian socio-economic datasets to enable spatial and temporal analysis, providing researchers with tools to identify development trends and regional disparities.',
       images: [
         {
-          src: 'companies/nagoya/cover.png',
+          src: '/companies/nagoya/cover.jpg',
           alt: 'QuaRCS Bolivia data visualization'
         }
       ]

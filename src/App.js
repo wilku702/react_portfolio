@@ -76,19 +76,21 @@ function App() {
           <a href="#main-content" className="skip-link">Skip to main content</a>
           <ScrollToTop />
           <Navbar />
-          <Suspense fallback={<LoadingPage />} id="main-content">
+          <Suspense fallback={<LoadingPage />}>
             <ErrorBoundary>
-              <Routes>
-                <Route path="/" element={<FrontPage />} />
-                <Route path="/experience" element={<ExperiencePage />} />
-                <Route path="/projects" element={<ProjectsPage />} />
-                <Route path="/work" element={<Navigate to="/experience" replace />} />
-                <Route path="/about" element={<AboutPage />} />
+              <main id="main-content">
+                <Routes>
+                  <Route path="/" element={<FrontPage />} />
+                  <Route path="/experience" element={<ExperiencePage />} />
+                  <Route path="/projects" element={<ProjectsPage />} />
+                  <Route path="/work" element={<Navigate to="/experience" replace />} />
+                  <Route path="/about" element={<AboutPage />} />
 
-                <Route path="/:id" element={<DynamicArticlePage />} />
+                  <Route path="/:id" element={<DynamicArticlePage />} />
 
-                <Route path="*" element={<NotFoundPage />} />
-              </Routes>
+                  <Route path="*" element={<NotFoundPage />} />
+                </Routes>
+              </main>
             </ErrorBoundary>
           </Suspense>
           <Footer />

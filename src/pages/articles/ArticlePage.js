@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
 import './styles/ArticleGlobal.css';
 
@@ -82,7 +83,7 @@ const ArticlePage = ({ data }) => {
   };
 
   return (
-    <main className="page">
+    <div className="page">
       <div className="whitespace"></div>
       <div className="article-container">
         <div className="row">
@@ -133,8 +134,35 @@ const ArticlePage = ({ data }) => {
           ))}
         </div>
       </div>
-    </main>
+    </div>
   );
+};
+
+const imageShape = PropTypes.shape({
+  src: PropTypes.string.isRequired,
+  alt: PropTypes.string.isRequired,
+  className: PropTypes.string
+});
+
+ArticlePage.propTypes = {
+  data: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    service: PropTypes.string.isRequired,
+    timeline: PropTypes.string.isRequired,
+    role: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    images: PropTypes.arrayOf(imageShape).isRequired,
+    sections: PropTypes.arrayOf(
+      PropTypes.shape({
+        headerType: PropTypes.string,
+        title: PropTypes.string.isRequired,
+        contentType: PropTypes.oneOf(['paragraph', 'list', 'demonstration']).isRequired,
+        content: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.string)]).isRequired,
+        images: PropTypes.arrayOf(imageShape),
+        position: PropTypes.oneOf(['left', 'right'])
+      })
+    ).isRequired
+  }).isRequired
 };
 
 export default ArticlePage;

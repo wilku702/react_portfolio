@@ -16,7 +16,19 @@
       "mcp__chrome-devtools__emulate",
       "mcp__chrome-devtools__hover",
       "Bash(git checkout:*)",
-      "Bash(wc:*)"
+      "Bash(wc:*)",
+      "Bash(ls:*)",
+      "Bash(npm install:*)",
+      "Bash(npx --yes sharp-cli:*)",
+      "Bash(npx sharp-cli:*)",
+      "Bash(sips:*)",
+      "Bash(du:*)",
+      "Bash(for f in companies/kdan/kdan-ai.jpg companies/kdan/figma.jpg companies/kdan/chatbot/chatbot_message.gif companies/kdan/chatbot/chatbot_table.gif companies/kdan/chatbot/chatbot_graph.gif companies/kdan/chatbot_layout.jpg companies/kdan/langfuse.jpg companies/kdan/deployment.jpg companies/kdan/hi_team.jpg companies/kdan/aws.jpg companies/nagoya/nagoya_large.jpg companies/nagoya/figma.jpg companies/nagoya/cover.jpg companies/adonit/start.jpg companies/adonit/forecast_page.jpg companies/kdan.png companies/adonit.png companies/donedesk.jpg companies/resia.jpg companies/nagoya.png companies/triniti.png logo/my_logo.png portrait.jpg sitemap.xml)",
+      "Bash(do if [ -f \"$f\" ])",
+      "Bash(then echo \"OK: $f\")",
+      "Bash(else echo \"MISSING: $f\")",
+      "Bash(fi)",
+      "Bash(done)"
     ]
   }
 }

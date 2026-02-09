@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import PropTypes from 'prop-types';
 import { motion, AnimatePresence } from 'framer-motion';
 import './ConfirmModal.css';
 
@@ -92,6 +93,13 @@ const ConfirmModal = ({ isOpen, destination, onConfirm, onCancel }) => {
       )}
     </AnimatePresence>
   );
+};
+
+ConfirmModal.propTypes = {
+  isOpen: PropTypes.bool.isRequired,
+  destination: PropTypes.string,
+  onConfirm: PropTypes.func.isRequired,
+  onCancel: PropTypes.func.isRequired
 };
 
 export default ConfirmModal;

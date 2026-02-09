@@ -6,7 +6,7 @@ export const adonitData = {
   description: `At Adonit, I contributed to both mobile and data projects. I built new features for the Adonit One app in React Native, including an audio module with AI-powered key point generation and accessibility support. In parallel, I developed a web application using Python, Streamlit, and SQL to extract data from BigQuery, applying Facebook’s Prophet model for predictive analytics and product revenue forecasting. I also authored YAML configuration files to streamline updates and enable feature integration via GitLab CI/CD pipelines.`,
   images: [
     {
-      src: './companies/adonit/start.jpg',
+      src: '/companies/adonit/start.jpg',
       alt: 'Forecast Analyzer interface'
     }
   ],
@@ -19,7 +19,7 @@ export const adonitData = {
         'Developed a forecasting tool that leveraged Facebook’s Prophet model to predict product revenue. Implemented the interface in Streamlit, extracted and processed data from BigQuery using SQL, and provided interactive visualizations to support business decision-making.',
       images: [
         {
-          src: './companies/adonit/forecast_page.png',
+          src: '/companies/adonit/forecast_page.jpg',
           alt: 'Forecast Analyzer interface'
         }
       ]

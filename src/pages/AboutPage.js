@@ -7,7 +7,7 @@ import { defaultPageFadeInVariants } from '../motionUtils';
 
 const AboutPage = () => {
   return (
-    <motion.main
+    <motion.div
       className="about-page"
       variants={defaultPageFadeInVariants}
       initial="initial"
@@ -74,7 +74,7 @@ const AboutPage = () => {
         <div className="snowflake">❅</div>
         <div className="snowflake">❅</div>
       </div>
-    </motion.main>
+    </motion.div>
   );
 };
 

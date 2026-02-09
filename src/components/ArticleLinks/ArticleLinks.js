@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import './ArticleLinks.css';
@@ -71,6 +72,19 @@ const ArticleLinks = ({ items }) => {
       })}
     </section>
   );
+};
+
+ArticleLinks.propTypes = {
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+      link: PropTypes.string.isRequired,
+      backgroundImage: PropTypes.string.isRequired,
+      details: PropTypes.string.isRequired,
+      description: PropTypes.string.isRequired
+    })
+  ).isRequired
 };
 
 export default ArticleLinks;

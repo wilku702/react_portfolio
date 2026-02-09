@@ -14,7 +14,7 @@ const titleAnim = {
 
 const FrontPage = () => {
   return (
-    <main className="page">
+    <div className="page">
       <Header />
       <div className="home-sections">
         <section id="work" className="home-section">
@@ -35,7 +35,7 @@ const FrontPage = () => {
           </div>
         </section>
       </div>
-    </main>
+    </div>
   );
 };
 

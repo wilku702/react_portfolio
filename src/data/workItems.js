@@ -49,7 +49,7 @@ export const projectItems = [
   {
     id: 'nagoya',
     title: 'Nagoya USARD',
-    link: 'https://github.com/quarcs-lab/quarcs-bolivia',
+    link: '/nagoya',
     backgroundImage: '/companies/nagoya.png',
     emojiLink: '🎓',
     details: 'Hugo | Go | Node.js',

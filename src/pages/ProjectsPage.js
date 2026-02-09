@@ -7,7 +7,7 @@ import './styles/WorkPage.css';
 
 const ProjectsPage = () => {
   return (
-    <motion.main
+    <motion.div
       className="work-page"
       variants={defaultPageFadeInVariants}
       initial="initial"
@@ -16,7 +16,7 @@ const ProjectsPage = () => {
     >
       <h1 className="work-page-title">Projects</h1>
       <ArticleLinks items={projectItems} />
-    </motion.main>
+    </motion.div>
   );
 };
 

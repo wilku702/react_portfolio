@@ -23,7 +23,7 @@ const Navbar = () => {
       aria-label="Main navigation">
       <motion.div variants={bannerFadeInVariants}>
         <NavLink to="/">
-          <img className="navigation-logo" src="./logo/W.svg" alt="Site Icon" />
+          <img className="navigation-logo" src="/logo/W.svg" alt="Site Icon" />
         </NavLink>
       </motion.div>
       <ul className="navigation-menu">

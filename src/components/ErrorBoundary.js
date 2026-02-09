@@ -18,11 +18,11 @@ class ErrorBoundary extends React.Component {
   render() {
     if (this.state.hasError) {
       return (
-        <main className="page not-found-page">
+        <div className="page not-found-page">
           <h1>Oops</h1>
           <p>Something went wrong.</p>
           <Link to="/" className="back-link" onClick={() => this.setState({ hasError: false })}>← Back to Home</Link>
-        </main>
+        </div>
       );
     }
     return this.props.children;

@@ -1,6 +1,7 @@
 import React from 'react';
-import { useParams, Navigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import ArticlePage from './ArticlePage';
+import NotFoundPage from '../NotFoundPage';
 import articles from '../../data/articles';
 
 const DynamicArticlePage = () => {
@@ -8,7 +9,7 @@ const DynamicArticlePage = () => {
   const data = articles[id];
 
   if (!data) {
-    return <Navigate to="/404" replace />;
+    return <NotFoundPage />;
   }
 
   return <ArticlePage data={data} />;
