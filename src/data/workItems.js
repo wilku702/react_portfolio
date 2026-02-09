@@ -61,7 +61,7 @@ export const projectItems = [
     id: 'triniti',
     title: 'Triniti',
     link: 'https://github.com/wilku702/Triniti',
-    backgroundImage: '/companies/triniti.png',
+    backgroundImage: '/companies/triniti.jpg',
     emojiLink: '👵🏠',
     details: 'React Native | Firebase',
     description:

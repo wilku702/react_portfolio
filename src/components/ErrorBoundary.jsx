@@ -1,7 +1,8 @@
-import React from 'react';
+import { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-class ErrorBoundary extends React.Component {
+class ErrorBoundary extends Component {
   constructor(props) {
     super(props);
     this.state = { hasError: false };
@@ -28,5 +29,9 @@ class ErrorBoundary extends React.Component {
     return this.props.children;
   }
 }
+
+ErrorBoundary.propTypes = {
+  children: PropTypes.node.isRequired,
+};
 
 export default ErrorBoundary;

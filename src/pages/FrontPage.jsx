@@ -1,5 +1,5 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import Header from '../components/Header/Header';
 import ArticleLinks from '../components/ArticleLinks/ArticleLinks';
@@ -15,6 +15,9 @@ const titleAnim = {
 const FrontPage = () => {
   return (
     <div className="page">
+      <Helmet>
+        <title>Will Kung | Full Stack Developer</title>
+      </Helmet>
       <Header />
       <div className="home-sections">
         <section id="work" className="home-section">

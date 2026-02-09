@@ -1,4 +1,4 @@
-import React from 'react';
+// Footer component
 import './Footer.css';
 import { useNavigationConfirm } from '../../context/NavigationContext';
 
@@ -41,7 +41,7 @@ const Footer = () => {
           className="footer-info-item"
           id="media">
           <h4 className="footer-info-header">
-            <br /> let's connect
+            <br /> let&apos;s connect
           </h4>
           <ul>
             {socialLinks.map((link) => (

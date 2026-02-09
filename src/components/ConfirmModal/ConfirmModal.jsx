@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { motion, AnimatePresence } from 'framer-motion';
 import './ConfirmModal.css';
@@ -14,6 +14,16 @@ const getHostname = (url) => {
 const ConfirmModal = ({ isOpen, destination, onConfirm, onCancel }) => {
   const confirmRef = useRef(null);
   const cancelRef = useRef(null);
+  const triggerRef = useRef(null);
+
+  useEffect(() => {
+    if (isOpen) {
+      triggerRef.current = document.activeElement;
+    } else if (triggerRef.current) {
+      triggerRef.current.focus();
+      triggerRef.current = null;
+    }
+  }, [isOpen]);
 
   useEffect(() => {
     if (!isOpen) return;

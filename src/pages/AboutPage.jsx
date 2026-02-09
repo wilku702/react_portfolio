@@ -1,4 +1,4 @@
-import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import './styles/AboutPage.css';
 
 import { motion } from 'framer-motion';
@@ -14,23 +14,28 @@ const AboutPage = () => {
       
       animate="animate"
       exit="exit">
+      <Helmet>
+        <title>About | Will Kung</title>
+        <meta property="og:title" content="About Will Kung - Full Stack Developer" />
+        <meta property="og:description" content="CS @ UT Austin. Backend specialist building scalable systems and exploring AI reliability." />
+      </Helmet>
       <div className="about-top-content">
         <div className="about-top-row">
           <div className="about-portrait">
             <img id="colchuck" src="/portrait.jpg" alt="Portrait of Will Kung" loading="lazy" />
           </div>
           <div className="about-top-text">
-            <h5>Good day! It's a pleasure to meet you.</h5>
+            <h5>Good day! It&apos;s a pleasure to meet you.</h5>
             <p>
-              I'm Will Kung, a Computer Science student at The University of
+              I&apos;m Will Kung, a Computer Science student at The University of
               Texas at Austin, currently interning as a Software Engineer at
               Done Desk and Resia.
             </p>
             <p>
               From a young age, I’ve been captivated by the mechanics of
               programming and the transformative potential of technology. This
-              passion began with creative ideas like, "What if you could see
-              daily information through a smart mirror?" Sure enough, I built
+              passion began with creative ideas like, &quot;What if you could see
+              daily information through a smart mirror?&quot; Sure enough, I built
               one. Now, my focus has evolved to building things that make a real
               impact on the world.
             </p>
@@ -54,7 +59,7 @@ const AboutPage = () => {
           <p>
             As I navigate through my academic and professional journey, I remain
             committed to leveraging my skills in both structured and creative
-            ways. Whether it's optimizing software functionalities or exploring
+            ways. Whether it&apos;s optimizing software functionalities or exploring
             the robustness of machine learning algorithms, I aim to bridge the
             gap between user needs and technological advancements. Through this
             portfolio, I invite you to explore my projects and the distinct

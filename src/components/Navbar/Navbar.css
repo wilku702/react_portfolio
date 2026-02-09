@@ -161,7 +161,6 @@
 }
 
 .toggle-menu.hidden .toggle-menu-items{
-    /* display: none; */
     opacity: 0;
     visibility: hidden;
 }

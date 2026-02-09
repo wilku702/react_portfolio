@@ -37,7 +37,8 @@
       "Bash(echo:*)",
       "Bash(npx vite build:*)",
       "Bash(npm run dev:*)",
-      "mcp__chrome-devtools__press_key"
+      "mcp__chrome-devtools__press_key",
+      "Bash(/Users/wilku/miniconda3/bin/fonttools:*)"
     ]
   }
 }

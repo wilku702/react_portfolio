@@ -1,5 +1,5 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import { useNavigate, Link } from 'react-router-dom';
 import './styles/ArticleGlobal.css';
@@ -92,6 +92,12 @@ const ArticlePage = ({ data }) => {
 
   return (
     <div className="page">
+      <Helmet>
+        <title>{data.title} | Will Kung</title>
+        <meta property="og:title" content={`${data.title} | Will Kung`} />
+        <meta property="og:description" content={data.description} />
+        <meta property="og:type" content="article" />
+      </Helmet>
       <div className="whitespace"></div>
       <div className="article-container">
         <motion.div className="row" {...scrollFadeIn}>

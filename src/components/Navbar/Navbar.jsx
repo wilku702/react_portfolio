@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './Navbar.css';
 import { NavLink } from 'react-router-dom';
 
@@ -43,17 +43,21 @@ const Navbar = () => {
         <button
           className="menu-status-off"
           onClick={() => handleClick(true)}
-          aria-expanded={isMenuOpen}
+          aria-expanded={false}
           aria-controls="mobile-menu"
-          aria-label="Open menu">
+          aria-label="Open menu"
+          aria-hidden={isMenuOpen}
+          tabIndex={isMenuOpen ? -1 : 0}>
           menu
         </button>
         <button
           className="menu-status-on"
           onClick={() => handleClick(false)}
-          aria-expanded={isMenuOpen}
+          aria-expanded={true}
           aria-controls="mobile-menu"
-          aria-label="Close menu">
+          aria-label="Close menu"
+          aria-hidden={!isMenuOpen}
+          tabIndex={!isMenuOpen ? -1 : 0}>
           close
         </button>
         <ul className="toggle-menu-items" id="mobile-menu" role="menu">

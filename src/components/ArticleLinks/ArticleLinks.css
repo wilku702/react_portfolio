@@ -12,14 +12,14 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    line-height: 36px !important;
+    line-height: 36px;
 }
 
 .tiles .article-card {
     align-items: center;
     display: flex;
-    transition: transform 0.25s ease, opacity 0.25s ease;
-    padding: 4em;
+    transition: transform 0.25s ease, opacity 0.25s ease, filter 1s ease;
+    padding: 4em 4em 2em 4em;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -31,8 +31,8 @@
     width: calc(50% - 5px);
     box-sizing: border-box;
     margin: 0;
+    border-radius: 8px;
 }
-
 
 .tiles .article-card header h1 {
     font-weight: 700;
@@ -45,38 +45,9 @@
     margin-bottom: 1rem;
 }
 
-
-
-
 /* Tiles */
 .tiles + * {
     border-top: 0 !important;
-}
-
-.tiles .article-card {
-    -moz-align-items: center;
-    -webkit-align-items: center;
-    -ms-align-items: center;
-    align-items: center;
-    display: -moz-flex;
-    display: -webkit-flex;
-    display: -ms-flex;
-    display: flex;
-    -moz-transition: -moz-transform 0.25s ease, opacity 0.25s ease, -moz-filter 1s ease, -webkit-filter 1s ease;
-    -webkit-transition: -webkit-transform 0.25s ease, opacity 0.25s ease, -webkit-filter 1s ease, -webkit-filter 1s ease;
-    -ms-transition: -ms-transform 0.25s ease, opacity 0.25s ease, -ms-filter 1s ease, -webkit-filter 1s ease;
-    transition: transform 0.25s ease, opacity 0.25s ease, filter 1s ease, -webkit-filter 1s ease;
-    padding: 4em 4em 2em 4em;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 40vh;
-    max-height: 40em;
-    min-height: 23em;
-    overflow: hidden;
-    position: relative;
-    width: calc(50% - 5px);
-    border-radius: 8px;
 }
 
 .tiles .article-card .image {
@@ -110,7 +81,6 @@
     z-index: 4;
 }
 
-
 .major:hover {
     transform: scale(1.02);
     transition: transform 0.3s ease;
@@ -127,16 +97,13 @@
 }
 
 .tiles .article-card:before {
-    -moz-transition: opacity 0.5s ease;
-    -webkit-transition: opacity 0.5s ease;
-    -ms-transition: opacity 0.5s ease;
     transition: opacity 0.5s ease;
     bottom: 0;
     content: '';
     display: block;
     height: 100%;
     left: 0;
-    opacity: 0.55;
+    opacity: 0.80;
     position: absolute;
     width: 100%;
     z-index: 2;
@@ -160,25 +127,14 @@
 }
 
 .tiles .article-card:hover:before {
-    opacity: 0.35;
+    opacity: 0.45;
 }
 
 .tiles .article-card.is-transitioning {
-    -moz-transform: scale(0.95);
-    -webkit-transform: scale(0.95);
-    -ms-transform: scale(0.95);
     transform: scale(0.95);
-    -moz-filter: blur(0.5em);
-    -webkit-filter: blur(0.5em);
-    -ms-filter: blur(0.5em);
     filter: blur(0.5em);
     opacity: 0;
 }
-
-/* change this and .tiles .article-card { width: } to stagger projects */
-/* .tiles .article-card:nth-child(4n - 1), .tiles .article-card:nth-child(4n - 2) {
-    width: 55%;
-} */
 
 .tiles .article-card:before {
     background-color: var(--bg-color);

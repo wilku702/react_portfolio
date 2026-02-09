@@ -1,4 +1,5 @@
-import React, { createContext, useContext, useState, useCallback } from 'react';
+import { createContext, useContext, useState, useCallback } from 'react';
+import PropTypes from 'prop-types';
 import ConfirmModal from '../components/ConfirmModal/ConfirmModal';
 
 const NavigationContext = createContext();
@@ -38,4 +39,8 @@ export const NavigationProvider = ({ children }) => {
       />
     </NavigationContext.Provider>
   );
+};
+
+NavigationProvider.propTypes = {
+  children: PropTypes.node.isRequired,
 };

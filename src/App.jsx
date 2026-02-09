@@ -1,4 +1,6 @@
-import React, { useState, useEffect, useRef, useCallback, lazy, Suspense } from 'react';
+import { useState, useEffect, useRef, useCallback, lazy, Suspense } from 'react';
+import { MotionConfig } from 'framer-motion';
+import { HelmetProvider } from 'react-helmet-async';
 import './assets/styles/global.css';
 
 // Import Routing
@@ -65,6 +67,8 @@ function App() {
   }, []);
 
   return (
+    <HelmetProvider>
+    <MotionConfig reducedMotion="user">
     <div className="App">
       <div
         className="pointer-gradient"
@@ -77,7 +81,13 @@ function App() {
           <a href="#main-content" className="skip-link">Skip to main content</a>
           <ScrollToTop />
           <Navbar />
-          <Suspense fallback={<div />}>
+          <Suspense fallback={
+            <div className="loading-page" role="status" aria-live="polite">
+              <div className="loading-pulse" />
+              <div className="loading-pulse short" />
+              <span className="sr-only">Loading page...</span>
+            </div>
+          }>
             <ErrorBoundary>
               <main id="main-content">
                 <Routes>
@@ -98,6 +108,8 @@ function App() {
         </NavigationProvider>
       </Router>
     </div>
+    </MotionConfig>
+    </HelmetProvider>
   );
 }
 

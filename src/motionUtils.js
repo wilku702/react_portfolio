@@ -12,17 +12,14 @@ export const bannerFadeInVariants = {
   initial: {
     opacity: 0,
     transition: { duration: 0.8, ease: defaultEasing },
-    willChange: 'opacity, transform'
   },
   animate: {
     opacity: 1,
     transition: { duration: 0.8, ease: defaultEasing },
-    willChange: 'opacity, transform'
   },
   exit: {
     opacity: 0,
     transition: { delay: 0.4, duration: 0.8, ease: defaultEasing },
-    willChange: 'opacity, transform'
   }
 };
 
@@ -31,19 +28,16 @@ export const bannerFadeInUpVariants = {
     y: 30,
     opacity: 0,
     transition: { duration: 0.8, ease: defaultEasing },
-    willChange: 'opacity, transform'
   },
   animate: {
     y: 0,
     opacity: 1,
     transition: { delayChildren: 0.4, duration: 0.8, ease: defaultEasing },
-    willChange: 'opacity, transform'
   },
   exit: {
     y: 30,
     opacity: 0,
     transition: { duration: 0.8, ease: defaultEasing },
-    willChange: 'opacity, transform'
   }
 };
 
@@ -51,17 +45,14 @@ export const defaultPageFadeInVariants = {
   initial: {
     opacity: 0,
     transition: { duration: 0.6, ease: defaultEasing },
-    willChange: 'opacity, transform'
   },
   animate: {
     opacity: 1,
     transition: { duration: 0.6, ease: defaultEasing },
-    willChange: 'opacity, transform'
   },
   exit: {
     opacity: 0,
     transition: { duration: 0.6, ease: defaultEasing },
-    willChange: 'opacity, transform'
   }
 };
 
