@@ -3,11 +3,11 @@ export const nagoyaData = {
   service: 'Research Assistance Tool',
   timeline: 'Sep 2022 - May 2023',
   role: 'Data Science for Sustainable Development',
-  description: `At KDANMobile, I developed a chatbot for a client, aimed at streamlining data inquiries such as daily revenue and stock levels. This role involved front-end and back-end development, ensuring the chatbot was both functional and user-friendly.`,
+  description: `At Nagoya University's USARD program, I contributed to the QuaRCS Bolivia project, building robust analysis tools for Bolivian socio-economic datasets to enhance research capabilities and support data-driven development initiatives.`,
   images: [
     {
       src: './companies/nagoya/nagoya.png',
-      alt: 'company branch'
+      alt: 'QuaRCS Bolivia project overview'
     }
   ],
   sections: [
@@ -16,20 +16,15 @@ export const nagoyaData = {
       title: 'Mission',
       contentType: 'paragraph',
       content:
-        "Designed and implemented the chatbot's front-end using React JavaScript. The interface allows users to interact with data through visualizations such as graphs and tables, enabling analysis and decision-making",
-      images: [
-        // {
-        //   src: './companies/nagoya/figma.svg',
-        //   alt: 'preview of figma design'
-        // }
-      ]
+        'The QuaRCS Bolivia project aimed to provide researchers and policymakers with accessible tools for analyzing socio-economic data across Bolivian regions, enabling evidence-based decision-making for sustainable development.',
+      images: []
     },
     {
       headerType: 'h3',
       title: 'FIGMA DESIGN',
       contentType: 'paragraph',
       content:
-        "Designed and implemented the chatbot's front-end using React JavaScript. The interface allows users to interact with data through visualizations such as graphs and tables, enabling analysis and decision-making",
+        'Designed the research tool interface with a focus on clarity and usability, ensuring that complex datasets could be explored intuitively through interactive visualizations and filtering controls.',
       images: [
         {
           src: './companies/nagoya/figma.svg',
@@ -39,91 +34,22 @@ export const nagoyaData = {
     },
     {
       headerType: 'h3',
-      title: 'FRONTEND',
-      contentType: 'demonstration',
-      position: 'left',
-      content: `Ask any question regarding data relevant to the client company.`,
-      images: [
-        {
-          src: './companies/kdan/opening-chatbot.gif',
-          alt: 'preview of opening chatbot'
-        }
-      ]
-    },
-    {
-      headerType: 'h3',
-      title: 'LOOK AT THE TABLE OF DATA',
-      contentType: 'demonstration',
-      position: 'right',
-      content: `Review the data relevant to your inquiry.`,
-      images: [
-        {
-          src: './companies/kdan/opening-chatbot.gif',
-          alt: 'preview of opening chatbot'
-        }
-      ]
-    },
-    {
-      headerType: 'h3',
-      title: 'GRAPH THE DATA',
-      contentType: 'demonstration',
-      position: 'left',
-      content: `Choose the graph type and variable axis.`,
-      images: [
-        {
-          src: './companies/kdan/opening-chatbot.gif',
-          alt: 'preview of opening chatbot'
-        }
-      ]
-    },
-    {
-      headerType: 'h3',
-      title: 'BACKEND',
+      title: 'DEVELOPMENT',
       contentType: 'paragraph',
-      content: `
-            I began by conducting an initial audit around current use cases for stars across all products and experiences. 
-            This allowed me to understand current use cases and consider potential use cases in the future. Additionally, 
-            I had to consider both mobile and web experiences, and an audit helped me see the context and placement of 
-            this particular component. This internal audit examined over 20 unique use cases across 6 distinct products.
-          `,
-      images: [
-        {
-          src: 'images/uberprivaudit.png',
-          alt: 'existing screens using stars'
-        }
-      ]
+      content:
+        'Built the web application using Hugo and Go for static site generation, with Node.js tooling to process and transform raw datasets into interactive, web-friendly formats for researchers.',
+      images: []
     },
     {
       headerType: 'h3',
-      title: 'DATASET',
+      title: 'DATASET ANALYSIS',
       contentType: 'paragraph',
-      content: `
-            I began by conducting an initial audit around current use cases for stars across all products and experiences. 
-            This allowed me to understand current use cases and consider potential use cases in the future. Additionally, 
-            I had to consider both mobile and web experiences, and an audit helped me see the context and placement of 
-            this particular component. This internal audit examined over 20 unique use cases across 6 distinct products.
-          `,
-      images: [
-        {
-          src: 'images/uberprivaudit.png',
-          alt: 'existing screens using stars'
-        }
-      ]
-    },
-    {
-      headerType: 'h3',
-      title: 'DEEPNOTES',
-      contentType: 'paragraph',
-      content: `
-            This audit revealed inconsistencies with aspects like size, color, shape, fill, and spacing. With color, 
-            there were also accessibility concerns as yellow stars do not pass web accessibility guidelines (WCAG). 
-            As an accessibility-focused designer, I realized the color contrast was a concern as the stars with shaded 
-            inactive states meant our ratings relied on color alone to distinguish the states, which is extremely inaccessible.
-          `,
+      content:
+        'Processed and structured Bolivian socio-economic datasets to enable spatial and temporal analysis, providing researchers with tools to identify development trends and regional disparities.',
       images: [
         {
           src: 'companies/nagoya/cover.png',
-          alt: 'existing screens using stars'
+          alt: 'QuaRCS Bolivia data visualization'
         }
       ]
     }

@@ -1,5 +1,6 @@
 export const internshipItems = [
   {
+    id: 'kdan',
     title: 'KDANMOBILE',
     link: '/kdan',
     backgroundImage: '/companies/kdan.png',
@@ -10,6 +11,7 @@ export const internshipItems = [
     type: 'internship'
   },
   {
+    id: 'adonit',
     title: 'Adonit',
     link: '/adonit',
     backgroundImage: '/companies/adonit.png',
@@ -20,6 +22,7 @@ export const internshipItems = [
     type: 'internship'
   },
   {
+    id: 'donedesk',
     title: 'Done Desk',
     link: '',
     backgroundImage: '/companies/donedesk.jpg',
@@ -30,6 +33,7 @@ export const internshipItems = [
     type: 'internship'
   },
   {
+    id: 'resia',
     title: 'Resia',
     link: '',
     backgroundImage: '/companies/resia.jpg',
@@ -43,6 +47,7 @@ export const internshipItems = [
 
 export const projectItems = [
   {
+    id: 'nagoya',
     title: 'Nagoya USARD',
     link: 'https://github.com/quarcs-lab/quarcs-bolivia',
     backgroundImage: '/companies/nagoya.png',
@@ -53,6 +58,7 @@ export const projectItems = [
     type: 'project'
   },
   {
+    id: 'triniti',
     title: 'Triniti',
     link: 'https://github.com/wilku702/Triniti',
     backgroundImage: '/companies/triniti.png',

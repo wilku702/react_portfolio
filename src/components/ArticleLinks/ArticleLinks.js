@@ -24,9 +24,8 @@ const ArticleLinks = ({ items }) => {
       return;
     }
 
-    // Internal route: animate then navigate
+    // Internal route: animate then navigate via onAnimationComplete
     setActiveIndex(index);
-    setTimeout(() => { navigate(link); }, 500);
   };
 
   return (
@@ -35,18 +34,23 @@ const ArticleLinks = ({ items }) => {
         const isNonClickable = typeof article.link === 'string' && article.link.length === 0;
 
         return (
-          <motion.article
-            key={index}
+          <motion.div
+            key={article.id || index}
             initial="normal"
             animate={index === activeIndex ? 'clicked' : 'normal'}
             variants={articleVariants}
-            className={isNonClickable ? 'non-clickable' : ''}
-            role={!isNonClickable ? 'link' : undefined}
+            className={`article-card${isNonClickable ? ' non-clickable' : ''}`}
+            role={!isNonClickable ? 'button' : undefined}
             tabIndex={!isNonClickable ? 0 : undefined}
             aria-label={!isNonClickable ? `View ${article.title} details` : undefined}
             style={{ backgroundImage: `url(${article.backgroundImage})` }}
             onClick={() => handleClick(index, article.link)}
-            onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); handleClick(index, article.link); } }}>
+            onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); handleClick(index, article.link); } }}
+            onAnimationComplete={(definition) => {
+              if (definition === 'clicked' && index === activeIndex) {
+                navigate(articles[activeIndex]?.link);
+              }
+            }}>
             <motion.header
               className="major"
               initial={{ opacity: 0, y: 16 }}
@@ -62,7 +66,7 @@ const ArticleLinks = ({ items }) => {
               </div>
               <p className="card-description">{article.description}</p>
             </motion.header>
-          </motion.article>
+          </motion.div>
         );
       })}
     </section>

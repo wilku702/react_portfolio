@@ -17,7 +17,7 @@ const AboutPage = () => {
       <div className="about-top-content">
         <div className="about-top-row">
           <div className="about-portrait">
-            <img id="colchuck" src="/portrait.jpg" alt="Thats Me" loading="lazy" />
+            <img id="colchuck" src="/portrait.jpg" alt="Portrait of Will Kung" loading="lazy" />
           </div>
           <div className="about-top-text">
             <h5>Good day! It's a pleasure to meet you.</h5>
@@ -64,7 +64,7 @@ const AboutPage = () => {
         </div>
       </div>
 
-      <div>
+      <div aria-hidden="true">
         <div className="snowflake">❅</div>
         <div className="snowflake">❄</div>
         <div className="snowflake">❅</div>

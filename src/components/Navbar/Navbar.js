@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom';
 
 import { motion } from 'framer-motion';
 import { staggerOne, bannerFadeInVariants } from '../../motionUtils';
+import { navigationLinks } from '../../data/siteConfig';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -26,27 +27,15 @@ const Navbar = () => {
         </NavLink>
       </motion.div>
       <ul className="navigation-menu">
-        <li>
-          <motion.div variants={bannerFadeInVariants}>
-            <NavLink to="/experience" className="bar-link">
-              experience
-            </NavLink>
-          </motion.div>
-        </li>
-        <li>
-          <motion.div variants={bannerFadeInVariants}>
-            <NavLink to="/projects" className="bar-link">
-              projects
-            </NavLink>
-          </motion.div>
-        </li>
-        <li>
-          <motion.div variants={bannerFadeInVariants}>
-            <NavLink to="/about" className="bar-link">
-              about
-            </NavLink>
-          </motion.div>
-        </li>
+        {navigationLinks.map((link) => (
+          <li key={link.path}>
+            <motion.div variants={bannerFadeInVariants}>
+              <NavLink to={link.path} className="bar-link">
+                {link.label}
+              </NavLink>
+            </motion.div>
+          </li>
+        ))}
       </ul>
       <motion.div
         variants={bannerFadeInVariants}
@@ -77,33 +66,17 @@ const Navbar = () => {
               home
             </NavLink>
           </li>
-          <li role="none">
-            <NavLink
-              to="/experience"
-              className="menu-link"
-              role="menuitem"
-              onClick={() => handleClick(false)}>
-              experience
-            </NavLink>
-          </li>
-          <li role="none">
-            <NavLink
-              to="/projects"
-              className="menu-link"
-              role="menuitem"
-              onClick={() => handleClick(false)}>
-              projects
-            </NavLink>
-          </li>
-          <li role="none">
-            <NavLink
-              to="/about"
-              className="menu-link"
-              role="menuitem"
-              onClick={() => handleClick(false)}>
-              about
-            </NavLink>
-          </li>
+          {navigationLinks.map((link) => (
+            <li key={link.path} role="none">
+              <NavLink
+                to={link.path}
+                className="menu-link"
+                role="menuitem"
+                onClick={() => handleClick(false)}>
+                {link.label}
+              </NavLink>
+            </li>
+          ))}
         </ul>
       </motion.div>
     </motion.nav>

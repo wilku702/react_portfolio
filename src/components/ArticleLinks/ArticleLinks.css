@@ -42,7 +42,7 @@
     line-height: 36px !important;
 }
 
-.tiles article {
+.tiles .article-card {
     align-items: center;
     display: flex;
     transition: transform 0.25s ease, opacity 0.25s ease;
@@ -61,14 +61,14 @@
 }
 
 
-.tiles article header h1 {
+.tiles .article-card header h1 {
     font-weight: 700;
     line-height: 1.2;
     font-size: 2.5rem;
     margin-bottom: .5rem;
 }
 
-.tiles article header p {
+.tiles .article-card header p {
     margin-bottom: 1rem;
 }
 
@@ -80,7 +80,7 @@
     border-top: 0 !important;
 }
 
-.tiles article {
+.tiles .article-card {
     -moz-align-items: center;
     -webkit-align-items: center;
     -ms-align-items: center;
@@ -106,28 +106,28 @@
     border-radius: 8px;
 }
 
-.tiles article .image {
+.tiles .article-card .image {
     display: none;
 }
 
-.tiles article header {
+.tiles .article-card header {
     position: relative;
     z-index: 3;
 }
 
-.tiles article h3 {
+.tiles .article-card h3 {
     font-size: 1.75em;
 }
 
-.tiles article h3 a:hover {
+.tiles .article-card h3 a:hover {
     color: inherit !important;
 }
 
-.tiles article:hover {
+.tiles .article-card:hover {
     cursor: pointer;
 }
 
-.tiles article .link.primary {
+.tiles .article-card .link.primary {
     border: 0;
     height: 100%;
     left: 0;
@@ -153,7 +153,7 @@
     filter: none;
 }
 
-.tiles article:before {
+.tiles .article-card:before {
     -moz-transition: opacity 0.5s ease;
     -webkit-transition: opacity 0.5s ease;
     -ms-transition: opacity 0.5s ease;
@@ -169,7 +169,7 @@
     z-index: 2;
 }
 
-.tiles article:after {
+.tiles .article-card:after {
     background-color: var(--bg1);
     content: '';
     display: block;
@@ -181,11 +181,11 @@
     z-index: 1;
 }
 
-.tiles article:hover:before {
+.tiles .article-card:hover:before {
     opacity: 0.50;
 }
 
-.tiles article.is-transitioning {
+.tiles .article-card.is-transitioning {
     -moz-transform: scale(0.95);
     -webkit-transform: scale(0.95);
     -ms-transform: scale(0.95);
@@ -197,17 +197,17 @@
     opacity: 0;
 }
 
-/* change this and .tiles article { width: } to stagger projects */
-/* .tiles article:nth-child(4n - 1), .tiles article:nth-child(4n - 2) {
+/* change this and .tiles .article-card { width: } to stagger projects */
+/* .tiles .article-card:nth-child(4n - 1), .tiles .article-card:nth-child(4n - 2) {
     width: 55%;
 } */
 
-.tiles article:before {
+.tiles .article-card:before {
     background-color: var(--bg-color);
 }
 
 @media screen and (max-width: 1280px) {
-    .tiles article {
+    .tiles .article-card {
         padding: 4em 3em 2em 3em ;
         height: 30vh;
         max-height: 30em;
@@ -216,25 +216,25 @@
 }
 
 @media screen and (max-width: 980px) {
-    .tiles article {
+    .tiles .article-card {
         width: calc(50% - 2px) !important;
     }
 }
 
 @media screen and (max-width: 736px) {
-    .tiles article {
+    .tiles .article-card {
         padding: 3em 1.5em 1em 1.5em ;
         height: 16em;
         max-height: none;
         min-height: 0;
     }
-        .tiles article h3 {
+        .tiles .article-card h3 {
             font-size: 1.5em;
         }
 }
 
 @media screen and (max-width: 480px) {
-    .tiles article {
+    .tiles .article-card {
         height: 20em;
         width: 100% !important;
     }
@@ -275,7 +275,7 @@
     color: rgba(255, 255, 255, 0.8);
 }
 
-.tiles article:hover .card-description {
+.tiles .article-card:hover .card-description {
     opacity: 1;
     max-height: 200px;
 }

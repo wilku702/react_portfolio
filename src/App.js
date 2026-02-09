@@ -24,10 +24,7 @@ const AboutPage = lazy(() => import('./pages/AboutPage'));
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
 
 // Lazy-loaded Articles
-const KdanPage = lazy(() => import('./pages/articles/KdanPage'));
-const TrinitiPage = lazy(() => import('./pages/articles/TrinitiPage'));
-const NagoyaPage = lazy(() => import('./pages/articles/NagoyaPage'));
-const AdonitPage = lazy(() => import('./pages/articles/AdonitPage'));
+const DynamicArticlePage = lazy(() => import('./pages/articles/DynamicArticlePage'));
 
 const LoadingPage = () => (
   <div className="page loading-page">
@@ -88,10 +85,7 @@ function App() {
                 <Route path="/work" element={<Navigate to="/experience" replace />} />
                 <Route path="/about" element={<AboutPage />} />
 
-                <Route path="/kdan" element={<KdanPage />} />
-                <Route path="/triniti" element={<TrinitiPage />} />
-                <Route path="/nagoya" element={<NagoyaPage />} />
-                <Route path="/adonit" element={<AdonitPage />} />
+                <Route path="/:id" element={<DynamicArticlePage />} />
 
                 <Route path="*" element={<NotFoundPage />} />
               </Routes>

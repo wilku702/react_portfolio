@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://willkung.com/sitemap.xml

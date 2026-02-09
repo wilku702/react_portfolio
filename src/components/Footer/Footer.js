@@ -7,24 +7,10 @@ import {
   staggerOne,
   bannerFadeInUpVariants
 } from '../../motionUtils';
+import { socialLinks, workLinks, contactEmail } from '../../data/siteConfig';
 
 const Footer = () => {
   const { confirmNavigation } = useNavigationConfirm();
-
-  const footerLinks = [
-    {
-      id: 'ig',
-      url: 'https://instagram.com/willkung72',
-      platform: 'instagram',
-      delay: '0.6s'
-    },
-    {
-      id: 'li',
-      url: 'https://www.linkedin.com/in/willkung702/',
-      platform: 'linkedin',
-      delay: '0.8s'
-    }
-  ];
 
   return (
     <motion.div
@@ -43,10 +29,10 @@ const Footer = () => {
           </h4>
           <h4>
             <a
-              href="mailto:wkung2004@gmail.com"
+              href={`mailto:${contactEmail}`}
               target="_blank"
               rel="noopener noreferrer">
-              wkung2004@gmail.com
+              {contactEmail}
             </a>
           </h4>
         </motion.div>
@@ -58,13 +44,13 @@ const Footer = () => {
             <br /> let's connect
           </h4>
           <ul>
-            {footerLinks.map((link) => (
+            {socialLinks.map((link) => (
               <li key={link.id} id={link.id}>
                 <button
                   className="footer-ext-link"
                   onClick={() => confirmNavigation(link.url)}
                 >
-                  {link.platform}
+                  {link.label}
                 </button>
               </li>
             ))}
@@ -78,22 +64,16 @@ const Footer = () => {
             <br /> my work
           </h4>
           <ul>
-            <li id="gh">
-              <button
-                className="footer-ext-link"
-                onClick={() => confirmNavigation('https://github.com/wilku702')}
-              >
-                github
-              </button>
-            </li>
-            <li id="rs">
-              <button
-                className="footer-ext-link"
-                onClick={() => confirmNavigation('https://drive.google.com/file/d/16GZNTunAN-zW5FVHhaSBrJUaG9L8IIh5/view?usp=sharing')}
-              >
-                resume
-              </button>
-            </li>
+            {workLinks.map((link) => (
+              <li key={link.id} id={link.id}>
+                <button
+                  className="footer-ext-link"
+                  onClick={() => confirmNavigation(link.url)}
+                >
+                  {link.label}
+                </button>
+              </li>
+            ))}
           </ul>
         </motion.div>
       </div>
