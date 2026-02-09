@@ -34,7 +34,8 @@
       "Bash(npm ls:*)",
       "Bash(timeout 5 npm run dev:*)",
       "Bash(find:*)",
-      "Bash(echo:*)"
+      "Bash(echo:*)",
+      "Bash(npx vite build:*)"
     ]
   }
 }

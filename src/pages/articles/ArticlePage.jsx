@@ -1,9 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import './styles/ArticleGlobal.css';
 
 const ALLOWED_TAGS = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
+
+const scrollFadeIn = {
+  initial: { opacity: 0, y: 20 },
+  whileInView: { opacity: 1, y: 0 },
+  transition: { duration: 0.6, ease: [0.6, -0.05, 0.01, 0.99] },
+  viewport: { once: true, amount: 0.2 },
+};
 
 const ArticlePage = ({ data }) => {
   const navigate = useNavigate();
@@ -86,11 +94,11 @@ const ArticlePage = ({ data }) => {
     <div className="page">
       <div className="whitespace"></div>
       <div className="article-container">
-        <div className="row">
+        <motion.div className="row" {...scrollFadeIn}>
           <div className="col-lg-12">
             <button onClick={() => navigate(-1)} className="back-link">← Back</button>
             <h1 className="article-title">{data.title}</h1>
-            <div className="row">
+            <div className="row article-meta">
               <div className="col-lg-4">
                 <p>service :</p>
                 <h6>{data.service}</h6>
@@ -106,9 +114,9 @@ const ArticlePage = ({ data }) => {
             </div>
             <p>{data.description}</p>
           </div>
-        </div>
+        </motion.div>
       </div>
-      <div className="project-img">
+      <motion.div className="project-img" {...scrollFadeIn}>
         <div className="article-container">
           <div className="row">
             <div className="col-lg-12">
@@ -124,13 +132,13 @@ const ArticlePage = ({ data }) => {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
       <div className="article-container">
         <div>
           {data.sections.map((section, index) => (
-            <div key={index} className="row space">
+            <motion.div key={index} className="row space" {...scrollFadeIn}>
               {renderContent(section)}
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

@@ -65,6 +65,11 @@
     margin-bottom: 5vh;
 }
 
+.article-meta {
+    margin-top: 1rem;
+    margin-bottom: 4rem;
+}
+
 /* column style */
 .col-lg-12, .col-lg-4, .col-lg-3, .col-lg-5{
     --text: #fff;
