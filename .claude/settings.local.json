@@ -35,7 +35,9 @@
       "Bash(timeout 5 npm run dev:*)",
       "Bash(find:*)",
       "Bash(echo:*)",
-      "Bash(npx vite build:*)"
+      "Bash(npx vite build:*)",
+      "Bash(npm run dev:*)",
+      "mcp__chrome-devtools__press_key"
     ]
   }
 }

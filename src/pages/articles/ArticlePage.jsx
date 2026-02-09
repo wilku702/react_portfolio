@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { motion } from 'framer-motion';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import './styles/ArticleGlobal.css';
 
 const ALLOWED_TAGS = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
@@ -67,19 +67,19 @@ const ArticlePage = ({ data }) => {
       const isLeftPosition = section.position === 'left';
       return (
         <>
-          <div className="col-lg-3" />
+          <div className="col-lg-3 demo-spacer" />
           {isLeftPosition ? (
             <>
-              <div className="col-lg-5 sltn-prv">
+              <div className="col-lg-5 sltn-prv demo-text">
                 <h5>{section.title}</h5>
                 <h4>{content}</h4>
               </div>
-              <div className="col-lg-4">{renderImages()}</div>
+              <div className="col-lg-4 demo-image">{renderImages()}</div>
             </>
           ) : (
             <>
-              <div className="col-lg-4">{renderImages()}</div>
-              <div className="col-lg-5 sltn-prv">
+              <div className="col-lg-4 demo-image">{renderImages()}</div>
+              <div className="col-lg-5 sltn-prv demo-text">
                 <h5>{section.title}</h5>
                 <h4>{content}</h4>
               </div>
@@ -96,19 +96,30 @@ const ArticlePage = ({ data }) => {
       <div className="article-container">
         <motion.div className="row" {...scrollFadeIn}>
           <div className="col-lg-12">
-            <button onClick={() => navigate(-1)} className="back-link">← Back</button>
+            <button
+              onClick={() => {
+                if (window.history.length > 1) {
+                  navigate(-1);
+                } else {
+                  navigate('/experience');
+                }
+              }}
+              className="back-link"
+            >
+              ← Back
+            </button>
             <h1 className="article-title">{data.title}</h1>
             <div className="row article-meta">
               <div className="col-lg-4">
-                <p>service :</p>
+                <p className="meta-label">service :</p>
                 <h6>{data.service}</h6>
               </div>
               <div className="col-lg-4">
-                <p>timeline :</p>
+                <p className="meta-label">timeline :</p>
                 <h6>{data.timeline}</h6>
               </div>
               <div className="col-lg-4">
-                <p>role :</p>
+                <p className="meta-label">role :</p>
                 <h6>{data.role}</h6>
               </div>
             </div>
@@ -141,6 +152,10 @@ const ArticlePage = ({ data }) => {
             </motion.div>
           ))}
         </div>
+        <motion.div className="article-cta" {...scrollFadeIn}>
+          <p>Interested in seeing more?</p>
+          <Link to="/experience" className="cta-button">View more work</Link>
+        </motion.div>
       </div>
     </div>
   );

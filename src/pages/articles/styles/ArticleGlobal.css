@@ -63,6 +63,13 @@
 
 .space {
     margin-bottom: 5vh;
+    padding-top: 3vh;
+    border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.space:first-child {
+    border-top: none;
+    padding-top: 0;
 }
 
 .article-meta {
@@ -135,7 +142,7 @@
 .article-container img,
 .project-img img {
     display: block;
-    max-width: 80%;
+    max-width: 100%;
     height: auto;
     /* Constrain portrait/tall images so they don't dominate */
     max-height: 600px;
@@ -222,19 +229,22 @@
 
 .back-link {
   display: inline-block;
-  background: none;
-  border: none;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 6px;
   cursor: pointer;
   color: var(--main-color);
   text-decoration: none;
   font-family: 'RobotoMono', sans-serif;
   font-size: 1rem;
-  padding: 0.5rem 0;
-  transition: opacity 0.3s;
+  padding: 0.5rem 1rem;
+  margin-bottom: 1.5rem;
+  transition: background 0.3s, opacity 0.3s;
 }
 
 .back-link:hover {
-  opacity: 0.7;
+  background: rgba(255,255,255,0.1);
+  opacity: 0.85;
 }
 
 .article-cta {
@@ -265,4 +275,39 @@
 .cta-button:hover {
   background-color: var(--main-color);
   color: var(--background-color);
+}
+
+/* Meta label styles (#7) */
+.meta-label {
+  font-size: 0.85rem !important;
+  color: rgba(255,255,255,0.5) !important;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.25rem !important;
+}
+
+/* Demonstration layout mobile fix (#3, #14) */
+@media (max-width: 991px) {
+  .demo-spacer {
+    display: none;
+  }
+
+  .demo-text,
+  .demo-image {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .demo-text {
+    order: 1;
+  }
+
+  .demo-image {
+    order: 2;
+  }
+
+  .demo-image img {
+    max-width: 100%;
+    max-height: none;
+  }
 }

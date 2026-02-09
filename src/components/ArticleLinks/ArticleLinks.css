@@ -8,7 +8,7 @@
     color: var(--text);
     display: flex;
     flex-wrap: wrap;
-    gap: 4px;
+    gap: 10px;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -28,7 +28,7 @@
     min-height: 23em;
     overflow: hidden;
     position: relative;
-    width: calc(50% - 2px);
+    width: calc(50% - 5px);
     box-sizing: border-box;
     margin: 0;
 }
@@ -75,7 +75,7 @@
     min-height: 23em;
     overflow: hidden;
     position: relative;
-    width: calc(50% - 2px);
+    width: calc(50% - 5px);
     border-radius: 8px;
 }
 
@@ -136,14 +136,19 @@
     display: block;
     height: 100%;
     left: 0;
-    opacity: 0.70;
+    opacity: 0.55;
     position: absolute;
     width: 100%;
     z-index: 2;
 }
 
 .tiles .article-card:after {
-    background-color: var(--bg1);
+    background: linear-gradient(
+      to bottom,
+      rgba(26, 27, 31, 0.6) 0%,
+      var(--bg1) 50%,
+      transparent 100%
+    );
     content: '';
     display: block;
     height: 100%;
@@ -155,7 +160,7 @@
 }
 
 .tiles .article-card:hover:before {
-    opacity: 0.50;
+    opacity: 0.35;
 }
 
 .tiles .article-card.is-transitioning {
@@ -190,7 +195,7 @@
 
 @media screen and (max-width: 980px) {
     .tiles .article-card {
-        width: calc(50% - 2px) !important;
+        width: calc(50% - 5px) !important;
     }
 }
 
@@ -206,15 +211,17 @@
         }
 }
 
+@media screen and (max-width: 768px) {
+    .card-description {
+        opacity: 1;
+        max-height: none;
+    }
+}
+
 @media screen and (max-width: 480px) {
     .tiles .article-card {
         height: 20em;
         width: 100% !important;
-    }
-
-    .card-description {
-        opacity: 1;
-        max-height: none;
     }
 }
 
@@ -251,4 +258,20 @@
 .tiles .article-card:hover .card-description {
     opacity: 1;
     max-height: 200px;
+}
+
+/* Coming soon badge for non-clickable cards (#5) */
+.coming-soon-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 3;
+    padding: 4px 12px;
+    font-size: 0.75rem;
+    font-family: 'Roboto Mono', monospace;
+    color: rgba(255,255,255,0.7);
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 20px;
+    letter-spacing: 0.05em;
 }

@@ -67,6 +67,7 @@ const ArticleLinks = ({ items }) => {
               </div>
               <p className="card-description">{article.description}</p>
             </motion.header>
+            {isNonClickable && <span className="coming-soon-badge">Coming soon</span>}
           </motion.div>
         );
       })}
