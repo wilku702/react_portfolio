@@ -80,6 +80,14 @@
     transform: scale(1.25);
 }
 
+.bar-link.active {
+    color: var(--main-color) !important;
+}
+
+.menu-link.active {
+    font-weight: 700;
+}
+
 /* Menu Toggle */
 .menu-status-off,
 .menu-status-on {

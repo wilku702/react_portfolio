@@ -10,6 +10,14 @@ html, body, #root {
     width: 100%;
     margin: 0;
     padding: 0;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+#root::-webkit-scrollbar {
+    display: none;
 }
   
 body {
@@ -24,11 +32,17 @@ body {
     flex-direction: column;
     justify-content: space-between;
     width: 100%;
-    min-height: 100vh; 
+    min-height: 100vh;
     overflow-y: auto;
     background-color: var(--background-color);
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 
     /* cursor: url('../images/cursor/pointer48.png'), auto; */
+}
+
+.App::-webkit-scrollbar {
+    display: none;
 }
 
 .pointer-gradient {

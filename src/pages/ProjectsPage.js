@@ -14,7 +14,6 @@ const ProjectsPage = () => {
       animate="animate"
       exit="exit"
     >
-      <h1 className="work-page-title">Projects</h1>
       <ArticleLinks items={projectItems} />
     </motion.div>
   );
