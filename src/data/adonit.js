@@ -3,6 +3,7 @@ export const adonitData = {
   service: 'Adonit One & Forecast Analyzer',
   timeline: 'May 2023 – Jul 2023 (3 months)',
   role: 'Software Engineer Intern',
+  techStack: ['React Native', 'Python', 'Streamlit', 'SQL', 'BigQuery', 'GitLab CI/CD'],
   description: `At Adonit, I contributed to both mobile and data projects. I built new features for the Adonit One app in React Native, including an audio module with AI-powered key point generation and accessibility support. In parallel, I developed a web application using Python, Streamlit, and SQL to extract data from BigQuery, applying Facebook’s Prophet model for predictive analytics and product revenue forecasting. I also authored YAML configuration files to streamline updates and enable feature integration via GitLab CI/CD pipelines.`,
   images: [
     {

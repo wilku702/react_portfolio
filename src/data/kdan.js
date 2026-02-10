@@ -3,6 +3,7 @@ export const kdanData = {
   service: 'Chatbot Development',
   timeline: 'Jun 2024 - Aug 2024 (3 months)',
   role: 'Software Engineer Intern',
+  techStack: ['React.js', 'Python', 'SQL', 'BigQuery', 'Docker', 'LangChain'],
   description: `At KDANMobile, I built a chatbot for a client to streamline data inquiries like revenue and stock checks, combining front-end and back-end development to deliver a responsive and user-friendly experience.`,
   images: [
     {

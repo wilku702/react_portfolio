@@ -1,5 +1,16 @@
 export const internshipItems = [
   {
+    id: 'elasa',
+    title: 'ELASA AI',
+    link: '/elasa',
+    backgroundImage: '/companies/elasa.jpg',
+    emojiLink: '🧠',
+    details: 'Node.js | Playwright | AWS SQS | MySQL',
+    description:
+      'Hardened SQS + Playwright carrier automation (ICW, Atlas, BTIS, Arrowhead) and improved quote explainability via webhook cleanup and error typing across API + DB.',
+    type: 'part-time'
+  },
+  {
     id: 'kdan',
     title: 'KDANMOBILE',
     link: '/kdan',

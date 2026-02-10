@@ -38,7 +38,14 @@
       "Bash(npx vite build:*)",
       "Bash(npm run dev:*)",
       "mcp__chrome-devtools__press_key",
-      "Bash(/Users/wilku/miniconda3/bin/fonttools:*)"
+      "Bash(/Users/wilku/miniconda3/bin/fonttools:*)",
+      "Bash(python3:*)",
+      "mcp__chrome-devtools__list_console_messages",
+      "WebSearch",
+      "WebFetch(domain:react-icons.github.io)",
+      "WebFetch(domain:simpleicons.org)",
+      "WebFetch(domain:app.unpkg.com)",
+      "Bash(node -e:*)"
     ]
   }
 }

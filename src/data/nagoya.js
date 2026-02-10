@@ -3,6 +3,7 @@ export const nagoyaData = {
   service: 'Research Assistance Tool',
   timeline: 'Sep 2022 - May 2023',
   role: 'Data Science for Sustainable Development',
+  techStack: ['Hugo', 'Go', 'Node.js', 'Figma'],
   description: `At Nagoya University's USARD program, I contributed to the QuaRCS Bolivia project, building robust analysis tools for Bolivian socio-economic datasets to enhance research capabilities and support data-driven development initiatives.`,
   images: [
     {

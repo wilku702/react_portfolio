@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import { useNavigate, Link } from 'react-router-dom';
+import techIcons from '../../data/techIcons';
 import './styles/ArticleGlobal.css';
 
 const ALLOWED_TAGS = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
@@ -129,6 +130,19 @@ const ArticlePage = ({ data }) => {
                 <h6>{data.role}</h6>
               </div>
             </div>
+            {data.techStack && data.techStack.length > 0 && (
+              <div className="tech-stack-row" aria-label="Technologies used">
+                {data.techStack.map((tech) => {
+                  const IconComponent = techIcons[tech];
+                  return (
+                    <span key={tech} className="tech-stack-item" title={tech}>
+                      {IconComponent && <IconComponent aria-hidden="true" />}
+                      <span className="tech-stack-label">{tech}</span>
+                    </span>
+                  );
+                })}
+              </div>
+            )}
             <p>{data.description}</p>
           </div>
         </motion.div>
@@ -179,6 +193,7 @@ ArticlePage.propTypes = {
     service: PropTypes.string.isRequired,
     timeline: PropTypes.string.isRequired,
     role: PropTypes.string.isRequired,
+    techStack: PropTypes.arrayOf(PropTypes.string),
     description: PropTypes.string.isRequired,
     images: PropTypes.arrayOf(imageShape).isRequired,
     sections: PropTypes.arrayOf(
@@ -186,7 +201,10 @@ ArticlePage.propTypes = {
         headerType: PropTypes.string,
         title: PropTypes.string.isRequired,
         contentType: PropTypes.oneOf(['paragraph', 'list', 'demonstration']).isRequired,
-        content: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.string)]).isRequired,
+        content: PropTypes.oneOfType([
+          PropTypes.string,
+          PropTypes.arrayOf(PropTypes.string),
+        ]).isRequired,
         images: PropTypes.arrayOf(imageShape),
         position: PropTypes.oneOf(['left', 'right'])
       })
