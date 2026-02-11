@@ -147,23 +147,25 @@ const ArticlePage = ({ data }) => {
           </div>
         </motion.div>
       </div>
-      <motion.div className="project-img" {...scrollFadeIn}>
-        <div className="article-container">
-          <div className="row">
-            <div className="col-lg-12">
-              {data.images.map((image, index) => (
-                <img
-                  key={index}
-                  src={image.src}
-                  alt={image.alt}
-                  className={image.className || ''}
-                  loading="lazy"
-                />
-              ))}
+      {data.images?.length > 0 && (
+        <motion.div className="project-img" {...scrollFadeIn}>
+          <div className="article-container">
+            <div className="row">
+              <div className="col-lg-12">
+                {data.images.map((image, index) => (
+                  <img
+                    key={index}
+                    src={image.src}
+                    alt={image.alt}
+                    className={image.className || ''}
+                    loading="lazy"
+                  />
+                ))}
+              </div>
             </div>
           </div>
-        </div>
-      </motion.div>
+        </motion.div>
+      )}
       <div className="article-container">
         <div>
           {data.sections.map((section, index) => (
@@ -195,7 +197,7 @@ ArticlePage.propTypes = {
     role: PropTypes.string.isRequired,
     techStack: PropTypes.arrayOf(PropTypes.string),
     description: PropTypes.string.isRequired,
-    images: PropTypes.arrayOf(imageShape).isRequired,
+    images: PropTypes.arrayOf(imageShape),
     sections: PropTypes.arrayOf(
       PropTypes.shape({
         headerType: PropTypes.string,

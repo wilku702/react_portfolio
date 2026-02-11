@@ -1,8 +1,8 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import './Header.css';
 
 const Header = () => {
-  const skipAnimation = sessionStorage.getItem('hero_animated') === 'true';
+  const [skipAnimation] = useState(() => sessionStorage.getItem('hero_animated') === 'true');
 
   useEffect(() => {
     if (!skipAnimation) {
