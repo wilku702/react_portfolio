@@ -3,7 +3,7 @@ export const internshipItems = [
     id: 'elasa',
     title: 'ELASA AI',
     link: '/elasa',
-    backgroundImage: '/companies/elasa.jpg',
+    backgroundImage: '/companies/elasa-logo.svg',
     emojiLink: '🧠',
     details: 'Node.js | Playwright | AWS SQS | MySQL',
     description:
@@ -57,6 +57,17 @@ export const internshipItems = [
 ];
 
 export const projectItems = [
+  {
+    id: 'senioruplift',
+    title: 'SeniorUplift',
+    link: '/senioruplift',
+    backgroundImage: '/projects/senioruplift/01-home.png',
+    emojiLink: '👴',
+    details: 'React.js | Python | Flask | MySQL | AWS | D3.js',
+    description:
+      'Full-stack web application aggregating welfare support information for the elderly in Texas — healthcare centers, nursing homes, and entertainment — all interconnected through geographic proximity.',
+    type: 'project'
+  },
   {
     id: 'nagoya',
     title: 'Nagoya USARD',

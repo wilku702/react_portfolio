@@ -6,7 +6,12 @@ export const elasaData = {
   techStack: ['Node.js', 'Express', 'Next.js', 'Playwright', 'AWS SQS', 'MySQL', 'Docker'],
   description:
     'Three-tier quoting platform: Next.js portal, Node/Express API + MySQL, and SQS-driven Playwright workers for carrier flows (ICW, Atlas, BTIS, Arrowhead). I improved bot reliability (especially ICW), expanded question coverage via the question bank pipeline, and tightened API correctness with typed errors and webhook fixes.',
-  images: [],
+  images: [
+    {
+      src: '/companies/elasa-logo.svg',
+      alt: 'ELASA.AI logo'
+    }
+  ],
   sections: [
     {
       headerType: 'h3',

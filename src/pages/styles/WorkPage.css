@@ -10,13 +10,13 @@
 
 @media (min-width: 1200px) {
     .work-page {
-        max-width: 1140px;
+        max-width: 1300px;
     }
 }
 
 @media (max-width: 1199px) {
     .work-page {
-        max-width: 960px;
+        max-width: 1080px;
     }
 }
 

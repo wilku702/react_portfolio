@@ -14,6 +14,10 @@ import {
   SiHugo,
   SiGo,
   SiFigma,
+  SiFlask,
+  SiAmazonwebservices,
+  SiD3Dotjs,
+  SiSelenium,
 } from 'react-icons/si';
 
 const techIcons = {
@@ -21,6 +25,7 @@ const techIcons = {
   'Express': SiExpress,
   'Next.js': SiNextdotjs,
   'AWS SQS': SiAmazonsqs,
+  'AWS': SiAmazonwebservices,
   'MySQL': SiMysql,
   'Docker': SiDocker,
   'React.js': SiReact,
@@ -34,6 +39,9 @@ const techIcons = {
   'Hugo': SiHugo,
   'Go': SiGo,
   'Figma': SiFigma,
+  'Flask': SiFlask,
+  'D3.js': SiD3Dotjs,
+  'Selenium': SiSelenium,
 };
 
 export default techIcons;
