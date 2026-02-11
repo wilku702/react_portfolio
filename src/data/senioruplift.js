@@ -3,6 +3,7 @@ export const seniorUpliftData = {
   service: 'Full-Stack Web Application',
   timeline: 'Aug 2024 - Dec 2024 (4 months)',
   role: 'Developer & Phase 4 Lead',
+  githubUrl: 'https://github.com/wilku702/SeniorUplift',
   techStack: ['React.js', 'Python', 'Flask', 'MySQL', 'AWS', 'D3.js', 'Docker', 'Selenium'],
   description: `SeniorUplift is a full-stack web application built for CS 373 (Software Engineering) at UT Austin. It aggregates welfare support information for the elderly population in Texas — healthcare centers, nursing homes, and entertainment — all interconnected through geographic proximity.`,
   images: [

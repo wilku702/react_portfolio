@@ -44,7 +44,7 @@ const ArticleLinks = ({ items }) => {
             role={!isNonClickable ? 'button' : undefined}
             tabIndex={!isNonClickable ? 0 : undefined}
             aria-label={!isNonClickable ? `View ${article.title} details` : undefined}
-            style={{ backgroundImage: `url(${article.backgroundImage})` }}
+            style={{ backgroundImage: `url(${article.backgroundImage})`, ...article.backgroundStyle }}
             onClick={() => handleClick(index, article.link)}
             onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); handleClick(index, article.link); } }}
             onAnimationComplete={(definition) => {
@@ -82,6 +82,7 @@ ArticleLinks.propTypes = {
       title: PropTypes.string.isRequired,
       link: PropTypes.string.isRequired,
       backgroundImage: PropTypes.string.isRequired,
+      backgroundStyle: PropTypes.object,
       details: PropTypes.string.isRequired,
       description: PropTypes.string.isRequired
     })

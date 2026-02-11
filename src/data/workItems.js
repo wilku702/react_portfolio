@@ -61,7 +61,8 @@ export const projectItems = [
     id: 'senioruplift',
     title: 'SeniorUplift',
     link: '/senioruplift',
-    backgroundImage: '/projects/senioruplift/01-home.png',
+    backgroundImage: '/projects/senioruplift/senioruplift_logo.svg',
+    backgroundStyle: { backgroundSize: 'contain', backgroundColor: '#0dcaf0', backgroundPosition: 'center' },
     emojiLink: '👴',
     details: 'React.js | Python | Flask | MySQL | AWS | D3.js',
     description:
