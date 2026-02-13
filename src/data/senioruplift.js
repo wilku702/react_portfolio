@@ -8,7 +8,7 @@ export const seniorUpliftData = {
   description: `SeniorUplift is a full-stack web application built for CS 373 (Software Engineering) at UT Austin. It aggregates welfare support information for the elderly population in Texas — healthcare centers, nursing homes, and entertainment — all interconnected through geographic proximity.`,
   images: [
     {
-      src: '/projects/senioruplift/01-home.png',
+      src: '/projects/senioruplift/01-home.jpg',
       alt: 'SeniorUplift landing page with hero section and feature cards'
     }
   ],
@@ -29,7 +29,7 @@ export const seniorUpliftData = {
       content: 'Browse nursing homes across Texas with sorting, filtering, search, and pagination.',
       images: [
         {
-          src: '/projects/senioruplift/02-nursing-homes.png',
+          src: '/projects/senioruplift/02-nursing-homes.jpg',
           alt: 'Nursing Homes list page with card grid and filter controls'
         }
       ]
@@ -42,7 +42,7 @@ export const seniorUpliftData = {
       content: 'View detailed information for each nursing home, including nearby healthcare centers and entertainment options.',
       images: [
         {
-          src: '/projects/senioruplift/03-nursing-home-detail.png',
+          src: '/projects/senioruplift/03-nursing-home-detail.jpg',
           alt: 'Nursing Home detail page for Sunrise Senior Living'
         }
       ]
@@ -55,7 +55,7 @@ export const seniorUpliftData = {
       content: 'Explore hospitals and medical facilities with data on beds, discharges, patient days, and revenue.',
       images: [
         {
-          src: '/projects/senioruplift/04-healthcare-centers.png',
+          src: '/projects/senioruplift/04-healthcare-centers.jpg',
           alt: 'Healthcare Centers list page with sortable card grid'
         }
       ]
@@ -68,7 +68,7 @@ export const seniorUpliftData = {
       content: 'Each healthcare center links to nearby nursing homes and entertainment, creating a connected resource network.',
       images: [
         {
-          src: '/projects/senioruplift/05-healthcare-detail.png',
+          src: '/projects/senioruplift/05-healthcare-detail.jpg',
           alt: 'Healthcare detail page for Austin Regional Medical Center'
         }
       ]
@@ -81,7 +81,7 @@ export const seniorUpliftData = {
       content: 'Discover senior-friendly events and activities across Texas, filterable by category and cost.',
       images: [
         {
-          src: '/projects/senioruplift/06-entertainment.png',
+          src: '/projects/senioruplift/06-entertainment.jpg',
           alt: 'Entertainment list page showing senior events'
         }
       ]
@@ -94,7 +94,7 @@ export const seniorUpliftData = {
       content: 'View event details including venue, time, cost, and nearby healthcare and nursing home resources.',
       images: [
         {
-          src: '/projects/senioruplift/07-entertainment-detail.png',
+          src: '/projects/senioruplift/07-entertainment-detail.jpg',
           alt: 'Entertainment detail page for Senior Jazz Night'
         }
       ]
@@ -107,7 +107,7 @@ export const seniorUpliftData = {
         'Built interactive D3.js visualizations including a bar chart of entertainment event frequency by category, a bubble map showing nursing home distribution across Texas using TopoJSON, and a bubble chart of hospital density by city.',
       images: [
         {
-          src: '/projects/senioruplift/08-visualizations.png',
+          src: '/projects/senioruplift/08-visualizations.jpg',
           alt: 'D3.js visualizations: bar chart, bubble map, and bubble chart'
         }
       ]
@@ -128,7 +128,7 @@ export const seniorUpliftData = {
         'Implemented full-text search across all three models with keyword highlighting and a tabbed interface to switch between Healthcare, Nursing Homes, and Entertainment results.',
       images: [
         {
-          src: '/projects/senioruplift/10-search-results.png',
+          src: '/projects/senioruplift/10-search-results.jpg',
           alt: 'Search results for "austin" with keyword highlighting'
         }
       ]
@@ -141,7 +141,7 @@ export const seniorUpliftData = {
         'The About page dynamically fetches team contribution stats from the GitLab API — commits, issues, and pipeline counts per member — providing full transparency on project contributions.',
       images: [
         {
-          src: '/projects/senioruplift/09-about.png',
+          src: '/projects/senioruplift/09-about.jpg',
           alt: 'About page showing team members and GitLab contribution stats'
         }
       ]

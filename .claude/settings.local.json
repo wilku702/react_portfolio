@@ -46,7 +46,9 @@
       "WebFetch(domain:simpleicons.org)",
       "WebFetch(domain:app.unpkg.com)",
       "Bash(node -e:*)",
-      "Bash(git log:*)"
+      "Bash(git log:*)",
+      "Bash(lsof:*)",
+      "Bash(npx vite:*)"
     ]
   }
 }
