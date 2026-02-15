@@ -70,3 +70,50 @@ export const articleVariants = {
     transition: { duration: 0.5, ease: defaultEasing }
   }
 };
+
+/* ── ArticlePage scroll/reveal animation variants ── */
+
+export const scrollFadeIn = {
+  initial: { opacity: 0, y: 20 },
+  whileInView: { opacity: 1, y: 0 },
+  transition: { duration: 0.6, ease: defaultEasing },
+  viewport: { once: true, amount: 0.2 },
+};
+
+export const slideFromLeft = {
+  initial: { opacity: 0, x: -30 },
+  whileInView: { opacity: 1, x: 0 },
+  transition: { duration: 0.7, ease: [0.43, 0.13, 0.23, 0.96] },
+  viewport: { once: true, amount: 0.2 },
+};
+
+export const slideFromRight = {
+  initial: { opacity: 0, x: 30 },
+  whileInView: { opacity: 1, x: 0 },
+  transition: { duration: 0.7, ease: [0.43, 0.13, 0.23, 0.96] },
+  viewport: { once: true, amount: 0.2 },
+};
+
+export const scaleUp = {
+  initial: { opacity: 0, scale: 0.95, y: 20 },
+  whileInView: { opacity: 1, scale: 1, y: 0 },
+  transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] },
+  viewport: { once: true, amount: 0.2 },
+};
+
+export const galleryContainerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.15 },
+  },
+};
+
+export const galleryItemVariants = {
+  hidden: { opacity: 0, scale: 0.9 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: { duration: 0.5, ease: defaultEasing },
+  },
+};

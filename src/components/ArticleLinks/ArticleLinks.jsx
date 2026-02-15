@@ -59,7 +59,7 @@ const ArticleLinks = ({ items }) => {
               transition={{ duration: 0.5 }}
               viewport={{ once: true, amount: 0.5 }}
             >
-              <h1>{article.title}</h1>
+              <h3>{article.title}</h3>
               <div className="tech-tags">
                 {article.details.split('|').map((tech, i) => (
                   <span key={i} className="tech-tag">{tech.trim()}</span>

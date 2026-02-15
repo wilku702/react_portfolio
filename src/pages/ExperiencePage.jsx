@@ -17,6 +17,7 @@ const ExperiencePage = () => {
       <Helmet>
         <title>Experience | Will Kung</title>
         <meta property="og:title" content="Experience | Will Kung" />
+        <meta property="og:description" content="Professional experience and internships in software engineering, AI, and full-stack development." />
       </Helmet>
       <ArticleLinks items={internshipItems} />
     </motion.div>

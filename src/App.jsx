@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useCallback, lazy, Suspense } from 'react';
+import { useEffect, lazy, Suspense } from 'react';
 import { MotionConfig } from 'framer-motion';
 import { HelmetProvider } from 'react-helmet-async';
 import './assets/styles/global.css';
@@ -16,6 +16,7 @@ import {
 import Footer from './components/Footer/Footer';
 import Navbar from './components/Navbar/Navbar';
 import ErrorBoundary from './components/ErrorBoundary';
+import PointerGradient from './components/PointerGradient';
 import { NavigationProvider } from './context/NavigationContext';
 
 // Lazy-loaded Pages
@@ -39,43 +40,28 @@ function ScrollToTop() {
 }
 
 function App() {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const rafId = useRef(null);
-
-  const handleMouseMove = useCallback((event) => {
-    if (rafId.current) return;
-    rafId.current = requestAnimationFrame(() => {
-      setMousePosition({ x: event.clientX, y: event.clientY });
-      rafId.current = null;
-    });
-  }, []);
-
+  // Prefetch lazy-loaded route chunks when the browser is idle
   useEffect(() => {
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-      if (rafId.current) cancelAnimationFrame(rafId.current);
+    const prefetch = () => {
+      import('./pages/ExperiencePage');
+      import('./pages/ProjectsPage');
+      import('./pages/AboutPage');
+      import('./pages/articles/DynamicArticlePage');
     };
-  }, [handleMouseMove]);
 
-  // Prefetch lazy-loaded route chunks so they're cached before the user navigates
-  useEffect(() => {
-    import('./pages/ExperiencePage');
-    import('./pages/ProjectsPage');
-    import('./pages/AboutPage');
-    import('./pages/articles/DynamicArticlePage');
+    if ('requestIdleCallback' in window) {
+      const id = requestIdleCallback(prefetch);
+      return () => cancelIdleCallback(id);
+    }
+    const id = setTimeout(prefetch, 2000);
+    return () => clearTimeout(id);
   }, []);
 
   return (
     <HelmetProvider>
     <MotionConfig reducedMotion="user">
     <div className="App">
-      <div
-        className="pointer-gradient"
-        style={{
-          background: `radial-gradient(600px at ${mousePosition.x}px ${mousePosition.y}px, rgba(148, 174, 247, 0.09), transparent 80%)`,
-          transition: 'background 0.1s ease'
-        }}></div>
+      <PointerGradient />
       <Router>
         <NavigationProvider>
           <a href="#main-content" className="skip-link">Skip to main content</a>

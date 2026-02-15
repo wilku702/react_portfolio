@@ -31,37 +31,3 @@
         max-width: 540px;
     }
 }
-
-.work-tabs {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    margin-bottom: 2rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-    padding-bottom: 0;
-}
-
-.work-tab {
-    background: none;
-    border: none;
-    font-family: "Roboto Mono", monospace;
-    font-size: 1rem;
-    font-weight: 500;
-    color: rgba(255, 255, 255, 0.5);
-    cursor: pointer;
-    padding: 0.5rem 0.25rem;
-    margin-bottom: -1px;
-    border-bottom: 2px solid transparent;
-    transition: color 0.2s ease, border-color 0.2s ease;
-}
-
-.work-tab:hover,
-.work-tab:focus-visible {
-    color: rgba(255, 255, 255, 0.8);
-    outline: none;
-}
-
-.work-tab[aria-selected="true"] {
-    color: var(--main-color);
-    border-bottom-color: var(--main-color);
-}

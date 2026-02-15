@@ -28,10 +28,7 @@ const Footer = () => {
             reach out to me <br /> through email
           </h4>
           <h4>
-            <a
-              href={`mailto:${contactEmail}`}
-              target="_blank"
-              rel="noopener noreferrer">
+            <a href={`mailto:${contactEmail}`}>
               {contactEmail}
             </a>
           </h4>

@@ -52,7 +52,10 @@
       "mcp__chrome-devtools__resize_page",
       "WebFetch(domain:cosmicai.org)",
       "Bash(curl:*)",
-      "WebFetch(domain:unsplash.com)"
+      "WebFetch(domain:unsplash.com)",
+      "Bash(git -C /Users/wilku/Desktop/UT_Workspace/Personal_Workspace/Personal_Projects/react_portfolio ls-files:*)",
+      "Bash(npx vite-bundle-visualizer:*)",
+      "Bash(pkill:*)"
     ]
   }
 }

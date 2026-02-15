@@ -41,24 +41,12 @@ const Navbar = () => {
         variants={bannerFadeInVariants}
         className={`toggle-menu ${isMenuOpen ? 'active' : 'hidden'}`}>
         <button
-          className="menu-status-off"
-          onClick={() => handleClick(true)}
-          aria-expanded={false}
+          className="menu-toggle-btn"
+          onClick={() => handleClick(!isMenuOpen)}
+          aria-expanded={isMenuOpen}
           aria-controls="mobile-menu"
-          aria-label="Open menu"
-          aria-hidden={isMenuOpen}
-          tabIndex={isMenuOpen ? -1 : 0}>
-          menu
-        </button>
-        <button
-          className="menu-status-on"
-          onClick={() => handleClick(false)}
-          aria-expanded={true}
-          aria-controls="mobile-menu"
-          aria-label="Close menu"
-          aria-hidden={!isMenuOpen}
-          tabIndex={!isMenuOpen ? -1 : 0}>
-          close
+          aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}>
+          {isMenuOpen ? 'close' : 'menu'}
         </button>
         <ul className="toggle-menu-items" id="mobile-menu" role="menu">
           <li role="none">

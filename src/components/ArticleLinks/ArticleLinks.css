@@ -34,7 +34,7 @@
     border-radius: 8px;
 }
 
-.tiles .article-card header h1 {
+.tiles .article-card header h3 {
     font-weight: 700;
     line-height: 1.2;
     font-size: 2.5rem;
@@ -50,10 +50,6 @@
     border-top: 0 !important;
 }
 
-.tiles .article-card .image {
-    display: none;
-}
-
 .tiles .article-card header {
     position: relative;
     z-index: 3;
@@ -63,22 +59,8 @@
     font-size: 1.75em;
 }
 
-.tiles .article-card h3 a:hover {
-    color: inherit !important;
-}
-
 .tiles .article-card:hover {
     cursor: pointer;
-}
-
-.tiles .article-card .link.primary {
-    border: 0;
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    z-index: 4;
 }
 
 .major:hover {
@@ -107,6 +89,7 @@
     position: absolute;
     width: 100%;
     z-index: 2;
+    background-color: var(--bg-color);
 }
 
 .tiles .article-card:after {
@@ -128,16 +111,6 @@
 
 .tiles .article-card:hover:before {
     opacity: 0.45;
-}
-
-.tiles .article-card.is-transitioning {
-    transform: scale(0.95);
-    filter: blur(0.5em);
-    opacity: 0;
-}
-
-.tiles .article-card:before {
-    background-color: var(--bg-color);
 }
 
 @media screen and (max-width: 1280px) {

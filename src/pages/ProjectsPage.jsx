@@ -17,6 +17,7 @@ const ProjectsPage = () => {
       <Helmet>
         <title>Projects | Will Kung</title>
         <meta property="og:title" content="Projects | Will Kung" />
+        <meta property="og:description" content="Personal and academic projects in web development, AI, mobile apps, and data engineering." />
       </Helmet>
       <ArticleLinks items={projectItems} />
     </motion.div>

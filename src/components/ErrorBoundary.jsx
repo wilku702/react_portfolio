@@ -19,7 +19,7 @@ class ErrorBoundary extends Component {
   render() {
     if (this.state.hasError) {
       return (
-        <div className="page not-found-page">
+        <div className="page not-found-page" role="alert">
           <h1>Oops</h1>
           <p>Something went wrong.</p>
           <Link to="/" className="back-link" onClick={() => this.setState({ hasError: false })}>← Back to Home</Link>
