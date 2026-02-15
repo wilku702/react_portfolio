@@ -32,4 +32,12 @@
     <loc>https://willkung.com/senioruplift</loc>
     <priority>0.6</priority>
   </url>
+  <url>
+    <loc>https://willkung.com/triniti</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://willkung.com/elasa</loc>
+    <priority>0.6</priority>
+  </url>
 </urlset>

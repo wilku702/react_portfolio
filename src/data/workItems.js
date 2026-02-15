@@ -83,12 +83,12 @@ export const projectItems = [
   {
     id: 'triniti',
     title: 'Triniti',
-    link: 'https://github.com/wilku702/Triniti',
+    link: '/triniti',
     backgroundImage: '/companies/triniti.jpg',
     emojiLink: '👵🏠',
-    details: 'React Native | Firebase',
+    details: 'React Native | Firebase | Node.js',
     description:
-      'User interaction enhancement // Implemented a social media framework to enable nursing staff to post updates, enhancing family engagement.',
+      'Nursing home management app bridging communication between care facility staff and residents\u2019 families through dual portals for scheduling, mood tracking, and real-time messaging.',
     type: 'project'
   }
 ];

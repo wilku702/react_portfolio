@@ -18,6 +18,7 @@ import {
   SiAmazonwebservices,
   SiD3Dotjs,
   SiSelenium,
+  SiFirebase,
 } from 'react-icons/si';
 
 const techIcons = {
@@ -42,6 +43,7 @@ const techIcons = {
   'Flask': SiFlask,
   'D3.js': SiD3Dotjs,
   'Selenium': SiSelenium,
+  'Firebase': SiFirebase,
 };
 
 export default techIcons;
