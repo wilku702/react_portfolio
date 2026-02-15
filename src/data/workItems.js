@@ -53,6 +53,18 @@ export const internshipItems = [
     description:
       'Collaborated on building an AI-powered 3D modeling and cost estimation platform for architects. Developed React.js components for interactive design previews, integrated LLM-based natural language inputs for generating structural layouts, and deployed prototypes on AWS.',
     type: 'internship'
+  },
+  {
+    id: 'siemens',
+    title: 'Siemens',
+    link: '',
+    backgroundImage: '/companies/siemens.svg',
+    backgroundStyle: { backgroundSize: 'contain', backgroundColor: '#009999', backgroundPosition: 'center' },
+    emojiLink: '🏭',
+    details: 'Tableau | Excel VBA | Postman | HTTP',
+    description:
+      'Created graphical visualizations of Siemens\u2019 HTTP Library, programmed building management interfaces, used Tableau for energy consumption modeling, and developed Excel VBA scripts for sorting a 10-year financial database.',
+    type: 'internship'
   }
 ];
 
@@ -89,6 +101,42 @@ export const projectItems = [
     details: 'React Native | Firebase | Node.js',
     description:
       'Nursing home management app bridging communication between care facility staff and residents\u2019 families through dual portals for scheduling, mood tracking, and real-time messaging.',
+    type: 'project'
+  },
+  {
+    id: 'codeassist',
+    title: 'CodeAssist',
+    link: '',
+    backgroundImage: '/projects/codeassist.png',
+    backgroundStyle: { backgroundSize: 'contain', backgroundColor: '#ffffff', backgroundPosition: 'center' },
+    emojiLink: '🤖',
+    details: 'RAG | Llama | Python | React | PostgreSQL',
+    description:
+      'RAG-driven Llama tutor that reviews student code and returns scaffolded hints, using retrieval over course notes, a policy layer that blocks solution leakage, and code redaction.',
+    type: 'project'
+  },
+  {
+    id: 'cosmicai',
+    title: 'CosmicAI',
+    link: '',
+    backgroundImage: '/projects/cosmicai.jpg',
+    backgroundStyle: { backgroundSize: 'contain', backgroundColor: '#ffffff', backgroundPosition: 'center' },
+    emojiLink: '🔭',
+    details: 'Python | Hugging Face | OpenCV | Qwen 2.5-VL',
+    description:
+      'Multi-agent feedback loop for adaptive scientific modeling at the NSF-Simons AI Institute for Cosmic Origins, with VLM-driven code generation and a pre-image processing pipeline for scientific plots.',
+    type: 'project'
+  },
+  {
+    id: 'ldos',
+    title: 'LDOS Lab',
+    link: '',
+    backgroundImage: '/projects/ldos.png',
+    backgroundStyle: { backgroundSize: 'contain', backgroundColor: '#ffffff', backgroundPosition: 'center' },
+    emojiLink: '🐧',
+    details: 'Linux | Python | LLM | PolicySmith | QDisc',
+    description:
+      'Offline search and online policy-selection framework for Linux packet scheduling, extending PolicySmith to evolve QDisc heuristics with safe rollback, benchmarked against DRR/SCRR on trace-driven network instances.',
     type: 'project'
   }
 ];

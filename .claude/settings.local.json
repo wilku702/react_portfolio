@@ -49,7 +49,10 @@
       "Bash(git log:*)",
       "Bash(lsof:*)",
       "Bash(npx vite:*)",
-      "mcp__chrome-devtools__resize_page"
+      "mcp__chrome-devtools__resize_page",
+      "WebFetch(domain:cosmicai.org)",
+      "Bash(curl:*)",
+      "WebFetch(domain:unsplash.com)"
     ]
   }
 }
