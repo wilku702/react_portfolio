@@ -23,6 +23,26 @@ export const trinitiData = {
     },
     {
       headerType: 'h3',
+      title: 'LOGIN SYSTEM',
+      contentType: 'gallery',
+      columns: 2,
+      content:
+        'Triniti provides dual authentication paths for role-based access. Staff login with email and password for full CRUD operations, while family members authenticate with email to access read-only views of their loved one\u2019s care.',
+      images: [
+        {
+          src: '/projects/triniti/03_staff_login_filled.png',
+          alt: 'Staff login screen with email and password fields filled',
+          caption: 'Staff Login'
+        },
+        {
+          src: '/projects/triniti/13_family_login.png',
+          alt: 'Family login screen with email field',
+          caption: 'Family Login'
+        }
+      ]
+    },
+    {
+      headerType: 'h3',
       title: 'PATIENT DASHBOARD',
       contentType: 'demonstration',
       position: 'left',
@@ -38,8 +58,7 @@ export const trinitiData = {
     {
       headerType: 'h3',
       title: 'ACTIVITY MANAGEMENT',
-      contentType: 'demonstration',
-      position: 'right',
+      contentType: 'feature-highlight',
       content:
         'Each patient has a daily activity schedule grouped by date with a Today badge. Staff can create, view, and delete activities across 10 categories \u2014 Yoga, Reading, Music, Games, Painting, Walking, Crafts, Garden, Meal, and Movie.',
       images: [
@@ -51,15 +70,26 @@ export const trinitiData = {
     },
     {
       headerType: 'h3',
-      title: 'ADD ACTIVITY',
-      contentType: 'demonstration',
-      position: 'left',
+      title: 'ADD ACTIVITY FLOW',
+      contentType: 'gallery',
+      columns: 3,
       content:
-        'A modal lets staff add activities with a title, scrollable icon-based category picker, and native date/time selectors. Activities appear instantly via optimistic UI updates before syncing to Firestore.',
+        'Creating an activity involves selecting a category, setting a time, and adding details. Changes appear instantly via optimistic UI updates before syncing to Firestore.',
       images: [
         {
-          src: '/projects/triniti/gif_02_add_activity.gif',
-          alt: 'Full flow of adding a new activity: title input, category selection, and submission'
+          src: '/projects/triniti/06_add_activity_modal.png',
+          alt: 'Add activity modal with category picker',
+          caption: 'Category Selection'
+        },
+        {
+          src: '/projects/triniti/06b_add_activity_filled.png',
+          alt: 'Add activity modal with all fields filled',
+          caption: 'Details Entered'
+        },
+        {
+          src: '/projects/triniti/07_activity_detail.png',
+          alt: 'Activity detail view showing full information',
+          caption: 'Activity Detail'
         }
       ]
     },
@@ -93,17 +123,24 @@ export const trinitiData = {
     },
     {
       headerType: 'h3',
-      title: 'FAMILY PORTAL',
-      contentType: 'demonstration',
-      position: 'right',
-      content:
-        'Family members see the same activity schedule, appointments, and mood data as staff \u2014 but in a read-only view with no add, edit, or delete controls. The same components are reused with role-based feature toggling, and family accounts are intelligently linked to patients via email matching.',
-      images: [
-        {
+      title: 'DUAL PORTAL EXPERIENCE',
+      contentType: 'comparison',
+      leftSide: {
+        label: 'Staff Portal',
+        content: 'Full CRUD access to patient data, activities, mood logs, and real-time messaging. Staff can create, edit, and delete entries across all modules.',
+        image: {
+          src: '/projects/triniti/05_activities_tab.png',
+          alt: 'Staff portal showing full activity management with edit controls'
+        }
+      },
+      rightSide: {
+        label: 'Family Portal',
+        content: 'Read-only visibility with real-time updates from the care team. Same UI components with role-based feature toggling ensure a consistent experience.',
+        image: {
           src: '/projects/triniti/14_family_activities.png',
           alt: 'Family portal showing read-only view of patient activities without edit controls'
         }
-      ]
+      }
     }
   ]
 };

@@ -7,11 +7,69 @@ import './styles/ArticleGlobal.css';
 
 const ALLOWED_TAGS = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
 
+/* ── Animation variants per content type ── */
+
+const defaultEasing = [0.6, -0.05, 0.01, 0.99];
+
 const scrollFadeIn = {
   initial: { opacity: 0, y: 20 },
   whileInView: { opacity: 1, y: 0 },
-  transition: { duration: 0.6, ease: [0.6, -0.05, 0.01, 0.99] },
+  transition: { duration: 0.6, ease: defaultEasing },
   viewport: { once: true, amount: 0.2 },
+};
+
+const slideFromLeft = {
+  initial: { opacity: 0, x: -30 },
+  whileInView: { opacity: 1, x: 0 },
+  transition: { duration: 0.7, ease: [0.43, 0.13, 0.23, 0.96] },
+  viewport: { once: true, amount: 0.2 },
+};
+
+const slideFromRight = {
+  initial: { opacity: 0, x: 30 },
+  whileInView: { opacity: 1, x: 0 },
+  transition: { duration: 0.7, ease: [0.43, 0.13, 0.23, 0.96] },
+  viewport: { once: true, amount: 0.2 },
+};
+
+const scaleUp = {
+  initial: { opacity: 0, scale: 0.95, y: 20 },
+  whileInView: { opacity: 1, scale: 1, y: 0 },
+  transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] },
+  viewport: { once: true, amount: 0.2 },
+};
+
+const galleryContainerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.15 },
+  },
+};
+
+const galleryItemVariants = {
+  hidden: { opacity: 0, scale: 0.9 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: { duration: 0.5, ease: defaultEasing },
+  },
+};
+
+const getAnimationForSection = (section) => {
+  switch (section.contentType) {
+    case 'demonstration':
+      return section.position === 'right' ? slideFromRight : slideFromLeft;
+    case 'feature-highlight':
+      return scaleUp;
+    case 'gallery':
+    case 'comparison':
+    case 'split-content':
+    case 'paragraph':
+    case 'list':
+    default:
+      return scrollFadeIn;
+  }
 };
 
 const ArticlePage = ({ data }) => {
@@ -30,14 +88,6 @@ const ArticlePage = ({ data }) => {
         <img key={imgIndex} src={img.src} alt={img.alt} className="space" loading="lazy" />
       ));
 
-    const renderList = () => (
-      <ul>
-        {content.map((item, index) => (
-          <li key={index}>{item}</li>
-        ))}
-      </ul>
-    );
-
     const renderHeaderSection = () => (
       <div className="col-lg-12">
         {renderHeader(section.headerType, section.title)}
@@ -49,7 +99,11 @@ const ArticlePage = ({ data }) => {
         <>
           {renderHeaderSection()}
           <div className="col-lg-12">
-            {renderList()}
+            <ul>
+              {content.map((item, index) => (
+                <li key={index}>{item}</li>
+              ))}
+            </ul>
             {renderImages()}
           </div>
         </>
@@ -86,6 +140,97 @@ const ArticlePage = ({ data }) => {
               </div>
             </>
           )}
+        </>
+      );
+    } else if (contentType === 'gallery') {
+      const cols = section.columns || 2;
+      return (
+        <>
+          {renderHeaderSection()}
+          <div className="col-lg-12">
+            {content && <p>{content}</p>}
+            <motion.div
+              className={`gallery-grid cols-${cols}`}
+              variants={galleryContainerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+            >
+              {section.images?.map((img, imgIndex) => (
+                <motion.figure key={imgIndex} className="gallery-item" variants={galleryItemVariants}>
+                  <img src={img.src} alt={img.alt} loading="lazy" />
+                  {img.caption && <figcaption className="gallery-caption">{img.caption}</figcaption>}
+                </motion.figure>
+              ))}
+            </motion.div>
+          </div>
+        </>
+      );
+    } else if (contentType === 'feature-highlight') {
+      return (
+        <div className="col-lg-12 feature-highlight">
+          {renderHeader(section.headerType, section.title)}
+          {section.images?.map((img, imgIndex) => (
+            <img key={imgIndex} src={img.src} alt={img.alt} loading="lazy" />
+          ))}
+          {content && <p>{content}</p>}
+        </div>
+      );
+    } else if (contentType === 'split-content') {
+      return (
+        <>
+          {renderHeaderSection()}
+          <div className="col-lg-12">
+            <div className="split-content">
+              <motion.div
+                className="split-content-text"
+                {...slideFromLeft}
+              >
+                <p>{content}</p>
+              </motion.div>
+              <motion.div
+                className="split-content-list"
+                {...slideFromRight}
+              >
+                <ul>
+                  {section.list?.map((item, index) => (
+                    <li key={index}>{item}</li>
+                  ))}
+                </ul>
+              </motion.div>
+            </div>
+            {renderImages()}
+          </div>
+        </>
+      );
+    } else if (contentType === 'comparison') {
+      return (
+        <>
+          {renderHeaderSection()}
+          <div className="col-lg-12">
+            <div className="comparison-row">
+              <motion.div
+                className="comparison-side"
+                {...slideFromLeft}
+              >
+                {section.leftSide?.image && (
+                  <img src={section.leftSide.image.src} alt={section.leftSide.image.alt} loading="lazy" />
+                )}
+                <h5 className="comparison-label">{section.leftSide?.label}</h5>
+                <p>{section.leftSide?.content}</p>
+              </motion.div>
+              <motion.div
+                className="comparison-side"
+                {...slideFromRight}
+              >
+                {section.rightSide?.image && (
+                  <img src={section.rightSide.image.src} alt={section.rightSide.image.alt} loading="lazy" />
+                )}
+                <h5 className="comparison-label">{section.rightSide?.label}</h5>
+                <p>{section.rightSide?.content}</p>
+              </motion.div>
+            </div>
+          </div>
         </>
       );
     }
@@ -185,7 +330,7 @@ const ArticlePage = ({ data }) => {
       <div className="article-container">
         <div>
           {data.sections.map((section, index) => (
-            <motion.div key={index} className="row space" {...scrollFadeIn}>
+            <motion.div key={index} className="row space" {...getAnimationForSection(section)}>
               {renderContent(section)}
             </motion.div>
           ))}
@@ -202,7 +347,14 @@ const ArticlePage = ({ data }) => {
 const imageShape = PropTypes.shape({
   src: PropTypes.string.isRequired,
   alt: PropTypes.string.isRequired,
-  className: PropTypes.string
+  className: PropTypes.string,
+  caption: PropTypes.string
+});
+
+const comparisonSideShape = PropTypes.shape({
+  label: PropTypes.string.isRequired,
+  content: PropTypes.string.isRequired,
+  image: imageShape
 });
 
 ArticlePage.propTypes = {
@@ -219,13 +371,20 @@ ArticlePage.propTypes = {
       PropTypes.shape({
         headerType: PropTypes.string,
         title: PropTypes.string.isRequired,
-        contentType: PropTypes.oneOf(['paragraph', 'list', 'demonstration']).isRequired,
+        contentType: PropTypes.oneOf([
+          'paragraph', 'list', 'demonstration',
+          'gallery', 'feature-highlight', 'split-content', 'comparison'
+        ]).isRequired,
         content: PropTypes.oneOfType([
           PropTypes.string,
           PropTypes.arrayOf(PropTypes.string),
-        ]).isRequired,
+        ]),
         images: PropTypes.arrayOf(imageShape),
-        position: PropTypes.oneOf(['left', 'right'])
+        position: PropTypes.oneOf(['left', 'right']),
+        columns: PropTypes.oneOf([2, 3]),
+        list: PropTypes.arrayOf(PropTypes.string),
+        leftSide: comparisonSideShape,
+        rightSide: comparisonSideShape
       })
     ).isRequired
   }).isRequired

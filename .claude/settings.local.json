@@ -48,7 +48,8 @@
       "Bash(node -e:*)",
       "Bash(git log:*)",
       "Bash(lsof:*)",
-      "Bash(npx vite:*)"
+      "Bash(npx vite:*)",
+      "mcp__chrome-devtools__resize_page"
     ]
   }
 }

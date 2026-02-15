@@ -78,7 +78,7 @@
 }
 
 /* column style */
-.col-lg-12, .col-lg-4, .col-lg-3, .col-lg-5{
+.col-lg-12, .col-lg-6, .col-lg-4, .col-lg-3, .col-lg-5{
     --text: #fff;
     line-height: 36px !important;
     font-family: "RobotoMono" !important;
@@ -109,6 +109,10 @@
 }
 
 @media (min-width: 992px) {
+    .col-lg-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
     .col-lg-4 {
         flex: 0 0 33.333333%;
         max-width: 33.333333%;
@@ -392,5 +396,157 @@
   .tech-stack-item svg {
     width: 0.85rem;
     height: 0.85rem;
+  }
+}
+
+/* ========================================
+   Gallery Layout
+   ======================================== */
+.gallery-grid {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.gallery-grid.cols-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.gallery-grid.cols-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.gallery-item {
+  text-align: center;
+}
+
+.gallery-item img {
+  max-height: 400px;
+  margin-bottom: 0.75rem;
+}
+
+.gallery-caption {
+  font-family: 'RobotoMono', sans-serif;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+  .gallery-grid.cols-2,
+  .gallery-grid.cols-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-item img {
+    max-height: 300px;
+  }
+}
+
+/* ========================================
+   Feature Highlight Layout
+   ======================================== */
+.feature-highlight {
+  text-align: center;
+}
+
+.feature-highlight h3 {
+  text-align: center !important;
+}
+
+.feature-highlight img {
+  max-width: 85%;
+  max-height: 500px;
+  margin: 1.5rem auto;
+}
+
+.feature-highlight p {
+  text-align: center !important;
+  max-width: 70ch;
+  margin: 0 auto !important;
+}
+
+@media (max-width: 768px) {
+  .feature-highlight img {
+    max-width: 100%;
+    max-height: 300px;
+  }
+}
+
+/* ========================================
+   Split Content Layout
+   ======================================== */
+.split-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.split-content-text,
+.split-content-list {
+  flex: 1;
+  min-width: 0;
+}
+
+.split-content-list ul {
+  padding-left: 1.25rem;
+  margin: 0;
+}
+
+.split-content-list li {
+  font-family: 'RobotoMonoSemiBold', sans-serif;
+  font-size: 1rem;
+  line-height: 2;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+@media (max-width: 768px) {
+  .split-content-text,
+  .split-content-list {
+    flex: 0 0 100%;
+  }
+}
+
+/* ========================================
+   Comparison Layout
+   ======================================== */
+.comparison-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.comparison-side {
+  flex: 1;
+  min-width: 0;
+  text-align: center;
+}
+
+.comparison-side img {
+  max-height: 400px;
+  margin-bottom: 1rem;
+}
+
+.comparison-label {
+  font-family: 'RobotoMonoSemiBold', sans-serif;
+  font-size: 1.1rem;
+  color: var(--main-color);
+  margin-bottom: 0.5rem;
+}
+
+.comparison-side p {
+  text-align: center !important;
+  font-size: 0.95rem !important;
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+@media (max-width: 768px) {
+  .comparison-side {
+    flex: 0 0 100%;
+  }
+
+  .comparison-side img {
+    max-height: 300px;
   }
 }

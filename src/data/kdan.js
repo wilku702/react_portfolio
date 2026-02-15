@@ -23,8 +23,8 @@ export const kdanData = {
     {
       headerType: 'h3',
       title: 'FIGMA DESIGN',
-      contentType: 'paragraph',
-      content: 'Adapted the company’s Figma design system, adding my own enhancements to improve usability and visual flow.',
+      contentType: 'feature-highlight',
+      content: 'Adapted the company\u2019s Figma design system, adding my own enhancements to improve usability and visual flow.',
       images: [
         {
           src: '/companies/kdan/figma.jpg',
@@ -34,40 +34,25 @@ export const kdanData = {
     },
     {
       headerType: 'h3',
-      title: 'ASK A QUESTION',
-      contentType: 'demonstration',
-      position: 'left',
-      content: `Ask any question regarding data relevant to the client company.`,
+      title: 'INTERACTIVE CHATBOT FEATURES',
+      contentType: 'gallery',
+      columns: 3,
+      content: 'Users ask questions, review data in tables, and generate charts \u2014 all within the same conversational interface.',
       images: [
         {
           src: '/companies/kdan/chatbot/chatbot_message.gif',
-          alt: 'Demo of sending a message to the chatbot'
-        }
-      ]
-    },
-    {
-      headerType: 'h3',
-      title: 'LOOK AT THE TABLE OF DATA',
-      contentType: 'demonstration',
-      position: 'right',
-      content: `Review the data relevant to your inquiry.`,
-      images: [
+          alt: 'Demo of sending a message to the chatbot',
+          caption: 'Ask a Question'
+        },
         {
           src: '/companies/kdan/chatbot/chatbot_table.gif',
-          alt: 'Demo of chatbot displaying data in a table'
-        }
-      ]
-    },
-    {
-      headerType: 'h3',
-      title: 'GRAPH THE DATA',
-      contentType: 'demonstration',
-      position: 'left',
-      content: `Choose the graph type and variable axis.`,
-      images: [
+          alt: 'Demo of chatbot displaying data in a table',
+          caption: 'Review Table Data'
+        },
         {
           src: '/companies/kdan/chatbot/chatbot_graph.gif',
-          alt: 'Demo of chatbot generating an interactive graph'
+          alt: 'Demo of chatbot generating an interactive graph',
+          caption: 'Graph the Data'
         }
       ]
     },
@@ -99,7 +84,7 @@ export const kdanData = {
       headerType: 'h3',
       title: 'DEPLOYMENT',
       contentType: 'paragraph',
-      content: `Containerized and embedded the chatbot into the client’s website using Docker, ensuring smooth deployment and scalability across environments.`,
+      content: `Containerized and embedded the chatbot into the client\u2019s website using Docker, ensuring smooth deployment and scalability across environments.`,
       images: [
         {
           src: '/companies/kdan/deployment.jpg',
@@ -110,12 +95,20 @@ export const kdanData = {
     {
       headerType: 'h3',
       title: 'MOMENTS',
-      contentType: 'paragraph',
-      content:
-        'Just highlighting some moments during my internship at KDANMobile.',
+      contentType: 'gallery',
+      columns: 2,
+      content: 'Just highlighting some moments during my internship at KDANMobile.',
       images: [
-        { src: '/companies/kdan/hi_team.jpg', alt: 'Hi Team' },
-        { src: '/companies/kdan/aws.jpg', alt: 'AWS Summit' }
+        {
+          src: '/companies/kdan/hi_team.jpg',
+          alt: 'Group photo with the KDANMobile team',
+          caption: 'Team Photo'
+        },
+        {
+          src: '/companies/kdan/aws.jpg',
+          alt: 'Attending the AWS Summit',
+          caption: 'AWS Summit'
+        }
       ]
     }
   ]
