@@ -56,7 +56,11 @@
       "Bash(git -C /Users/wilku/Desktop/UT_Workspace/Personal_Workspace/Personal_Projects/react_portfolio ls-files:*)",
       "Bash(npx vite-bundle-visualizer:*)",
       "Bash(pkill:*)",
-      "WebFetch(domain:willkung.com)"
+      "WebFetch(domain:willkung.com)",
+      "Bash(for f in public/projects/codeassist/01_landing_page.png public/projects/codeassist/09_configure_autograder.png public/projects/codeassist/12_student_results.png public/projects/codeassist/06_instructor_ai_settings.png public/projects/codeassist/14_student_ai_feedback_fullpage.png public/projects/codeassist/15_student_feedback_summary.png)",
+      "Bash(do sips -g pixelWidth -g pixelHeight \"$f\")",
+      "Bash(for f in public/projects/senioruplift/*.jpg)",
+      "Bash(for f in public/projects/triniti/01_start_page.jpg public/projects/triniti/03_staff_login_filled.jpg public/projects/triniti/gif_01_dashboard_search.gif)"
     ]
   }
 }

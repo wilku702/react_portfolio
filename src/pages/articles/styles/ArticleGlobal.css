@@ -544,3 +544,149 @@
     max-height: 300px;
   }
 }
+
+/* ========================================
+   Showcase Layout
+   ======================================== */
+.showcase-grid {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.showcase-device {
+  margin: 0;
+}
+
+/* Browser frame sizing */
+.showcase-grid.count-1 .frame-browser { max-width: 800px; margin: 0 auto; }
+.showcase-grid.count-2 .frame-browser { flex: 0 1 calc(50% - 1rem); }
+.showcase-grid.count-3 .frame-browser { flex: 0 1 calc(33.33% - 1.33rem); }
+
+/* Phone frame sizing */
+.showcase-grid.count-1 .frame-phone { max-width: 300px; margin: 0 auto; }
+.showcase-grid.count-2 .frame-phone { flex: 0 1 280px; }
+.showcase-grid.count-3 .frame-phone { flex: 0 1 240px; }
+
+/* ── Browser Frame ── */
+.frame-browser .device-screen {
+  background: #2a2a2a;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.browser-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 14px;
+  background: #363636;
+}
+
+.browser-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #555;
+}
+.browser-dot:first-child { background: #ff5f57; }
+.browser-dot:nth-child(2) { background: #febc2e; }
+.browser-dot:nth-child(3) { background: #28c840; }
+
+/* ── Phone Frame ── */
+.frame-phone .device-screen {
+  position: relative;
+  background: #1a1a1a;
+  border-radius: 36px;
+  padding: 12px;
+  box-shadow: 0 0 0 2px rgba(255,255,255,0.1), 0 20px 60px rgba(0,0,0,0.4);
+}
+
+.frame-phone .device-screen::before {
+  content: '';
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 35%;
+  height: 24px;
+  background: #0a0a0a;
+  border-radius: 0 0 16px 16px;
+  z-index: 2;
+}
+
+/* ── Image rules inside frames ── */
+
+/* Browser: crop from top for long page captures */
+.article-container .frame-browser .device-content img,
+.article-container .frame-browser .device-content video {
+  max-height: 500px;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 0;
+  margin: 0;
+}
+
+/* Phone: contain full screenshot */
+.article-container .frame-phone .device-content img,
+.article-container .frame-phone .device-content video {
+  max-height: 550px;
+  object-fit: contain;
+  border-radius: 24px;
+  margin: 0;
+}
+
+/* No frame: clean shadow */
+.article-container .showcase-device:not([class*="frame-"]) .device-content img,
+.article-container .showcase-device:not([class*="frame-"]) .device-content video {
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+  margin: 0;
+}
+
+/* Hero phone frame centering */
+.hero-phone {
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+/* ── Captions & descriptions ── */
+.showcase-caption {
+  font-family: 'RobotoMono', sans-serif;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.4;
+  text-align: center;
+  margin-top: 0.75rem;
+}
+
+.showcase-description {
+  font-size: 0.9rem !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+  text-align: center !important;
+  line-height: 1.5 !important;
+  margin-top: 0.25rem !important;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .showcase-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+  .showcase-grid .frame-phone { max-width: 260px; }
+  .showcase-grid .frame-browser { max-width: 100%; }
+  .frame-phone .device-screen { border-radius: 28px; padding: 8px; }
+  .frame-phone .device-screen::before { height: 18px; top: 8px; }
+  .article-container .frame-phone .device-content img,
+  .article-container .frame-phone .device-content video { border-radius: 20px; }
+  .hero-phone { max-width: 260px; }
+}
+
+@media (max-width: 991px) and (min-width: 769px) {
+  .showcase-grid.count-3 { flex-wrap: wrap; }
+  .showcase-grid.count-3 .showcase-device { flex: 0 1 calc(50% - 1rem); }
+}

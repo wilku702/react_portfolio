@@ -19,6 +19,9 @@ import {
   SiD3Dotjs,
   SiSelenium,
   SiFirebase,
+  SiPostgresql,
+  SiOpenai,
+  SiGoogle,
 } from 'react-icons/si';
 
 const techIcons = {
@@ -44,6 +47,9 @@ const techIcons = {
   'D3.js': SiD3Dotjs,
   'Selenium': SiSelenium,
   'Firebase': SiFirebase,
+  'PostgreSQL': SiPostgresql,
+  'OpenAI API': SiOpenai,
+  'Google OAuth': SiGoogle,
 };
 
 export default techIcons;

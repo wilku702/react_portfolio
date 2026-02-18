@@ -4,6 +4,7 @@ import { adonitData } from './adonit';
 import { elasaData } from './elasa';
 import { seniorUpliftData } from './senioruplift';
 import { trinitiData } from './triniti';
+import { codeassistData } from './codeassist';
 
 const articles = {
   kdan: kdanData,
@@ -11,7 +12,8 @@ const articles = {
   adonit: adonitData,
   elasa: elasaData,
   senioruplift: seniorUpliftData,
-  triniti: trinitiData
+  triniti: trinitiData,
+  codeassist: codeassistData
 };
 
 export default articles;

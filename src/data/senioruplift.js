@@ -24,8 +24,8 @@ export const seniorUpliftData = {
     {
       headerType: 'h3',
       title: 'RESOURCE BROWSER',
-      contentType: 'gallery',
-      columns: 3,
+      contentType: 'showcase',
+      deviceFrame: 'browser',
       content:
         'Explore nursing homes, healthcare centers, and entertainment options with sorting, filtering, search, and pagination across all three resource types.',
       images: [
@@ -49,29 +49,29 @@ export const seniorUpliftData = {
     {
       headerType: 'h3',
       title: 'RESOURCE DETAILS',
-      contentType: 'comparison',
-      leftSide: {
-        label: 'Nursing Home Details',
-        content: 'View detailed information for each nursing home, including nearby healthcare centers and entertainment options.',
-        image: {
+      contentType: 'showcase',
+      deviceFrame: 'browser',
+      content: 'View detailed information for each resource, including nearby healthcare centers and entertainment options, creating a connected resource network.',
+      images: [
+        {
           src: '/projects/senioruplift/03-nursing-home-detail.jpg',
-          alt: 'Nursing Home detail page for Sunrise Senior Living'
-        }
-      },
-      rightSide: {
-        label: 'Healthcare Details',
-        content: 'Each healthcare center links to nearby nursing homes and entertainment, creating a connected resource network.',
-        image: {
+          alt: 'Nursing Home detail page for Sunrise Senior Living',
+          caption: 'Nursing Home Details',
+          description: 'View detailed information for each nursing home, including nearby healthcare centers and entertainment options.'
+        },
+        {
           src: '/projects/senioruplift/05-healthcare-detail.jpg',
-          alt: 'Healthcare detail page for Austin Regional Medical Center'
+          alt: 'Healthcare detail page for Austin Regional Medical Center',
+          caption: 'Healthcare Details',
+          description: 'Each healthcare center links to nearby nursing homes and entertainment, creating a connected resource network.'
         }
-      }
+      ]
     },
     {
       headerType: 'h3',
       title: 'ENTERTAINMENT',
-      contentType: 'demonstration',
-      position: 'left',
+      contentType: 'showcase',
+      deviceFrame: 'browser',
       content: 'Discover senior-friendly events and activities across Texas, filterable by category and cost.',
       images: [
         {
@@ -83,8 +83,8 @@ export const seniorUpliftData = {
     {
       headerType: 'h3',
       title: 'ENTERTAINMENT DETAILS',
-      contentType: 'demonstration',
-      position: 'right',
+      contentType: 'showcase',
+      deviceFrame: 'browser',
       content: 'View event details including venue, time, cost, and nearby healthcare and nursing home resources.',
       images: [
         {
@@ -96,7 +96,8 @@ export const seniorUpliftData = {
     {
       headerType: 'h3',
       title: 'DATA VISUALIZATIONS',
-      contentType: 'feature-highlight',
+      contentType: 'showcase',
+      deviceFrame: 'browser',
       content:
         'Built interactive D3.js visualizations including a bar chart of entertainment event frequency by category, a bubble map showing nursing home distribution across Texas using TopoJSON, and a bubble chart of hospital density by city.',
       images: [

@@ -88,7 +88,7 @@ export const projectItems = [
   {
     id: 'codeassist',
     title: 'CodeAssist',
-    link: '',
+    link: '/codeassist',
     backgroundImage: '/projects/codeassist.png',
     backgroundStyle: { backgroundSize: 'contain', backgroundColor: '#ffffff', backgroundPosition: 'center' },
     details: 'RAG | Llama | Python | React | PostgreSQL',

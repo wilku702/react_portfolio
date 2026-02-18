@@ -9,7 +9,8 @@ export const trinitiData = {
   images: [
     {
       src: '/projects/triniti/01_start_page.jpg',
-      alt: 'Triniti welcome screen with hero illustration and dual login buttons for Staff and Family portals'
+      alt: 'Triniti welcome screen with hero illustration and dual login buttons for Staff and Family portals',
+      deviceFrame: 'phone'
     }
   ],
   sections: [
@@ -24,8 +25,8 @@ export const trinitiData = {
     {
       headerType: 'h3',
       title: 'LOGIN SYSTEM',
-      contentType: 'gallery',
-      columns: 2,
+      contentType: 'showcase',
+      deviceFrame: 'phone',
       content:
         'Triniti provides dual authentication paths for role-based access. Staff login with email and password for full CRUD operations, while family members authenticate with email to access read-only views of their loved one\u2019s care.',
       images: [
@@ -44,21 +45,23 @@ export const trinitiData = {
     {
       headerType: 'h3',
       title: 'PATIENT DASHBOARD',
-      contentType: 'demonstration',
-      position: 'left',
+      contentType: 'showcase',
+      deviceFrame: 'phone',
       content:
         'Staff land on a patient grid showing all residents with photos and names. A real-time search bar filters patients instantly as you type, powered by memoized card components for smooth scrolling performance.',
       images: [
         {
           src: '/projects/triniti/gif_01_dashboard_search.gif',
-          alt: 'Dashboard with real-time search filtering patients by name'
+          alt: 'Dashboard with real-time search filtering patients by name',
+          video: false
         }
       ]
     },
     {
       headerType: 'h3',
       title: 'ACTIVITY MANAGEMENT',
-      contentType: 'feature-highlight',
+      contentType: 'showcase',
+      deviceFrame: 'phone',
       content:
         'Each patient has a daily activity schedule grouped by date with a Today badge. Staff can create, view, and delete activities across 10 categories \u2014 Yoga, Reading, Music, Games, Painting, Walking, Crafts, Garden, Meal, and Movie.',
       images: [
@@ -71,8 +74,8 @@ export const trinitiData = {
     {
       headerType: 'h3',
       title: 'ADD ACTIVITY FLOW',
-      contentType: 'gallery',
-      columns: 3,
+      contentType: 'showcase',
+      deviceFrame: 'phone',
       content:
         'Creating an activity involves selecting a category, setting a time, and adding details. Changes appear instantly via optimistic UI updates before syncing to Firestore.',
       images: [
@@ -96,51 +99,53 @@ export const trinitiData = {
     {
       headerType: 'h3',
       title: 'MOOD TRACKING',
-      contentType: 'demonstration',
-      position: 'right',
+      contentType: 'showcase',
+      deviceFrame: 'phone',
       content:
         'An interactive calendar displays color-coded emoji indicators across a 5-level mood scale: Great, Good, Okay, Low, and Bad. Staff log one mood entry per day per patient, and tapping a calendar day filters the history below.',
       images: [
         {
           src: '/projects/triniti/gif_04_mood_calendar.gif',
-          alt: 'Mood calendar with color-coded days and mood logging interaction'
+          alt: 'Mood calendar with color-coded days and mood logging interaction',
+          video: false
         }
       ]
     },
     {
       headerType: 'h3',
       title: 'REAL-TIME CHAT',
-      contentType: 'demonstration',
-      position: 'left',
+      contentType: 'showcase',
+      deviceFrame: 'phone',
       content:
         'Direct messaging between staff and family about a specific patient, powered by Firestore\u2019s onSnapshot listener for instant delivery. Messages display sender name, role, and relative timestamps in a familiar bubble UI.',
       images: [
         {
           src: '/projects/triniti/gif_05_chat_send.gif',
-          alt: 'Chat conversation showing real-time message sending between staff and family'
+          alt: 'Chat conversation showing real-time message sending between staff and family',
+          video: false
         }
       ]
     },
     {
       headerType: 'h3',
       title: 'DUAL PORTAL EXPERIENCE',
-      contentType: 'comparison',
-      leftSide: {
-        label: 'Staff Portal',
-        content: 'Full CRUD access to patient data, activities, mood logs, and real-time messaging. Staff can create, edit, and delete entries across all modules.',
-        image: {
+      contentType: 'showcase',
+      deviceFrame: 'phone',
+      content: 'Triniti provides two portals with the same UI components but role-based feature toggling for a consistent experience across staff and family users.',
+      images: [
+        {
           src: '/projects/triniti/05_activities_tab.jpg',
-          alt: 'Staff portal showing full activity management with edit controls'
-        }
-      },
-      rightSide: {
-        label: 'Family Portal',
-        content: 'Read-only visibility with real-time updates from the care team. Same UI components with role-based feature toggling ensure a consistent experience.',
-        image: {
+          alt: 'Staff portal showing full activity management with edit controls',
+          caption: 'Staff Portal',
+          description: 'Full CRUD access to patient data, activities, mood logs, and real-time messaging. Staff can create, edit, and delete entries across all modules.'
+        },
+        {
           src: '/projects/triniti/14_family_activities.jpg',
-          alt: 'Family portal showing read-only view of patient activities without edit controls'
+          alt: 'Family portal showing read-only view of patient activities without edit controls',
+          caption: 'Family Portal',
+          description: 'Read-only visibility with real-time updates from the care team. Same UI components with role-based feature toggling ensure a consistent experience.'
         }
-      }
+      ]
     }
   ]
 };

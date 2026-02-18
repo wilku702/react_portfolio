@@ -21,6 +21,7 @@ const getAnimationForSection = (section) => {
       return section.position === 'right' ? slideFromRight : slideFromLeft;
     case 'feature-highlight':
       return scaleUp;
+    case 'showcase':
     case 'gallery':
     case 'comparison':
     case 'split-content':
@@ -176,6 +177,50 @@ const ComparisonSection = ({ section }) => (
   </>
 );
 
+const ShowcaseSection = ({ section }) => {
+  const frameType = section.deviceFrame || false;
+  const count = Math.min(section.images?.length || 0, 3);
+
+  return (
+    <>
+      <SectionHeader section={section} />
+      <div className="col-lg-12">
+        {section.content && <p>{section.content}</p>}
+        <motion.div
+          className={`showcase-grid count-${count}`}
+          variants={galleryContainerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+        >
+          {section.images?.map((img, i) => (
+            <motion.figure
+              key={i}
+              className={`showcase-device ${frameType ? `frame-${frameType}` : ''}`}
+              variants={galleryItemVariants}
+            >
+              <div className="device-screen">
+                {frameType === 'browser' && (
+                  <div className="browser-bar">
+                    <span className="browser-dot" />
+                    <span className="browser-dot" />
+                    <span className="browser-dot" />
+                  </div>
+                )}
+                <div className="device-content">
+                  {renderMedia(img, i, '')}
+                </div>
+              </div>
+              {img.caption && <figcaption className="showcase-caption">{img.caption}</figcaption>}
+              {img.description && <p className="showcase-description">{img.description}</p>}
+            </motion.figure>
+          ))}
+        </motion.div>
+      </div>
+    </>
+  );
+};
+
 const sectionRenderers = {
   list: ListSection,
   paragraph: ParagraphSection,
@@ -184,6 +229,7 @@ const sectionRenderers = {
   'feature-highlight': FeatureHighlightSection,
   'split-content': SplitContentSection,
   comparison: ComparisonSection,
+  showcase: ShowcaseSection,
 };
 
 const ArticlePage = ({ data }) => {
@@ -255,15 +301,25 @@ const ArticlePage = ({ data }) => {
           <div className="article-container">
             <div className="row">
               <div className="col-lg-12">
-                {data.images.map((image, index) => (
-                  <img
-                    key={index}
-                    src={image.src}
-                    alt={image.alt}
-                    className={image.className || ''}
-                    loading="lazy"
-                  />
-                ))}
+                {data.images.map((image, index) =>
+                  image.deviceFrame === 'phone' ? (
+                    <figure key={index} className="showcase-device frame-phone hero-phone">
+                      <div className="device-screen">
+                        <div className="device-content">
+                          <img src={image.src} alt={image.alt} loading="lazy" />
+                        </div>
+                      </div>
+                    </figure>
+                  ) : (
+                    <img
+                      key={index}
+                      src={image.src}
+                      alt={image.alt}
+                      className={image.className || ''}
+                      loading="lazy"
+                    />
+                  )
+                )}
               </div>
             </div>
           </div>
@@ -294,7 +350,9 @@ const imageShape = PropTypes.shape({
   alt: PropTypes.string.isRequired,
   className: PropTypes.string,
   caption: PropTypes.string,
-  video: PropTypes.bool
+  description: PropTypes.string,
+  video: PropTypes.bool,
+  deviceFrame: PropTypes.oneOf(['browser', 'phone'])
 });
 
 const comparisonSideShape = PropTypes.shape({
@@ -319,7 +377,7 @@ ArticlePage.propTypes = {
         title: PropTypes.string.isRequired,
         contentType: PropTypes.oneOf([
           'paragraph', 'list', 'demonstration',
-          'gallery', 'feature-highlight', 'split-content', 'comparison'
+          'gallery', 'feature-highlight', 'split-content', 'comparison', 'showcase'
         ]).isRequired,
         content: PropTypes.oneOfType([
           PropTypes.string,
@@ -328,6 +386,7 @@ ArticlePage.propTypes = {
         images: PropTypes.arrayOf(imageShape),
         position: PropTypes.oneOf(['left', 'right']),
         columns: PropTypes.oneOf([2, 3]),
+        deviceFrame: PropTypes.oneOf(['browser', 'phone']),
         list: PropTypes.arrayOf(PropTypes.string),
         leftSide: comparisonSideShape,
         rightSide: comparisonSideShape
