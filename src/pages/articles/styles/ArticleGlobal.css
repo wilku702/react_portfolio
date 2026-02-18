@@ -631,6 +631,11 @@
 }
 
 /* Phone: contain full screenshot */
+.frame-phone .device-content {
+  overflow: hidden;
+  border-radius: 24px;
+}
+
 .article-container .frame-phone .device-content img,
 .article-container .frame-phone .device-content video {
   max-height: 550px;
@@ -649,7 +654,7 @@
 
 /* Hero phone frame centering */
 .hero-phone {
-  max-width: 300px;
+  max-width: 280px;
   margin: 0 auto;
 }
 
@@ -683,7 +688,7 @@
   .frame-phone .device-screen::before { height: 18px; top: 8px; }
   .article-container .frame-phone .device-content img,
   .article-container .frame-phone .device-content video { border-radius: 20px; }
-  .hero-phone { max-width: 260px; }
+  .hero-phone { max-width: 280px; }
 }
 
 @media (max-width: 991px) and (min-width: 769px) {
