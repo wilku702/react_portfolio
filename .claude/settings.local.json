@@ -62,7 +62,8 @@
       "Bash(for f in public/projects/senioruplift/*.jpg)",
       "Bash(for f in public/projects/triniti/01_start_page.jpg public/projects/triniti/03_staff_login_filled.jpg public/projects/triniti/gif_01_dashboard_search.gif)",
       "Bash(for f in 01-home.jpg 02-nursing-homes.jpg 03-nursing-home-detail.jpg 04-healthcare-centers.jpg 05-healthcare-detail.jpg 06-entertainment.jpg 07-entertainment-detail.jpg 08-visualizations.jpg 09-about.jpg)",
-      "Bash(do echo \"Cropping $f...\")"
+      "Bash(do echo \"Cropping $f...\")",
+      "Bash(file:*)"
     ]
   }
 }

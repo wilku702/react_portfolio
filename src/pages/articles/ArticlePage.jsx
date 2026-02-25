@@ -10,6 +10,9 @@ import {
   scaleUp,
   galleryContainerVariants,
   galleryItemVariants,
+  splitContainerVariants,
+  splitLeftVariants,
+  splitRightVariants,
 } from '../../motionUtils';
 import './styles/ArticleGlobal.css';
 
@@ -83,8 +86,7 @@ const DemonstrationSection = ({ section }) => {
   const isLeft = section.position === 'left';
   const textBlock = (
     <div className="col-lg-5 sltn-prv demo-text">
-      <h5>{section.title}</h5>
-      <h4>{section.content}</h4>
+      <p className="demo-body">{section.content}</p>
     </div>
   );
   const imageBlock = (
@@ -94,6 +96,7 @@ const DemonstrationSection = ({ section }) => {
   );
   return (
     <>
+      <SectionHeader section={section} />
       <div className="col-lg-3 demo-spacer" />
       {isLeft ? <>{textBlock}{imageBlock}</> : <>{imageBlock}{textBlock}</>}
     </>
@@ -138,16 +141,22 @@ const SplitContentSection = ({ section }) => (
   <>
     <SectionHeader section={section} />
     <div className="col-lg-12">
-      <div className="split-content">
-        <motion.div className="split-content-text" {...slideFromLeft}>
+      <motion.div
+        className="split-content"
+        variants={splitContainerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+      >
+        <motion.div className="split-content-text" variants={splitLeftVariants}>
           <p>{section.content}</p>
         </motion.div>
-        <motion.div className="split-content-list" {...slideFromRight}>
+        <motion.div className="split-content-list" variants={splitRightVariants}>
           <ul>
             {section.list?.map((item, i) => <li key={i}>{item}</li>)}
           </ul>
         </motion.div>
-      </div>
+      </motion.div>
       <SectionImages section={section} />
     </div>
   </>
@@ -193,7 +202,7 @@ const ShowcaseSection = ({ section }) => {
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
         >
-          {section.images?.map((img, i) => (
+          {section.images?.slice(0, 3).map((img, i) => (
             <motion.figure
               key={i}
               className={`showcase-device ${frameType ? `frame-${frameType}` : ''}`}
@@ -285,7 +294,7 @@ const ArticlePage = ({ data, backTo = '/experience' }) => {
                 {data.techStack.map((tech) => {
                   const IconComponent = techIcons[tech];
                   return (
-                    <span key={tech} className="tech-stack-item" role="listitem" title={tech}>
+                    <span key={tech} className="tech-stack-item" role="listitem">
                       {IconComponent && <IconComponent aria-hidden="true" />}
                       <span className="tech-stack-label">{tech}</span>
                     </span>
@@ -318,6 +327,7 @@ const ArticlePage = ({ data, backTo = '/experience' }) => {
                       alt={image.alt}
                       className={image.className || ''}
                       loading="eager"
+                      fetchPriority="high"
                     />
                   )
                 )}
@@ -345,7 +355,23 @@ const ArticlePage = ({ data, backTo = '/experience' }) => {
         </div>
         <motion.div className="article-cta" {...scrollFadeIn}>
           <p>Interested in seeing more?</p>
-          <Link to={backTo} className="cta-button">View more work</Link>
+          <div className="cta-actions">
+            <Link to={backTo} className="cta-button">View more work</Link>
+            {data.githubUrl && (
+              <a
+                href={data.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="cta-button cta-github"
+                aria-label={`View ${data.title} on GitHub`}
+              >
+                View on GitHub
+              </a>
+            )}
+          </div>
+          <a href="mailto:wkung2004@gmail.com" className="cta-contact">
+            Or get in touch
+          </a>
         </motion.div>
       </div>
     </div>

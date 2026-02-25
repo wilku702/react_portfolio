@@ -58,7 +58,7 @@
 .space {
     margin-bottom: 5vh;
     padding-top: 3vh;
-    border-top: 1px solid rgba(255,255,255,0.08);
+    border-top: 1px solid rgba(148, 174, 247, 0.12);
 }
 
 .space:first-child {
@@ -73,7 +73,7 @@
 /* column style */
 .col-lg-12, .col-lg-6, .col-lg-4, .col-lg-3, .col-lg-5{
     --text: #fff;
-    line-height: 36px !important;
+    line-height: 1.6;
     font-family: "RobotoMono" !important;
     font-size: 1rem;
     font-weight: 400;
@@ -213,6 +213,8 @@
     font-weight: 500;
     line-height: 1.2;
     font-size: 1.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
 }
 
 .article-container h4 {
@@ -296,6 +298,7 @@
   display: inline-block;
   padding: 0.75rem 2rem;
   border: 2px solid var(--main-color);
+  border-radius: 6px;
   color: var(--main-color);
   text-decoration: none;
   font-family: 'RobotoMono', sans-serif;
@@ -557,6 +560,12 @@
 
 .showcase-device {
   margin: 0;
+  min-width: 0;
+  transition: transform 0.3s ease;
+}
+
+.showcase-device:hover {
+  transform: translateY(-4px);
 }
 
 /* Browser frame sizing */
@@ -693,4 +702,66 @@
 @media (max-width: 991px) and (min-width: 769px) {
   .showcase-grid.count-3 { flex-wrap: wrap; }
   .showcase-grid.count-3 .showcase-device { flex: 0 1 calc(50% - 1rem); }
+}
+
+/* ========================================
+   Demo body text
+   ======================================== */
+.demo-body {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* ========================================
+   Demo image hover
+   ======================================== */
+.demo-image img {
+  transition: box-shadow 0.3s ease;
+}
+
+.demo-image img:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+/* ========================================
+   CTA actions row + contact link
+   ======================================== */
+.cta-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.cta-github {
+  border-color: rgba(255, 255, 255, 0.25);
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.cta-github:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.cta-contact {
+  display: inline-block;
+  margin-top: 1rem;
+  font-family: 'RobotoMono', sans-serif;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.cta-contact:hover {
+  color: var(--main-color);
+}
+
+/* ========================================
+   Mobile h1 reduction
+   ======================================== */
+@media (max-width: 768px) {
+  .article-container h1 {
+    font-size: 1.875rem;
+  }
 }

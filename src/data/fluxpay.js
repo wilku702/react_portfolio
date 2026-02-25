@@ -5,7 +5,7 @@ export const fluxpayData = {
   role: 'Full Stack Developer',
   githubUrl: 'https://github.com/wilku702/fluxpay',
   techStack: ['React.js', 'Spring Boot', 'PostgreSQL', 'Redis', 'Kafka', 'Docker'],
-  description: `FluxPay is a full-stack payment ledger built with double-entry bookkeeping at its core. A React 19 SPA sits on top of a Spring Boot API backed by PostgreSQL, Redis, and Kafka — handling deposits, withdrawals, and account-to-account transfers with idempotency guarantees, optimistic concurrency control, and real-time balance caching.`,
+  description: `Building a payment system correctly means more than adding and subtracting from a balance field. FluxPay implements real double-entry bookkeeping — every transaction creates paired DEBIT/CREDIT records — alongside idempotency keys and optimistic locking to handle the edge cases that most hobby projects ignore.`,
   images: [
     {
       src: '/projects/fluxpay/01-login.png',
@@ -15,21 +15,7 @@ export const fluxpayData = {
   sections: [
     {
       headerType: 'h3',
-      title: 'ARCHITECTURE',
-      contentType: 'split-content',
-      content:
-        'The frontend is a React 19 SPA built with Vite and Framer Motion, communicating with a Spring Boot 3.2 REST API secured by JWT authentication and a rate-limiting filter. PostgreSQL handles persistent storage with Flyway-managed migrations, while Redis provides a balance caching layer and Kafka powers async event streaming for daily account summaries.',
-      list: [
-        'Double-entry bookkeeping — every transfer creates paired DEBIT and CREDIT records linked by a correlation ID',
-        'Idempotency keys checked inside the @Transactional boundary to prevent duplicate processing',
-        'Optimistic locking with automatic retry (up to 3 attempts) on concurrent balance conflicts',
-        'Redis balance cache with configurable TTL and graceful fallback when unavailable'
-      ],
-      images: []
-    },
-    {
-      headerType: 'h3',
-      title: 'DASHBOARD',
+      title: 'Dashboard',
       contentType: 'demonstration',
       position: 'left',
       content:
@@ -43,7 +29,7 @@ export const fluxpayData = {
     },
     {
       headerType: 'h3',
-      title: 'ACCOUNT DETAIL',
+      title: 'Account Detail',
       contentType: 'demonstration',
       position: 'right',
       content:
@@ -57,7 +43,7 @@ export const fluxpayData = {
     },
     {
       headerType: 'h3',
-      title: 'TRANSACTIONS',
+      title: 'Transactions',
       contentType: 'showcase',
       deviceFrame: 'browser',
       content:
@@ -79,7 +65,7 @@ export const fluxpayData = {
     },
     {
       headerType: 'h3',
-      title: 'DATA VISUALIZATION',
+      title: 'Data Visualization',
       contentType: 'demonstration',
       position: 'left',
       content:
@@ -93,9 +79,9 @@ export const fluxpayData = {
     },
     {
       headerType: 'h3',
-      title: 'MOBILE RESPONSIVE',
-      contentType: 'demonstration',
-      position: 'right',
+      title: 'Mobile Responsive',
+      contentType: 'showcase',
+      deviceFrame: 'phone',
       content:
         'The entire interface adapts to mobile viewports — account cards stack vertically, the navigation collapses into a hamburger menu, and charts resize to fit smaller screens without losing interactivity.',
       images: [
@@ -104,6 +90,20 @@ export const fluxpayData = {
           alt: 'FluxPay mobile responsive view at 390px showing stacked account cards and hamburger navigation'
         }
       ]
+    },
+    {
+      headerType: 'h3',
+      title: 'Architecture',
+      contentType: 'split-content',
+      content:
+        'The frontend is a React 19 SPA built with Vite and Framer Motion, communicating with a Spring Boot 3.2 REST API secured by JWT authentication and a rate-limiting filter. PostgreSQL handles persistent storage with Flyway-managed migrations, while Redis provides a balance caching layer and Kafka powers async event streaming for daily account summaries.',
+      list: [
+        'Chose double-entry bookkeeping over simple balance mutations — paired DEBIT/CREDIT records linked by a correlation ID make every transaction auditable and reversible.',
+        'Idempotency keys are verified inside the @Transactional boundary so that network retries and duplicate requests never produce double charges.',
+        'Chose optimistic locking over pessimistic to allow parallel reads — automatic retry (up to 3 attempts) handles the rare write conflict without holding DB locks.',
+        'Redis caches account balances with a configurable TTL, falling back gracefully to a DB query when the cache is unavailable.'
+      ],
+      images: []
     }
   ]
 };
