@@ -38,7 +38,13 @@ const ArticleLinks = ({ items }) => {
           <motion.div
             key={article.id || index}
             initial="normal"
-            animate={index === activeIndex ? 'clicked' : 'normal'}
+            animate={
+              activeIndex === null
+                ? 'normal'
+                : index === activeIndex
+                  ? 'clicked'
+                  : 'dimmed'
+            }
             variants={articleVariants}
             className={`article-card${isNonClickable ? ' non-clickable' : ''}`}
             role={!isNonClickable ? 'button' : undefined}

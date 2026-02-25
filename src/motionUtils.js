@@ -68,6 +68,27 @@ export const articleVariants = {
     scale: 0.85,
     opacity: 0,
     transition: { duration: 0.5, ease: defaultEasing }
+  },
+  dimmed: {
+    zIndex: 1,
+    scale: 0.97,
+    opacity: 0.3,
+    transition: { duration: 0.35, ease: defaultEasing }
+  }
+};
+
+export const articlePageVariants = {
+  initial: { opacity: 0, y: 40, scale: 0.97 },
+  animate: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] }
+  },
+  exit: {
+    opacity: 0,
+    y: -20,
+    transition: { duration: 0.3, ease: defaultEasing }
   }
 };
 

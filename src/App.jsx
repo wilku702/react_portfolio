@@ -1,5 +1,5 @@
 import { useEffect, lazy, Suspense } from 'react';
-import { MotionConfig } from 'framer-motion';
+import { MotionConfig, AnimatePresence } from 'framer-motion';
 import { HelmetProvider } from 'react-helmet-async';
 import './assets/styles/global.css';
 
@@ -39,6 +39,28 @@ function ScrollToTop() {
   return null;
 }
 
+function AnimatedRoutes() {
+  const location = useLocation();
+  return (
+    <>
+      <ScrollToTop />
+      <AnimatePresence mode="wait">
+        <Routes location={location} key={location.pathname}>
+          <Route path="/" element={<FrontPage />} />
+          <Route path="/experience" element={<ExperiencePage />} />
+          <Route path="/projects" element={<ProjectsPage />} />
+          <Route path="/work" element={<Navigate to="/experience" replace />} />
+          <Route path="/about" element={<AboutPage />} />
+
+          <Route path="/:id" element={<DynamicArticlePage />} />
+
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+      </AnimatePresence>
+    </>
+  );
+}
+
 function App() {
   // Prefetch lazy-loaded route chunks when the browser is idle
   useEffect(() => {
@@ -65,7 +87,6 @@ function App() {
       <Router>
         <NavigationProvider>
           <a href="#main-content" className="skip-link">Skip to main content</a>
-          <ScrollToTop />
           <Navbar />
           <Suspense fallback={
             <div className="loading-page" role="status" aria-live="polite">
@@ -76,17 +97,7 @@ function App() {
           }>
             <ErrorBoundary>
               <main id="main-content">
-                <Routes>
-                  <Route path="/" element={<FrontPage />} />
-                  <Route path="/experience" element={<ExperiencePage />} />
-                  <Route path="/projects" element={<ProjectsPage />} />
-                  <Route path="/work" element={<Navigate to="/experience" replace />} />
-                  <Route path="/about" element={<AboutPage />} />
-
-                  <Route path="/:id" element={<DynamicArticlePage />} />
-
-                  <Route path="*" element={<NotFoundPage />} />
-                </Routes>
+                <AnimatedRoutes />
               </main>
             </ErrorBoundary>
           </Suspense>

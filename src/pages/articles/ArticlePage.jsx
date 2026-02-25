@@ -13,6 +13,7 @@ import {
   splitContainerVariants,
   splitLeftVariants,
   splitRightVariants,
+  articlePageVariants,
 } from '../../motionUtils';
 import './styles/ArticleGlobal.css';
 
@@ -243,7 +244,13 @@ const sectionRenderers = {
 
 const ArticlePage = ({ data, backTo = '/experience' }) => {
   return (
-    <div className="page">
+    <motion.div
+      className="page"
+      variants={articlePageVariants}
+      initial="initial"
+      animate="animate"
+      exit="exit"
+    >
       <Helmet>
         <title>{data.title} | Will Kung</title>
         <meta name="description" content={data.description} />
@@ -253,7 +260,12 @@ const ArticlePage = ({ data, backTo = '/experience' }) => {
       </Helmet>
       <div className="whitespace"></div>
       <div className="article-container">
-        <motion.div className="row" {...scrollFadeIn}>
+        <motion.div
+          className="row"
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+        >
           <div className="col-lg-12">
             <div className="article-toolbar">
               <Link to={backTo} className="back-link" aria-label={`Back to ${backTo === '/projects' ? 'projects' : 'experience'} page`}>
@@ -307,7 +319,12 @@ const ArticlePage = ({ data, backTo = '/experience' }) => {
         </motion.div>
       </div>
       {data.images?.length > 0 && (
-        <motion.div className="project-img" {...scrollFadeIn}>
+        <motion.div
+          className="project-img"
+          initial={{ opacity: 0, scale: 0.96 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+        >
           <div className="article-container">
             <div className="row">
               <div className="col-lg-12">
@@ -374,7 +391,7 @@ const ArticlePage = ({ data, backTo = '/experience' }) => {
           </a>
         </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
