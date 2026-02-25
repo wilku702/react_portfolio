@@ -15,21 +15,29 @@ export const elasaData = {
   sections: [
     {
       headerType: 'h3',
-      title: 'SYSTEM ARCHITECTURE',
-      contentType: 'paragraph',
+      title: 'HOW IT\'S BUILT',
+      contentType: 'split-content',
       content:
-        'Two repos: product (Next.js + API + MySQL) and automation (SQS consumers + Playwright bots). A shared question engine powers discovery + carrier-specific logic across UI and workers.',
+        'Two repos power the platform: product (portal + API + persistence) and automation (SQS consumers + Playwright bots). A shared question engine keeps UI and workers aligned.',
+      list: [
+        'Next.js portal for agent-facing quoting UI',
+        'Node/Express API backed by MySQL',
+        'SQS-driven Playwright workers for carrier flows',
+        'Shared question engine across UI and automation'
+      ],
       images: []
     },
     {
       headerType: 'h3',
-      title: 'FLOW',
-      contentType: 'list',
-      content: [
-        'UI collects inputs and shows quote progress.',
-        'API persists state and enqueues jobs to SQS.',
-        'Workers run carrier flows and write results back to DB/API.',
-        'Question engine keeps UI + automation aligned.'
+      title: 'END-TO-END PIPELINE',
+      contentType: 'split-content',
+      content:
+        'A quote request flows from user input through persistence, async processing, and back to the UI — each step decoupled by SQS.',
+      list: [
+        'UI collects inputs and shows quote progress',
+        'API persists state and enqueues jobs to SQS',
+        'Workers run carrier flows and write results back to DB/API',
+        'Question engine keeps UI + automation aligned'
       ],
       images: []
     },
@@ -46,21 +54,29 @@ export const elasaData = {
     },
     {
       headerType: 'h3',
-      title: 'API + DEBUGGABILITY',
-      contentType: 'paragraph',
-      content:
-        'Improved integration correctness and failure visibility with Briza webhook fixes, typed quote errors across API/DB, and cleaner carrier credential routing (notably ICW).',
+      title: 'MAKING FAILURES VISIBLE',
+      contentType: 'list',
+      content: [
+        'Fixed Briza webhook integration for reliable status callbacks.',
+        'Introduced typed quote errors across API and database layers.',
+        'Cleaned up carrier credential routing, notably for ICW.'
+      ],
       images: []
     },
     {
       headerType: 'h3',
-      title: 'IMPACT',
-      contentType: 'list',
-      content: [
-        'Higher quote success rate from more resilient bots.',
-        'Faster debugging via clearer, typed failures.',
-        'Broader question coverage without UI/worker mismatches.'
-      ],
+      title: 'WHAT CHANGED',
+      contentType: 'comparison',
+      leftSide: {
+        label: 'Before',
+        content:
+          'Flaky bots with silent failures, mismatched questions between UI and workers, and opaque error messages that slowed debugging.'
+      },
+      rightSide: {
+        label: 'After',
+        content:
+          'Resilient carrier sessions, typed errors surfaced through every layer, and unified question coverage without UI/worker drift.'
+      },
       images: []
     }
   ]

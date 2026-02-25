@@ -22,6 +22,25 @@ export const kdanData = {
     },
     {
       headerType: 'h3',
+      title: 'MOMENTS',
+      contentType: 'gallery',
+      columns: 2,
+      content: 'Just highlighting some moments during my internship at KDANMobile.',
+      images: [
+        {
+          src: '/companies/kdan/hi_team.jpg',
+          alt: 'Group photo with the KDANMobile team',
+          caption: 'Team Photo'
+        },
+        {
+          src: '/companies/kdan/aws.jpg',
+          alt: 'Attending the AWS Summit',
+          caption: 'AWS Summit'
+        }
+      ]
+    },
+    {
+      headerType: 'h3',
       title: 'FIGMA DESIGN',
       contentType: 'feature-highlight',
       content: 'Adapted the company\u2019s Figma design system, adding my own enhancements to improve usability and visual flow.',
@@ -59,7 +78,8 @@ export const kdanData = {
     {
       headerType: 'h3',
       title: 'BACKEND',
-      contentType: 'paragraph',
+      contentType: 'showcase',
+      deviceFrame: 'browser',
       content: `Developed backend APIs in Python, connected to BigQuery with SQL queries, and integrated multiple LLM models to generate accurate, context-aware responses. Deployed on Google Cloud Functions and containerized with Docker.`,
       images: [
         {
@@ -71,8 +91,14 @@ export const kdanData = {
     {
       headerType: 'h3',
       title: 'INTEGRATION AND TESTING',
-      contentType: 'paragraph',
-      content: `Implemented a testing pipeline to improve accuracy and reliability, using LangChain/LangFuse for traceability and RAGAS for systematic prompt evaluation and refinement.`,
+      contentType: 'split-content',
+      content: `Implemented a testing pipeline to improve accuracy and reliability, using industry-standard tools for traceability and systematic evaluation.`,
+      list: [
+        'LangChain for orchestrating LLM interactions',
+        'LangFuse for tracing and observability',
+        'RAGAS for systematic prompt evaluation',
+        'Iterative refinement loop for accuracy improvements'
+      ],
       images: [
         {
           src: '/companies/kdan/langfuse.jpg',
@@ -83,31 +109,12 @@ export const kdanData = {
     {
       headerType: 'h3',
       title: 'DEPLOYMENT',
-      contentType: 'paragraph',
+      contentType: 'feature-highlight',
       content: `Containerized and embedded the chatbot into the client\u2019s website using Docker, ensuring smooth deployment and scalability across environments.`,
       images: [
         {
           src: '/companies/kdan/deployment.jpg',
           alt: 'Docker deployment pipeline for the chatbot'
-        }
-      ]
-    },
-    {
-      headerType: 'h3',
-      title: 'MOMENTS',
-      contentType: 'gallery',
-      columns: 2,
-      content: 'Just highlighting some moments during my internship at KDANMobile.',
-      images: [
-        {
-          src: '/companies/kdan/hi_team.jpg',
-          alt: 'Group photo with the KDANMobile team',
-          caption: 'Team Photo'
-        },
-        {
-          src: '/companies/kdan/aws.jpg',
-          alt: 'Attending the AWS Summit',
-          caption: 'AWS Summit'
         }
       ]
     }

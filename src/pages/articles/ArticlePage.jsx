@@ -237,6 +237,7 @@ const ArticlePage = ({ data }) => {
     <div className="page">
       <Helmet>
         <title>{data.title} | Will Kung</title>
+        <meta name="description" content={data.description} />
         <meta property="og:title" content={`${data.title} | Will Kung`} />
         <meta property="og:description" content={data.description} />
         <meta property="og:type" content="article" />
@@ -246,8 +247,8 @@ const ArticlePage = ({ data }) => {
         <motion.div className="row" {...scrollFadeIn}>
           <div className="col-lg-12">
             <div className="article-toolbar">
-              <Link to="/experience" className="back-link">
-                ← Back
+              <Link to="/experience" className="back-link" aria-label="Back to experience page">
+                <span aria-hidden="true">←</span> Back
               </Link>
               {data.githubUrl && (
                 <a
@@ -280,11 +281,11 @@ const ArticlePage = ({ data }) => {
               </div>
             </div>
             {data.techStack && data.techStack.length > 0 && (
-              <div className="tech-stack-row" aria-label="Technologies used">
+              <div className="tech-stack-row" role="list" aria-label="Technologies used">
                 {data.techStack.map((tech) => {
                   const IconComponent = techIcons[tech];
                   return (
-                    <span key={tech} className="tech-stack-item" title={tech}>
+                    <span key={tech} className="tech-stack-item" role="listitem" title={tech}>
                       {IconComponent && <IconComponent aria-hidden="true" />}
                       <span className="tech-stack-label">{tech}</span>
                     </span>
@@ -306,7 +307,7 @@ const ArticlePage = ({ data }) => {
                     <figure key={index} className="showcase-device frame-phone hero-phone">
                       <div className="device-screen">
                         <div className="device-content">
-                          <img src={image.src} alt={image.alt} loading="lazy" />
+                          <img src={image.src} alt={image.alt} loading="eager" />
                         </div>
                       </div>
                     </figure>
@@ -316,7 +317,7 @@ const ArticlePage = ({ data }) => {
                       src={image.src}
                       alt={image.alt}
                       className={image.className || ''}
-                      loading="lazy"
+                      loading="eager"
                     />
                   )
                 )}
@@ -329,11 +330,17 @@ const ArticlePage = ({ data }) => {
         <div>
           {data.sections.map((section, index) => {
             const Renderer = sectionRenderers[section.contentType];
-            return Renderer ? (
+            if (!Renderer) {
+              if (process.env.NODE_ENV !== 'production') {
+                console.warn(`ArticlePage: unknown contentType "${section.contentType}" in section "${section.title}"`);
+              }
+              return null;
+            }
+            return (
               <motion.div key={index} className="row space" {...getAnimationForSection(section)}>
                 <Renderer section={section} />
               </motion.div>
-            ) : null;
+            );
           })}
         </div>
         <motion.div className="article-cta" {...scrollFadeIn}>
