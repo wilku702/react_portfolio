@@ -22,6 +22,9 @@ import {
   SiPostgresql,
   SiOpenai,
   SiGoogle,
+  SiSpringboot,
+  SiRedis,
+  SiApachekafka,
 } from 'react-icons/si';
 
 const techIcons = {
@@ -50,6 +53,9 @@ const techIcons = {
   'PostgreSQL': SiPostgresql,
   'OpenAI API': SiOpenai,
   'Google OAuth': SiGoogle,
+  'Spring Boot': SiSpringboot,
+  'Redis': SiRedis,
+  'Kafka': SiApachekafka,
 };
 
 export default techIcons;

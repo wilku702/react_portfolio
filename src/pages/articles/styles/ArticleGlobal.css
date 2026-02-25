@@ -67,7 +67,6 @@
 }
 
 .article-meta {
-    margin-top: 1rem;
     margin-bottom: 1rem;
 }
 
@@ -145,7 +144,7 @@
     /* Constrain portrait/tall images so they don't dominate */
     max-height: 600px;
     object-fit: contain;
-    margin: 0 auto 24px;
+    margin: 2rem 1rem 1rem 1rem;
     /* Round top-right and bottom-left corners */
     border-radius: 0 16px 0 16px;
 }
@@ -239,6 +238,7 @@
     font-family: "RobotoMonoBold";
     box-sizing: border-box;
     margin-bottom: .5rem;
+    margin-top: .5rem;
     padding: 0;
     line-height: 1.2;
     font-size: 1rem;

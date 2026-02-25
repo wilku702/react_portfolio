@@ -5,6 +5,7 @@ import { elasaData } from './elasa';
 import { seniorUpliftData } from './senioruplift';
 import { trinitiData } from './triniti';
 import { codeassistData } from './codeassist';
+import { fluxpayData } from './fluxpay';
 
 const articles = {
   kdan: kdanData,
@@ -13,7 +14,8 @@ const articles = {
   elasa: elasaData,
   senioruplift: seniorUpliftData,
   triniti: trinitiData,
-  codeassist: codeassistData
+  codeassist: codeassistData,
+  fluxpay: fluxpayData
 };
 
 export default articles;

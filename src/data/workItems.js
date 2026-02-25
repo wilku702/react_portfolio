@@ -58,6 +58,26 @@ export const internshipItems = [
 
 export const projectItems = [
   {
+    id: 'fluxpay',
+    title: 'FluxPay',
+    link: '/fluxpay',
+    backgroundImage: '/projects/fluxpay/fluxpay-logo.svg',
+    backgroundStyle: { backgroundSize: 'contain', backgroundColor: '#0f172a', backgroundPosition: 'center' },
+    details: 'React.js | Spring Boot | PostgreSQL | Redis | Kafka | Docker',
+    description:
+      'Full-stack payment ledger with double-entry bookkeeping, idempotency guarantees, optimistic concurrency control, and real-time balance caching.'
+  },
+  {
+    id: 'codeassist',
+    title: 'CodeAssist',
+    link: '/codeassist',
+    backgroundImage: '/projects/codeassist.png',
+    backgroundStyle: { backgroundSize: 'contain', backgroundColor: '#ffffff', backgroundPosition: 'center' },
+    details: 'RAG | Llama | Python | React | PostgreSQL',
+    description:
+      'RAG-driven Llama tutor that reviews student code and returns scaffolded hints, using retrieval over course notes, a policy layer that blocks solution leakage, and code redaction.',
+  },
+  {
     id: 'senioruplift',
     title: 'SeniorUplift',
     link: '/senioruplift',
@@ -84,16 +104,6 @@ export const projectItems = [
     details: 'React Native | Firebase | Node.js',
     description:
       'Nursing home management app bridging communication between care facility staff and residents\u2019 families through dual portals for scheduling, mood tracking, and real-time messaging.',
-  },
-  {
-    id: 'codeassist',
-    title: 'CodeAssist',
-    link: '/codeassist',
-    backgroundImage: '/projects/codeassist.png',
-    backgroundStyle: { backgroundSize: 'contain', backgroundColor: '#ffffff', backgroundPosition: 'center' },
-    details: 'RAG | Llama | Python | React | PostgreSQL',
-    description:
-      'RAG-driven Llama tutor that reviews student code and returns scaffolded hints, using retrieval over course notes, a policy layer that blocks solution leakage, and code redaction.',
   },
   {
     id: 'cosmicai',

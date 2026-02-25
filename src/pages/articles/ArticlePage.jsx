@@ -232,7 +232,7 @@ const sectionRenderers = {
   showcase: ShowcaseSection,
 };
 
-const ArticlePage = ({ data }) => {
+const ArticlePage = ({ data, backTo = '/experience' }) => {
   return (
     <div className="page">
       <Helmet>
@@ -247,7 +247,7 @@ const ArticlePage = ({ data }) => {
         <motion.div className="row" {...scrollFadeIn}>
           <div className="col-lg-12">
             <div className="article-toolbar">
-              <Link to="/experience" className="back-link" aria-label="Back to experience page">
+              <Link to={backTo} className="back-link" aria-label={`Back to ${backTo === '/projects' ? 'projects' : 'experience'} page`}>
                 <span aria-hidden="true">←</span> Back
               </Link>
               {data.githubUrl && (
@@ -345,7 +345,7 @@ const ArticlePage = ({ data }) => {
         </div>
         <motion.div className="article-cta" {...scrollFadeIn}>
           <p>Interested in seeing more?</p>
-          <Link to="/experience" className="cta-button">View more work</Link>
+          <Link to={backTo} className="cta-button">View more work</Link>
         </motion.div>
       </div>
     </div>
@@ -399,7 +399,8 @@ ArticlePage.propTypes = {
         rightSide: comparisonSideShape
       })
     ).isRequired
-  }).isRequired
+  }).isRequired,
+  backTo: PropTypes.string
 };
 
 export default ArticlePage;
